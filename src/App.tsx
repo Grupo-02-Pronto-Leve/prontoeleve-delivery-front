@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify'
 import Home from './pages/home/Home'
 import Cadastro from './pages/cadastro/Cadastro'
 import Login from './pages/login/Login'
+import Perfil from './pages/perfil/Perfil'
 
 import Categoria from './pages/categoria/Categoria'
 import Produto from './pages/produto/Produto'
@@ -28,6 +29,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/categorias" element={<Categoria />} />
               <Route path="/produtos" element={<Produto />} />
+              <Route path="/perfil" element={<Perfil />}/>
             </Routes>
           </div>
           <Footer />
