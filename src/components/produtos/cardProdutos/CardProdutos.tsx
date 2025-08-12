@@ -8,14 +8,23 @@ interface CardProdutosProps {
 
 function CardProdutos({ produto }: CardProdutosProps) {
     return (
-        <div className="flex flex-col justify-between rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
-            <div className="flex items-center gap-4 py-3 px-6 text-gray-500 font-bold text-2xl">
+<div className="flex flex-col justify-between rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
+            
+            {/* Foto do produto */}
+            <img
+                src={produto.foto || "https://via.placeholder.com/400x250?text=Sem+Imagem"}
+                alt={produto.nome}
+                className="w-full h-48 object-cover"
+            />
+
+            {/* Dados do vendedor */}
+            {/* <div className="flex items-center gap-4 py-3 px-6 text-gray-500 font-bold text-2xl">
                 <img
                     src={produto.usuario?.foto || "https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-gris.png"}
-                    className='h-12 rounded-full'
+                    className="h-12 w-12 rounded-full object-cover"
                     alt={produto.usuario?.nome}
                 />
-                <h3 className='text-lg font-bold text-center uppercase'>
+                <h3 className="text-lg font-bold uppercase">
                     {produto.usuario?.nome}
                 </h3>
                 <img
@@ -24,7 +33,7 @@ function CardProdutos({ produto }: CardProdutosProps) {
                     className="h-8 w-8 ml-auto"
                 />
             </div>
-            <hr className="border-slate-300 mx-4" />
+            <hr className="border-slate-300 mx-4" /> */}
             <div className='p-5 flex-1'>
                 <div className="text-1xl text-gray-500">
                     <h4 className='text-lg font-semibold text-floresta'>{produto.nome}</h4>
