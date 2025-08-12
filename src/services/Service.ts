@@ -2,8 +2,6 @@
 import axios from "axios";
 
 const api = axios.create({
-    // criar um arquivo .env no seu ambiente local para não expormos a api publicamente
-    // conteúdo: VITE_API_URL=https://api-do-projeto.onrender.com/
     baseURL: import.meta.env.VITE_API_URL
 })
 
