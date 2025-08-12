@@ -6,13 +6,16 @@ import Cadastro from "./pages/cadastro/Cadastro";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Perfil from "./pages/perfil/Perfil";
-
+import Navbar from './components/navbar/Navbar'
 import Footer from "./components/footer/Footer";
-import Categoria from "./pages/categoria/Categoria";
-import Produto from "./pages/produto/Produto";
-
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import FormProduto from "./components/produtos/formProduto/FormProduto";
+import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto";
+import FormCategoria from "./components/categorias/formCategoria/FormCategoria";
+import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCategoria";
+import Categoria from "./pages/categoria/Categoria";
+import Produto from "./pages/produto/Produto";
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
       <AuthProvider>
         <ToastContainer />
         <BrowserRouter>
+        <Navbar />
           <div className="min-h-[80vh]">
             <Routes>
               <Route path="/" element={<Login />} />
@@ -27,7 +31,15 @@ function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/categorias" element={<Categoria />} />
+              <Route path="/categorias/:id" element={<FormCategoria />} />
+              <Route path="/cadastrarcategoria" element={<FormCategoria />} />
+              <Route path="/editarcategoria/:id" element={<FormCategoria />} />
+              <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
               <Route path="/produtos" element={<Produto />} />
+              <Route path="/produtos/:id" element={<FormProduto />} />
+              <Route path="/cadastrarproduto/:id" element={<FormProduto />} />
+              <Route path="/editarproduto/:id" element={<FormProduto />} />
+              <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
               <Route path="/perfil" element={<Perfil />} />
             </Routes>
           </div>
