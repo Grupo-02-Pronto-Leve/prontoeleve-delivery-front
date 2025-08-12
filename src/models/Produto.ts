@@ -1,4 +1,4 @@
-import type Tema from "./Categoria";
+import type Categoria from "./Categoria";
 import type Usuario from "./Usuario";
 
 export default interface Produto {
@@ -8,6 +8,6 @@ export default interface Produto {
     preco: number;
     disponivel: boolean;
     foto: string;
-    tema: Tema | null;
+    categoria: Categoria | null;
     usuario: Usuario | null;
 }
