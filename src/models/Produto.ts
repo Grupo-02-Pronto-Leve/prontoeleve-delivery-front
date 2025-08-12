@@ -1,11 +1,13 @@
-import type Tema from "./Tema";
+import type Tema from "./Categoria";
 import type Usuario from "./Usuario";
 
-export default interface Postagem {
+export default interface Produto {
     id: number;
-    titulo: string;
-    texto: string;
-    data: string;
+    nome: string;
+    descricao: string;
+    preco: number;
+    disponivel: boolean;
+    foto: string;
     tema: Tema | null;
     usuario: Usuario | null;
 }
