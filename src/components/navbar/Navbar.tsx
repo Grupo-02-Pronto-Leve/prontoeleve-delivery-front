@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { HiOutlineHome, HiOutlinePhone } from "react-icons/hi";
-import { HiOutlineBolt, HiOutlineUserCircle } from "react-icons/hi2";
+import { HiOutlineHome, HiOutlinePhone, HiOutlineSelector } from "react-icons/hi";
+import { HiOutlineBolt, HiOutlineCake, HiOutlineUserCircle } from "react-icons/hi2";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -47,6 +47,18 @@ function Navbar() {
             <NavLink to="/contact" className={({isActive}) => `${item} ${isActive ? active : ""}`}>
               <HiOutlinePhone />
               Contato
+            </NavLink>
+          </li>
+            <li>
+            <NavLink to="/categorias" className={({isActive}) => `${item} ${isActive ? active : ""}`}>
+              <HiOutlineSelector />
+              Categorias
+            </NavLink>
+          </li>
+            <li>
+            <NavLink to="/produtos" className={({isActive}) => `${item} ${isActive ? active : ""}`}>
+              <HiOutlineCake />
+              Produtos
             </NavLink>
           </li>
         </ul>
