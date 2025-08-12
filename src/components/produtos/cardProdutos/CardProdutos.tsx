@@ -30,10 +30,10 @@ function CardProdutos({ produto }: CardProdutosProps) {
                     <h4 className='text-lg font-semibold text-floresta'>{produto.nome}</h4>
                     <p>{produto.descricao}</p>
                     <p>Categoria: {produto.categoria?.descricao}</p>
-                    <p>Data: {new Intl.DateTimeFormat(undefined, {
-                        dateStyle: 'full',
-                        timeStyle: 'medium',
-                    }).format(new Date(produto.preco))}</p>
+                    <p>Preço: {new Intl.NumberFormat('pt-BR', {
+                            style: 'currency',
+                            currency: 'BRL',
+                        }).format(produto.preco)}</p>
                 </div>
             </div>
 
