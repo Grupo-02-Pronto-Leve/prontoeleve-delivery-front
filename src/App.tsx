@@ -9,11 +9,13 @@ import Perfil from "./pages/perfil/Perfil";
 import Footer from "./components/footer/Footer";
 import Categoria from "./pages/categoria/Categoria";
 import Produto from "./pages/produto/Produto";
+import Contato from "./pages/contato/Contato";
 
 import FormProduto from "./components/produtos/formProduto/FormProduto";
 import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto";
 import FormCategoria from "./components/categorias/formCategoria/FormCategoria";
 import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCategoria";
+
 
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
@@ -41,6 +43,7 @@ function App() {
               <Route path="/editarproduto/:id" element={<FormProduto />} />
               <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
               <Route path="/perfil" element={<Perfil />} />
+              <Route path="/contato" element={<Contato />} />
             </Routes>
           </div>
           <Footer />
