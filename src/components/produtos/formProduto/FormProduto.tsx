@@ -147,62 +147,116 @@ function FormProduto() {
                 {id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}
             </h1>
 
-            <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovoProduto}>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="titulo">Título do Produto</label>
-                    <input
-                        type="text"
-                        placeholder="Titulo"
-                        name="titulo"
-                        required
-                        className="border-2 border-menta rounded p-2 focus:outline-none focus:border-ligth-green focus:ring-2 focus:ring-ligth-green"
-                        value={produto.nome}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="titulo">Descrição do Produto</label>
-                    <input
-                        type="text"
-                        placeholder="Descrição"
-                        name="texto"
-                        required
-                        className="border-2 border-menta rounded p-2 focus:outline-none focus:border-ligth-green focus:ring-2 focus:ring-ligth-green"
-                        value={produto.descricao}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div>
-                <div className="flex flex-col gap-2">
-                    <p>Categoria do Produto</p>
-                    <select name="categoria" id="categoria" className='border-2 border-menta rounded p-2 focus:outline-none focus:border-ligth-green focus:ring-2 focus:ring-ligth-green'
-                        onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
-                    >
-                        <option value="" selected disabled>Selecione uma Categoria</option>
+        <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovoProduto}>
+        <div className="flex flex-col gap-2">
+            <label htmlFor="nome">Nome do Produto</label>
+            <input
+            type="text"
+            placeholder="Nome"
+            name="nome"
+            required
+            className="border-2 border-menta rounded p-2 focus:outline-none focus:border-ligth-green focus:ring-2 focus:ring-ligth-green"
+            value={produto.nome}
+            onChange={atualizarEstado}
+            />
+        </div>
 
-                        {categorias.map((categoria) => (
-                            <option key={categoria.id} value={categoria.id}>{categoria.descricao}</option>
-                        ))}
+        <div className="flex flex-col gap-2">
+            <label htmlFor="descricao">Descrição do Produto</label>
+            <input
+            type="text"
+            placeholder="Descrição"
+            name="descricao"
+            required
+            className="border-2 border-menta rounded p-2 focus:outline-none focus:border-ligth-green focus:ring-2 focus:ring-ligth-green"
+            value={produto.descricao}
+            onChange={atualizarEstado}
+            />
+        </div>
 
-                    </select>
-                </div>
-                <button
-                    type='submit'
-                    className='rounded disabled:bg-slate-200 bg-gradient-to-r from-teal-400 to-ligth-green hover:from-ligth-green hover:to-teal-400 shadow-sm
-                               text-white font-bold w-1/2 mx-auto py-2 flex justify-center'
-                    disabled={carregandoCategoria}
-                >
-                    {isLoading ?
-                        <RotatingLines
-                            strokeColor="white"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="24"
-                            visible={true}
-                        /> :
-                        <span>{id !== undefined ? 'Atualizar' : 'Cadastrar'}</span>
-                    }
-                </button>
-            </form>
+        <div className="flex flex-col gap-2">
+            <label htmlFor="preco">Preço</label>
+            <input
+            type="number"
+            step="0.01"
+            placeholder="Preço"
+            name="preco"
+            required
+            className="border-2 border-menta rounded p-2 focus:outline-none focus:border-ligth-green focus:ring-2 focus:ring-ligth-green"
+            value={produto.preco || ""}
+            onChange={atualizarEstado}
+            />
+        </div>
+
+        <div className="flex flex-col gap-2">
+            <label htmlFor="foto">URL da Foto</label>
+            <input
+            type="text"
+            placeholder="Link da imagem"
+            name="foto"
+            className="border-2 border-menta rounded p-2 focus:outline-none focus:border-ligth-green focus:ring-2 focus:ring-ligth-green"
+            value={produto.foto}
+            onChange={atualizarEstado}
+            />
+        </div>
+
+        <div className="flex flex-col gap-2">
+            <label htmlFor="disponivel">Disponível?</label>
+            <select
+            name="disponivel"
+            value={String(produto.disponivel)}
+            onChange={(e) =>
+                setProduto({
+                ...produto,
+                disponivel: e.target.value === "true",
+                })
+            }
+            className="border-2 border-menta rounded p-2 focus:outline-none focus:border-ligth-green focus:ring-2 focus:ring-ligth-green"
+            >
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+            </select>
+        </div>
+
+        <div className="flex flex-col gap-2">
+            <p>Categoria do Produto</p>
+            <select
+            name="categoria"
+            id="categoria"
+            className="border-2 border-menta rounded p-2 focus:outline-none focus:border-ligth-green focus:ring-2 focus:ring-ligth-green"
+            onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
+            >
+            <option value="" disabled selected>
+                Selecione uma Categoria
+            </option>
+            {categorias.map((categoria) => (
+                <option key={categoria.id} value={categoria.id}>
+                {categoria.descricao}
+                </option>
+            ))}
+            </select>
+        </div>
+
+        <button
+            type="submit"
+            className="rounded disabled:bg-slate-200 bg-gradient-to-r from-teal-400 to-ligth-green hover:from-ligth-green hover:to-teal-400 shadow-sm
+                    text-white font-bold w-1/2 mx-auto py-2 flex justify-center"
+            disabled={carregandoCategoria}
+        >
+            {isLoading ? (
+            <RotatingLines
+                strokeColor="white"
+                strokeWidth="5"
+                animationDuration="0.75"
+                width="24"
+                visible={true}
+            />
+            ) : (
+            <span>{id !== undefined ? "Atualizar" : "Cadastrar"}</span>
+            )}
+        </button>
+        </form>
+
         </div>
     );
 }
