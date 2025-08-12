@@ -6,16 +6,17 @@ import Cadastro from "./pages/cadastro/Cadastro";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Perfil from "./pages/perfil/Perfil";
-import Navbar from './components/navbar/Navbar'
 import Footer from "./components/footer/Footer";
-import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
+import Categoria from "./pages/categoria/Categoria";
+import Produto from "./pages/produto/Produto";
+
 import FormProduto from "./components/produtos/formProduto/FormProduto";
 import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto";
 import FormCategoria from "./components/categorias/formCategoria/FormCategoria";
 import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCategoria";
-import Categoria from "./pages/categoria/Categoria";
-import Produto from "./pages/produto/Produto";
+
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
 
 function App() {
   return (
@@ -23,10 +24,9 @@ function App() {
       <AuthProvider>
         <ToastContainer />
         <BrowserRouter>
-        <Navbar />
           <div className="min-h-[80vh]">
             <Routes>
-              <Route path="/" element={<Login />} />
+              <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
