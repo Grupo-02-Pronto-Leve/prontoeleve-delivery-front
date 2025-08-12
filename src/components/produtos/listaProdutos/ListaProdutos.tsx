@@ -7,6 +7,7 @@ import type Produto from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
 import { Comment } from "react-loader-spinner";
 import {ToastAlerta} from "../../../utils/ToastAlerta";
+// import ModalProduto from "../modalProduto/ModalProduto";
 
 function ListaProdutos() {
 
@@ -45,6 +46,7 @@ function ListaProdutos() {
 
     return (
         <>
+        {/* <ModalProduto /> */}
             {produtos.length === 0 && (
                 <div className="flex items-center justify-center h-screen">
                     <Comment

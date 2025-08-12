@@ -26,37 +26,37 @@ function Navbar() {
         {/* Menu central (desktop) */}
         <ul className="hidden md:flex items-center gap-4">
           <li>
-            <NavLink to="/home" className={({isActive}) => `${item} ${isActive ? active : ""}`}>
+            <NavLink to="/home" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
               <HiOutlineHome />
               Início
             </NavLink>
           </li>
           <li>
-            <NavLink to="/sobre" className={({isActive}) => `${item} ${isActive ? active : ""}`}>
+            <NavLink to="/sobre" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
               <HiOutlineBolt />
               Sobre
             </NavLink>
           </li>
           <li>
-            <NavLink to="/services" className={({isActive}) => `${item} ${isActive ? active : ""}`}>
+            <NavLink to="/services" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
               <HiOutlineUserCircle />
               Serviços
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" className={({isActive}) => `${item} ${isActive ? active : ""}`}>
+            <NavLink to="/contact" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
               <HiOutlinePhone />
               Contato
             </NavLink>
           </li>
-            <li>
-            <NavLink to="/categorias" className={({isActive}) => `${item} ${isActive ? active : ""}`}>
+          <li>
+            <NavLink to="/categorias" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
               <HiOutlineSelector />
               Categorias
             </NavLink>
           </li>
-            <li>
-            <NavLink to="/produtos" className={({isActive}) => `${item} ${isActive ? active : ""}`}>
+          <li>
+            <NavLink to="/produtos" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
               <HiOutlineCake />
               Produtos
             </NavLink>
@@ -89,12 +89,16 @@ function Navbar() {
       {open && (
         <div className="md:hidden border-t border-white/10">
           <div className="mx-auto max-w-7xl px-4 py-4 grid gap-3">
-            <NavLink onClick={() => setOpen(false)} to="/home" className={({isActive}) => `${item} ${isActive ? active : ""}`}>Início</NavLink>
-            <NavLink onClick={() => setOpen(false)} to="/sobre" className={({isActive}) => `${item} ${isActive ? active : ""}`}>Sobre</NavLink>
-            <NavLink onClick={() => setOpen(false)} to="/services" className={({isActive}) => `${item} ${isActive ? active : ""}`}>Serviços</NavLink>
-            <NavLink onClick={() => setOpen(false)} to="/contact" className={({isActive}) => `${item} ${isActive ? active : ""}`}>Contato</NavLink>
-            <Link onClick={() => setOpen(false)} to="/produtos" className="inline-flex justify-center px-5 py-2 rounded-full bg-lime-700 text-white font-semibold hover:bg-lime-600 transition">PEÇA AGORA</Link>
+            <NavLink onClick={() => setOpen(false)} to="/home" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Início</NavLink>
+            <NavLink onClick={() => setOpen(false)} to="/sobre" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Sobre</NavLink>
+            <NavLink onClick={() => setOpen(false)} to="/services" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Serviços</NavLink>
+            <NavLink onClick={() => setOpen(false)} to="/contact" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Contato</NavLink>
+            <NavLink onClick={() => setOpen(false)} to="/categorias" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Categorias</NavLink>
+            <NavLink onClick={() => setOpen(false)} to="/produtos" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Produtos</NavLink>
+            <Link onClick={() => setOpen(false)} to="/login" className="hidden md:inline-flex px-5 py-2 rounded-full bg-lime-700 text-white font-semibold hover:bg-lime-600 transition"
+            >LOGIN</Link>
           </div>
+
         </div>
       )}
     </header>
