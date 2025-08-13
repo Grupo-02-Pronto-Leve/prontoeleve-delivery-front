@@ -1,0 +1,11 @@
+.background-cadastro {
+  background-image: url("https://ik.imagekit.io/taelipsvolt/cadastrofoto03.jpg?updatedAt=1755116594642");
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
