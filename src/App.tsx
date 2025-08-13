@@ -19,6 +19,7 @@ import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCa
 
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import Sobre from "./pages/sobre/Sobre";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
               <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/contato" element={<Contato />} />
+              <Route path="/sobre" element={<Sobre />} />
             </Routes>
           </div>
           <Footer />

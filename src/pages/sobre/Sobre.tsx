@@ -3,8 +3,6 @@ import Navbar from "../../components/navbar/Navbar";
 import LogoDasStacks from "../../components/sobre/logosdasstacks/LogoDasStacks";
 
 function Sobre() {
-    
-    <Navbar/>
     const frontendTechs = [
         { name: "React", img: "https://ik.imagekit.io/iyc9bztrf8/reactmenorLogo.png?updatedAt=1755102234323" },
         { name: "TypeScript", img: "https://ik.imagekit.io/iyc9bztrf8/Typescript_logo_2020.svg.png?updatedAt=1755104841563" },
@@ -60,101 +58,99 @@ function Sobre() {
     ];
 
     return (
-    <div className="min-h-screen w-full bg-black text-white font-marko">
-        {/* HERO */}
-        <section
-        className="w-full text-white py-28 text-center bg-cover bg-center relative"
-        style={{
-            backgroundImage: "url('https://ik.imagekit.io/iyc9bztrf8/vecteezy_healthy-lifestyle-salad-with-chicken-and-veggies_50513834.png?updatedAt=1755115549588')", // atualize o caminho conforme necessário
-        }}
-        >
-        <div className="absolute inset-0"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}></div>
-
-        <div className="relative z-10 max-w-3xl mx-auto px-4">
-            <h1 className="text-5xl font-extrabold mb-6 text-yellow-400 drop-shadow-lg">
-            Sua fome, nossa missão!
-            </h1>
-            <p className="text-lg text-white drop-shadow-md">
-            Aqui, você encontra pratos sempre fresquinhos, preparados com ingredientes selecionados <br />
-            e aquele toque especial de sabor caseiro que conquista qualquer paladar. <br /><br />
-            Delivery ágil, comida quentinha e o sabor que você merece, direto na sua porta. <br />
-            Bateu a fome? A gente resolve. É só pedir!
-            </p>
-        </div>
-        </section>
-
-        {/* <section className="w-full py-20 px-6 bg-[#111111]"> */}
-        <div className="max-w-full mx-100 px-20 rounded-xl py-10 bg-green-900 bg-opacity-20 backdrop-blur-md shadow-xl">
-            <h2 className="text-3xl font-bold text-center text-green-400 mb-10">
-            Funcionalidades do Sistema
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
-            {crudFeatures.map((feature, index) => (
-                <div
-                key={index}
-                className="bg-black bg-opacity-60 rounded-xl p-6 text-center hover:scale-105 transition-transform w-full max-w-xs shadow-lg backdrop-blur-md"
-                >
-                <div className="text-4xl mb-4 text-green-400">{feature.icon}</div>
-                <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
-                <p className="text-gray-300 text-sm">{feature.description}</p>
-                </div>
-            ))}
-            </div>
-        </div>
-        {/* </section> */}
-
-        {/* STACKS */}
-        <LogoDasStacks title="Tecnologias Frontend" technologies={frontendTechs} />
-        <LogoDasStacks title="Tecnologias Backend" technologies={backendTechs} />
-
-        {/* EQUIPE */}
-        <section className="w-full py-20 bg-[#0f1f16]">
-        <h2 className="text-3xl font-bold text-center text-green-400 mb-12">
-            Nossa Equipe
-        </h2>
-        <div className="flex flex-wrap justify-center gap-8">
-            {team.map((member, index) => (
-            <div
-                key={index}
-                className="relative w-56 h-72 rounded-lg overflow-hidden shadow-lg group"
+        <>
+        <Navbar /><div className="min-h-screen w-full bg-black text-white font-marko">
+            {/* HERO */}
+            <section
+                className="w-full text-white py-28 text-center bg-cover bg-center relative"
+                style={{
+                    backgroundImage: "url('https://ik.imagekit.io/iyc9bztrf8/vecteezy_healthy-lifestyle-salad-with-chicken-and-veggies_50513834.png?updatedAt=1755115549588')", // atualize o caminho conforme necessário
+                }}
             >
-                <img
-                src={member.img}
-                alt={member.name}
-                className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white text-xl bg-blue-600 rounded-full p-3 hover:bg-blue-700 transition-colors"
-                >
-                    <LinkedinLogoIcon size={24} weight="fill" />
-                </a>
-                <a
-                    href={member.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white text-xl bg-gray-800 rounded-full p-3 hover:bg-gray-900 transition-colors"
-                >
-                    <GithubLogoIcon size={24} weight="fill" />
-                </a>
+                <div className="absolute inset-0"
+                    style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}></div>
+
+                <div className="relative z-10 max-w-3xl mx-auto px-4">
+                    <h1 className="text-5xl font-extrabold mb-6 text-yellow-400 drop-shadow-lg">
+                        Sua fome, nossa missão!
+                    </h1>
+                    <p className="text-lg text-white drop-shadow-md">
+                        Aqui, você encontra pratos sempre fresquinhos, preparados com ingredientes selecionados <br />
+                        e aquele toque especial de sabor caseiro que conquista qualquer paladar. <br /><br />
+                        Delivery ágil, comida quentinha e o sabor que você merece, direto na sua porta. <br />
+                        Bateu a fome? A gente resolve. É só pedir!
+                    </p>
                 </div>
-                <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-90 py-2 text-center">
-                <p className="text-gray-800 font-semibold">{member.name}</p>
+            </section>
+
+            {/* <section className="w-full py-20 px-6 bg-[#111111]"> */}
+            <div className="max-w-full mx-100 px-20 rounded-xl py-10 bg-green-900 bg-opacity-20 backdrop-blur-md shadow-xl">
+                <h2 className="text-3xl font-bold text-center text-green-400 mb-10">
+                    Funcionalidades do Sistema
+                </h2>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+                    {crudFeatures.map((feature, index) => (
+                        <div
+                            key={index}
+                            className="bg-black bg-opacity-60 rounded-xl p-6 text-center hover:scale-105 transition-transform w-full max-w-xs shadow-lg backdrop-blur-md"
+                        >
+                            <div className="text-4xl mb-4 text-green-400">{feature.icon}</div>
+                            <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                            <p className="text-gray-300 text-sm">{feature.description}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
-            ))}
+            {/* </section> */}
+
+            {/* STACKS */}
+            <LogoDasStacks title="Tecnologias Frontend" technologies={frontendTechs} />
+            <LogoDasStacks title="Tecnologias Backend" technologies={backendTechs} />
+
+            {/* EQUIPE */}
+            <section className="w-full py-20 bg-[#0f1f16]">
+                <h2 className="text-3xl font-bold text-center text-green-400 mb-12">
+                    Nossa Equipe
+                </h2>
+                <div className="flex flex-wrap justify-center gap-8">
+                    {team.map((member, index) => (
+                        <div
+                            key={index}
+                            className="relative w-56 h-72 rounded-lg overflow-hidden shadow-lg group"
+                        >
+                            <img
+                                src={member.img}
+                                alt={member.name}
+                                className="w-full h-full object-cover" />
+                            <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a
+                                    href={member.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white text-xl bg-blue-600 rounded-full p-3 hover:bg-blue-700 transition-colors"
+                                >
+                                    <LinkedinLogoIcon size={24} weight="fill" />
+                                </a>
+                                <a
+                                    href={member.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white text-xl bg-gray-800 rounded-full p-3 hover:bg-gray-900 transition-colors"
+                                >
+                                    <GithubLogoIcon size={24} weight="fill" />
+                                </a>
+                            </div>
+                            <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-90 py-2 text-center">
+                                <p className="text-gray-800 font-semibold">{member.name}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
         </div>
-        </section>
-    </div>
+        </>
     );
-
-
-
 }
 
 export default Sobre;
