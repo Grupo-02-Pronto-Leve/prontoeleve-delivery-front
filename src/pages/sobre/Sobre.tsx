@@ -1,4 +1,4 @@
-import { GithubLogoIcon, LinkedinLogo, LinkedinLogoIcon } from "@phosphor-icons/react";
+import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 import Navbar from "../../components/navbar/Navbar";
 import LogoDasStacks from "../../components/sobre/logosdasstacks/LogoDasStacks";
 
@@ -38,7 +38,7 @@ function Sobre() {
         icon: "",
         },
         {
-        title: "Busca de produtos por restrição alimentar",
+        title: "Busca por restrição alimentar",
         description:
             "Facilite a vida do cliente filtrando produtos conforme alergias e preferências.",
         icon: "",
@@ -59,8 +59,8 @@ function Sobre() {
 
     return (
         <>
-        <Navbar /><div className="min-h-screen w-full bg-black text-white font-marko">
-            {/* HERO */}
+        <Navbar />
+        <div className="min-h-screen w-full bg-black text-white font-marko">
             <section
                 className="w-full text-white py-28 text-center bg-cover bg-center relative"
                 style={{
@@ -74,16 +74,17 @@ function Sobre() {
                     <h1 className="text-5xl font-extrabold mb-6 text-yellow-400 drop-shadow-lg">
                         Sua fome, nossa missão!
                     </h1>
-                    <p className="text-lg text-white drop-shadow-md">
-                        Aqui, você encontra pratos sempre fresquinhos, preparados com ingredientes selecionados <br />
-                        e aquele toque especial de sabor caseiro que conquista qualquer paladar. <br /><br />
-                        Delivery ágil, comida quentinha e o sabor que você merece, direto na sua porta. <br />
+                    <p className="leading-relaxed text-lg justify-center text-center text-white drop-shadow-md">
+                        Aqui, você encontra pratos sempre fresquinhos, preparados com ingredientes selecionados
+                        e aquele toque especial de sabor caseiro que conquista qualquer paladar.
+                    </p>
+                    <p className="leading-relaxed pt-5 text-lg justify-center text-center text-white drop-shadow-md">
+                        Delivery ágil, comida quentinha e o sabor que você merece, direto na sua porta.
                         Bateu a fome? A gente resolve. É só pedir!
                     </p>
                 </div>
             </section>
 
-            {/* <section className="w-full py-20 px-6 bg-[#111111]"> */}
             <div className="max-w-full mx-100 px-20 rounded-xl py-10 bg-green-900 bg-opacity-20 backdrop-blur-md shadow-xl">
                 <h2 className="text-3xl font-bold text-center text-green-400 mb-10">
                     Funcionalidades do Sistema
@@ -96,19 +97,16 @@ function Sobre() {
                             className="bg-black bg-opacity-60 rounded-xl p-6 text-center hover:scale-105 transition-transform w-full max-w-xs shadow-lg backdrop-blur-md"
                         >
                             <div className="text-4xl mb-4 text-green-400">{feature.icon}</div>
-                            <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                            <h3 className="font-semibold text-white mb-2">{feature.title}</h3>
                             <p className="text-gray-300 text-sm">{feature.description}</p>
                         </div>
                     ))}
                 </div>
             </div>
-            {/* </section> */}
 
-            {/* STACKS */}
             <LogoDasStacks title="Tecnologias Frontend" technologies={frontendTechs} />
             <LogoDasStacks title="Tecnologias Backend" technologies={backendTechs} />
 
-            {/* EQUIPE */}
             <section className="w-full py-20 bg-[#0f1f16]">
                 <h2 className="text-3xl font-bold text-center text-green-400 mb-12">
                     Nossa Equipe

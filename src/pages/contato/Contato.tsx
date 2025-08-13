@@ -1,6 +1,7 @@
-import Navbar from "../../components/navbar/Navbar";
 import React, { useState } from "react";
-import burgerImage from "../../assets/salada.png";
+import salada from "../../assets/salada.png";
+import { MdOutlineAlternateEmail } from "react-icons/md";
+import { FaEnvelopeOpenText, FaRegCommentDots, FaRegUser } from "react-icons/fa";
 
 const Contato: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -66,67 +67,85 @@ const Contato: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center gap-10 max-w-5xl w-full">
           
           {/* Imagem */}
-          <div className="w-full md:w-1/2 flex justify-center">
-            <img src={burgerImage} alt="Contato" className="max-w-sm rounded-lg shadow-lg" />
+          <div className="w-full md:w-1/2 flex justify-center items-center">
+            <img 
+              src={salada} 
+              alt="Contato" 
+              className="w-full max-w-xl rounded-lg shadow-2xl transition-transform duration-300 hover:scale-105" 
+            />
           </div>
+
 
           {/* Formulário */}
           <div className="w-full md:w-1/2">
-            <h1 className="text-3xl font-bold mb-6 text-center text-white">Entre em Contato</h1>
 
             <form
               onSubmit={handleSubmit}
-              className="space-y-4 bg-neutral-900 shadow-lg p-6 rounded-lg"
+              className="bg-[#111111]/80 backdrop-blur-md shadow-lg rounded-xl py-8 px-10 w-full max-w-[500px] text-white"
             >
+              <h1 className="text-3xl font-bold mb-6 text-center text-white">Entre em Contato</h1>
+
               <div>
                 <label className="block font-semibold text-white">Nome:</label>
+                <div className="relative mb-4">
+                <FaRegUser className="absolute top-3 left-3 text-gray-400" />
                 <input
                   type="text"
                   name="nome"
                   value={formData.nome}
                   onChange={handleChange}
                   placeholder="Digite seu nome"
-                  className="w-full border border-gray-700 rounded p-2 bg-neutral-800 text-white"
+                  className="pl-10 pr-4 py-2 w-full rounded bg-[#1a1a1a] border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-lime-600"
                 />
                 {errors.nome && <span className="text-red-500 text-sm">{errors.nome}</span>}
+              </div>
               </div>
 
               <div>
                 <label className="block font-semibold text-white">E-mail:</label>
+                <div className="relative mb-4">
+                <MdOutlineAlternateEmail className="absolute top-3 left-3 text-gray-400" />
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Digite seu email"
-                  className="w-full border border-gray-700 rounded p-2 bg-neutral-800 text-white"
+                  className="pl-10 pr-4 py-2 w-full rounded bg-[#1a1a1a] border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-lime-600"
                 />
                 {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
+              </div>
               </div>
 
               <div>
                 <label className="block font-semibold text-white">Assunto:</label>
+                <div className="relative mb-4">
+                <FaEnvelopeOpenText className="absolute top-3 left-3 text-gray-400" />
                 <input
                   type="text"
                   name="assunto"
                   value={formData.assunto}
                   onChange={handleChange}
                   placeholder="Digite o título da mensagem"
-                  className="w-full border border-gray-700 rounded p-2 bg-neutral-800 text-white"
+                  className="pl-10 pr-4 py-2 w-full rounded bg-[#1a1a1a] border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-lime-600"
                 />
                 {errors.assunto && <span className="text-red-500 text-sm">{errors.assunto}</span>}
+              </div>
               </div>
 
               <div>
                 <label className="block font-semibold text-white">Mensagem:</label>
+                <div className="relative mb-4">
+                <FaRegCommentDots className="absolute top-3 left-3 text-gray-400" />
                 <textarea
                   name="mensagem"
                   value={formData.mensagem}
                   onChange={handleChange}
                   placeholder="Digite sua mensagem"
-                  className="w-full border border-gray-700 rounded p-2 h-28 bg-neutral-800 text-white"
+                  className="pl-10 pr-4 py-2 w-full rounded bg-[#1a1a1a] border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-lime-600"
                 />
                 {errors.mensagem && <span className="text-red-500 text-sm">{errors.mensagem}</span>}
+              </div>
               </div>
 
               <button
