@@ -1,8 +1,7 @@
 import { type ChangeEvent, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import type UsuarioLogin from "../../models/UsuarioLogin";
-import { MdEmail } from "react-icons/md";
 import "./Login.css";
 
 function Login() {
@@ -41,10 +40,10 @@ function Login() {
             {/* Texto da esquerda */}
             <div className="max-w-5xl w-full grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl text-lime-600 font-bold mb-2">
+                <h1 className="text-4xl text-lime-600 font-bold mb-2 text-center mt-8">
                   Pronto & Leve
                 </h1>
-                <p className="text-white text-xl">
+                <p className="text-white text-xl text-center">
                   Solução moderna e inclusiva para você!
                 </p>
               </div>
@@ -52,7 +51,9 @@ function Login() {
                 className="bg-[#111111] rounded-lg py-12 px-12 w-full max-w-[400px] box-border text-[#fff] mx-auto"
                 onSubmit={login}
               >
-                <h1 className="text-white text-4xl font-semibold text-center mb-4">Login</h1>
+                <h1 className="text-white text-4xl font-semibold text-center mb-4">
+                  Login
+                </h1>
                 <label
                   htmlFor="usuario"
                   className="block mb-2 text-sm font-medium text-white"
@@ -85,9 +86,22 @@ function Login() {
                   placeholder="Digite sua senha"
                 />
 
-                <button type="submit" className="w-full bg-lime-600 hover:bg-lime-700 transition text-black font-semibold text-xl p-3 rounded-full">
+                <button
+                  type="submit"
+                  className="w-full bg-lime-600 hover:bg-lime-700 transition text-black font-semibold text-xl p-3 rounded-full mb-4"
+                >
                   {isLoading ? "Carregando..." : "Entrar"}
                 </button>
+                
+                <p className="">
+                  Ainda não tem uma conta?{" "}
+                  <Link
+                    to="/cadastro"
+                    className="text-lime-600 hover:underline"
+                  >
+                    Cadastre-se
+                  </Link>
+                </p>
               </form>
             </div>
           </div>
