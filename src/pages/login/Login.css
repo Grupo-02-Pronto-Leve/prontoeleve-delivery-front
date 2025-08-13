@@ -21,7 +21,7 @@
   box-shadow: 0 0 5px black;
 }
 
-.btn-submit {
+/* .btn-submit {
   width: 100%;
   background-color: black;
   color: white;
@@ -32,7 +32,7 @@
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
+} */
 
 .btn-submit:hover {
   background-color: gray;

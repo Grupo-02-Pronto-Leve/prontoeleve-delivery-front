@@ -2,6 +2,7 @@ import { type ChangeEvent, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import type UsuarioLogin from "../../models/UsuarioLogin";
+import { MdEmail } from "react-icons/md";
 import "./Login.css";
 
 function Login() {
@@ -40,7 +41,7 @@ function Login() {
             {/* Texto da esquerda */}
             <div className="max-w-5xl w-full grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl text-[#00C950] font-bold mb-2">
+                <h1 className="text-4xl text-lime-600 font-bold mb-2">
                   Pronto & Leve
                 </h1>
                 <p className="text-white text-xl">
@@ -48,15 +49,13 @@ function Login() {
                 </p>
               </div>
               <form
-                className="bg-[#141414] py-12 px-12 shadow-[0_12px_24px_rgba(0,0,0,0.15)] w-full max-w-[400px] box-border text-[#fff]"
+                className="bg-[#111111] rounded-lg py-12 px-12 w-full max-w-[400px] box-border text-[#fff] mx-auto"
                 onSubmit={login}
               >
-                <h1 className="text-white text-5xl font-semibold text-center mb-7">
-                  Login
-                </h1>
+                <h1 className="text-white text-4xl font-semibold text-center mb-4">Login</h1>
                 <label
                   htmlFor="usuario"
-                  className="block mb-2 font-semibold text-white"
+                  className="block mb-2 text-sm font-medium text-white"
                 >
                   Usuário
                 </label>
@@ -64,15 +63,15 @@ function Login() {
                   type="text"
                   id="usuario"
                   name="usuario"
-                  className="w-full py-2 px-4 mb-4 border border-white rounded-xl text-lg"
+                  className="w-full px-4 py-2 rounded bg-[#111111] border border-[#333333] text-white placeholder-[#333333] focus:outline-none focus:ring-2 focus:ring-lime-600 mb-4"
                   value={usuarioLogin.usuario}
                   onChange={atualizarEstado}
-                  placeholder="Digite seu usuário"
+                  placeholder="Digite seu e-mail"
                 />
 
                 <label
                   htmlFor="senha"
-                  className="block mb-2 font-semibold text-white"
+                  className="block mb-2 text-sm font-medium text-white"
                 >
                   Senha
                 </label>
@@ -80,13 +79,13 @@ function Login() {
                   type="password"
                   id="senha"
                   name="senha"
-                  className="w-full py-2 px-4 mb-4 border border-white rounded-xl text-lg"
+                  className="w-full px-4 py-2 rounded bg-[#111111] border border-[#333333] text-white placeholder-[#333333] focus:outline-none focus:ring-2 focus:ring-lime-600 mb-4"
                   value={usuarioLogin.senha}
                   onChange={atualizarEstado}
                   placeholder="Digite sua senha"
                 />
 
-                <button type="submit" className="btn-submit">
+                <button type="submit" className="w-full bg-lime-600 hover:bg-lime-700 transition text-black font-semibold text-xl p-3 rounded-full">
                   {isLoading ? "Carregando..." : "Entrar"}
                 </button>
               </form>
