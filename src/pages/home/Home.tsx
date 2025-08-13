@@ -2,6 +2,7 @@ import Navbar from "../../components/navbar/Navbar";
 import "../../index.css";
 import prontoelevehorizontal from "../../assets/prontoelevehorizontal.png"
 import { Link } from "react-router-dom";
+import Contato from "../contato/Contato";
 
 function Home() {
   return (
@@ -224,7 +225,9 @@ function Home() {
           Seja um parceiro agora
         </button>
         </Link>
+
       </section>
+      <Contato />
     </>
   );
 }
