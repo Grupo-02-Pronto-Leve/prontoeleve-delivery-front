@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { HiOutlineHome, HiOutlinePhone, HiOutlineSelector } from "react-icons/hi";
 import { HiOutlineBolt, HiOutlineCake, HiOutlineUserCircle } from "react-icons/hi2";
+import logo from "../../assets/logo.png";
+import prontoeleve from "../../assets/prontoeleve.png";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -14,14 +16,23 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-black/95 backdrop-blur">
       <nav className="mx-auto max-w-7xl px-4 py-6 flex items-center justify-between">
-        <Link to="/home" className="flex items-center gap-2">
+      <Link to="/home" className="flex items-center gap-2">
+        {/* Logo principal */}
+        <img
+          src={logo}
+          alt="Logo"
+          className="h-12 w-auto rounded-lg"
+        />
+
+        {/* Texto + logo */}
+        <span className="text-white font-semibold tracking-tight flex items-center gap-2">
           <img
-            src="https://ik.imagekit.io/6j8wkskq7/pngaaa.com-5478411.png?updatedAt=1755011742929"
-            alt="Logo"
-            className="h-11 w-11 rounded-lg"
+            src={prontoeleve}
+            alt="Logo Pequena"
+            className="h-11 w-auto" // aumenta a altura e mantém proporção
           />
-          <span className="text-white font-semibold tracking-tight">PRONTO & LEVE</span>
-        </Link>
+        </span>
+      </Link>
 
         {/* Menu central (desktop) */}
         <ul className="hidden md:flex items-center gap-4">
