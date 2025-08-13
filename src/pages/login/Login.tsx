@@ -40,7 +40,7 @@ function Login() {
             {/* Texto da esquerda */}
             <div className="max-w-5xl w-full grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl text-lime-600 font-bold mb-2 text-center mt-8">
+                <h1 className="text-5xl text-lime-600 font-bold mb-2 text-center mt-8">
                   Pronto & Leve
                 </h1>
                 <p className="text-white text-xl text-center">
@@ -88,7 +88,7 @@ function Login() {
 
                 <button
                   type="submit"
-                  className="w-full bg-lime-600 hover:bg-lime-700 transition text-black font-semibold text-xl p-3 rounded-full mb-4"
+                  className="w-full bg-lime-600 hover:bg-lime-700 transition text-black font-semibold text-xl px-3 py-2 rounded-full mb-4"
                 >
                   {isLoading ? "Carregando..." : "Entrar"}
                 </button>
