@@ -100,7 +100,7 @@ function Home() {
           <div className="bg-black bg-opacity-30 backdrop-blur-md rounded-xl shadow-lg hover:scale-105 transition-transform transform overflow-hidden">
             <div className="flex items-center justify-center w-70 h-70 mx-auto mt-6 mb-4 rounded-full shadow-xl overflow-hidden">
               <img
-                src="/public/plataforma.png"
+                src="/plataforma.png"
                 alt="Cadastre seu negócio"
                 className="w-full h-full object-cover rounded-full"
               />
