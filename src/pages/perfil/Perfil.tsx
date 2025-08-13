@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/AuthContext"
 import Navbar from "../../components/navbar/Navbar"
 import { ToastAlerta } from "../../utils/ToastAlerta"
+import { HiOutlineArrowLeft } from "react-icons/hi"
 
 function Perfil() {
   const navigate = useNavigate()
@@ -19,6 +20,18 @@ function Perfil() {
     <>
       <Navbar />
       <div className="min-h-screen bg-[#15161B] p-6 md:p-10">
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="mb-3">
+            <button
+              type="button"
+              onClick={() => navigate(-1)}
+              className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/10 bg-white/10 hover:bg-white/20 px-4 py-2 text-sm text-white transition"
+            >
+              <HiOutlineArrowLeft />
+              Voltar
+            </button>
+          </div>
+        </div>
         <div className="mx-auto my-10 max-w-5xl rounded-2xl bg-[#23272D] p-6 md:p-10">
           <div
             className="flex items-center justify-between gap-6 border-b border-white/10 pb-6"

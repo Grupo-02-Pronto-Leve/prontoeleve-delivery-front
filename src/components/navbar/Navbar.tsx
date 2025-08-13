@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState, useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useState, useContext, useEffect, useRef } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { HiOutlineHome, HiOutlinePhone, HiOutlineSelector } from "react-icons/hi";
 import { HiOutlineBolt, HiOutlineCake } from "react-icons/hi2";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -9,23 +9,35 @@ import prontoeleve from "../../assets/prontoeleve.png";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const item =
     "inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-800/90 text-neutral-200 hover:text-white hover:bg-neutral-700 transition text-sm";
-  const active =
-    "ring-2 ring-white/40 text-white bg-neutral-700";
+  const active = "ring-2 ring-white/40 text-white bg-neutral-700";
 
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario?.token;
   const firstName = usuario?.nome ? usuario.nome.split(" ")[0] : "";
   const avatar =
-    (usuario as any)?.foto ||
-    "https://ik.imagekit.io/6j8wkskq7/default-avatar.jpg?updatedAt=1755124908038" + encodeURIComponent(firstName || "User");
+    (usuario as any)?.foto && (usuario as any)?.foto.trim() !== ""
+      ? (usuario as any)?.foto
+      : "https://ik.imagekit.io/6j8wkskq7/default-avatar.jpg?updatedAt=1755124908038";
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setProfileOpen(false);
+      }
+    }
+    if (profileOpen) document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [profileOpen]);
 
   return (
     <header className="sticky top-0 z-50 bg-black/95 backdrop-blur">
       <nav className="mx-auto max-w-7xl px-4 py-6 flex items-center justify-between">
-        {/* Logo */}
         <Link to="/home" className="flex items-center gap-2">
           <img src={logo} alt="Logo" className="h-12 w-auto rounded-lg" />
           <span className="text-white font-semibold tracking-tight flex items-center gap-2">
@@ -54,7 +66,6 @@ function Navbar() {
             </NavLink>
           </li>
 
-          {/* Mostrar apenas se estiver logado */}
           {token && (
             <>
               <li>
@@ -75,24 +86,55 @@ function Navbar() {
 
         {/* Área à direita (desktop) */}
         {token ? (
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4 relative" ref={dropdownRef}>
             <span className="text-white font-medium">Olá, {firstName}</span>
 
-            {/* Avatar -> /perfil */}
-            <Link to="/perfil" className="shrink-0" aria-label="Ir para o perfil">
+            {/* Avatar como botão do menu do usuário */}
+            <button
+              type="button"
+              onClick={() => setProfileOpen((s) => !s)}
+              className="shrink-0 rounded-full ring-2 ring-white/20 hover:ring-white/40 transition"
+              aria-haspopup="menu"
+              aria-expanded={profileOpen}
+              aria-label="Abrir menu do usuário"
+            >
               <img
                 src={avatar}
                 alt="Foto do perfil"
-                className="h-10 w-10 rounded-full object-cover ring-2 ring-white/20 hover:ring-white/40 transition"
+                className="h-10 w-10 rounded-full hover:shadow hover:shadow-green-900 cursor-pointer object-cover"
               />
-            </Link>
-
-            <button
-              onClick={handleLogout}
-              className="px-5 cursor-pointer py-2 rounded-full bg-red-600 text-white font-semibold hover:bg-red-700 transition"
-            >
-              SAIR
             </button>
+
+            {/* Dropdown */}
+            {profileOpen && (
+              <div
+                role="menu"
+                className="absolute right-0 top-12 w-56 rounded-xl border border-white/10 bg-neutral-900/95 backdrop-blur shadow-xl p-2"
+              >
+                <div className="px-3 py-2 text-xs text-zinc-400">Conectado como</div>
+                <div className="px-3 pb-2 text-sm text-zinc-200 truncate">{usuario?.usuario}</div>
+                <div className="my-1 h-px bg-white/10" />
+                <Link
+                  to="/perfil"
+                  role="menuitem"
+                  onClick={() => setProfileOpen(false)}
+                  className="block w-full text-left px-3 py-2 rounded-lg text-sm text-white hover:bg-white/10"
+                >
+                  Ver perfil
+                </Link>
+                <button
+                  role="menuitem"
+                  onClick={() => {
+                    setProfileOpen(false);
+                    handleLogout();
+                    navigate("/");
+                  }}
+                  className="mt-1 w-full px-3 py-2 rounded-lg text-left text-sm text-white bg-red-600 hover:bg-red-700"
+                >
+                  Sair
+                </button>
+              </div>
+            )}
           </div>
         ) : (
           <Link
@@ -121,8 +163,6 @@ function Navbar() {
       {open && (
         <div className="md:hidden border-t border-white/10">
           <div className="mx-auto max-w-7xl px-4 py-4 grid gap-3">
-
-            {/* Header do mobile com avatar quando logado */}
             {token && (
               <Link
                 to="/perfil"
@@ -145,7 +185,6 @@ function Navbar() {
             <NavLink onClick={() => setOpen(false)} to="/sobre" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Sobre</NavLink>
             <NavLink onClick={() => setOpen(false)} to="/contato" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Contato</NavLink>
 
-            {/* Apenas logado */}
             {token && (
               <>
                 <NavLink onClick={() => setOpen(false)} to="/categorias" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Categorias</NavLink>
