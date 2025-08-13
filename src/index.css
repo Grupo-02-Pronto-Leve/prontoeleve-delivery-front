@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Katibeh&family=Marko+One&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-marko: "Marko One", serif;
+  --font-zain: "Zain", sans-serif;
+  --font-katibeth: "Katibeh", serif;
+}
 
 .fundoHome {
   background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/home.jpeg");
