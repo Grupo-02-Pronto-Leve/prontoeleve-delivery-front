@@ -44,7 +44,7 @@ function Navbar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
+            <NavLink to="/contato" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
               <HiOutlinePhone />
               Contato
             </NavLink>

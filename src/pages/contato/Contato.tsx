@@ -1,3 +1,4 @@
+import Navbar from "../../components/navbar/Navbar"
 import React, { useState } from "react";
 
 const Contato: React.FC = () => {
@@ -21,6 +22,7 @@ const Contato: React.FC = () => {
 
   const validate = () => {
     let valid = true;
+    // eslint-disable-next-line prefer-const
     let newErrors = { nome: "", email: "", assunto: "", mensagem: "" };
 
     if (!formData.nome.trim()) {
@@ -53,6 +55,10 @@ const Contato: React.FC = () => {
   };
 
   return (
+    <>
+      <div className="fixed top-0 left-0 w-full z-50">
+        <Navbar />
+      </div>
     <div className="min-h-screen flex items-center justify-center bg-black p-6">
       <div className="w-full max-w-lg">
         <h1 className="text-3xl font-bold mb-6 text-center text-white">Entre em Contato</h1>
@@ -69,8 +75,7 @@ const Contato: React.FC = () => {
               value={formData.nome}
               onChange={handleChange}
               placeholder="Digite seu nome"
-              className="w-full border border-gray-700 rounded p-2 bg-neutral-800 text-white"
-            />
+              className="w-full border border-gray-700 rounded p-2 bg-neutral-800 text-white" />
             {errors.nome && (
               <span className="text-red-500 text-sm">{errors.nome}</span>
             )}
@@ -84,8 +89,7 @@ const Contato: React.FC = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Digite seu email"
-              className="w-full border border-gray-700 rounded p-2 bg-neutral-800 text-white"
-            />
+              className="w-full border border-gray-700 rounded p-2 bg-neutral-800 text-white" />
             {errors.email && (
               <span className="text-red-500 text-sm">{errors.email}</span>
             )}
@@ -99,8 +103,7 @@ const Contato: React.FC = () => {
               value={formData.assunto}
               onChange={handleChange}
               placeholder="Digite o título da mensagem"
-              className="w-full border border-gray-700 rounded p-2 bg-neutral-800 text-white"
-            />
+              className="w-full border border-gray-700 rounded p-2 bg-neutral-800 text-white" />
             {errors.assunto && (
               <span className="text-red-500 text-sm">{errors.assunto}</span>
             )}
@@ -113,8 +116,7 @@ const Contato: React.FC = () => {
               value={formData.mensagem}
               onChange={handleChange}
               placeholder="Digite sua mensagem"
-              className="w-full border border-gray-700 rounded p-2 h-28 bg-neutral-800 text-white"
-            />
+              className="w-full border border-gray-700 rounded p-2 h-28 bg-neutral-800 text-white" />
             {errors.mensagem && (
               <span className="text-red-500 text-sm">{errors.mensagem}</span>
             )}
@@ -128,7 +130,7 @@ const Contato: React.FC = () => {
           </button>
         </form>
       </div>
-    </div>
+    </div></>
   );
 };
 
