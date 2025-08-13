@@ -52,7 +52,7 @@ function ListaCategorias() {
         //     wrapperStyle={{}}
         //     wrapperClass="dna-wrapper mx-auto"
         // />
-        <div className="flex mt-10 justify-center h-screen">
+        <div className="flex mt-10 justify-center items-center h-screen">
             <PacmanLoader color="#80ed99" size={50} />
         </div>
         )}

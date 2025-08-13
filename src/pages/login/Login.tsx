@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import type UsuarioLogin from "../../models/UsuarioLogin";
 import "./Login.css";
+import logo from "../../assets/logo.png";
+import prontoelevehorizontal from "../../assets/prontoelevehorizontal.png"
 
 function Login() {
   const navigate = useNavigate();
@@ -40,9 +42,10 @@ function Login() {
             {/* Texto da esquerda */}
             <div className="max-w-5xl w-full grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-5xl text-lime-600 font-bold mb-2 text-center mt-8">
-                  Pronto & Leve
-                </h1>
+                      <div className="flex flex-col items-center gap-2">
+                        <img src={logo} alt="Logo" className="h-30 w-auto rounded-lg" />
+                        <img src={prontoelevehorizontal} alt="Logo Pequena" className="h-10 w-auto" />
+                      </div>
                 <p className="text-white text-xl text-center">
                   Solução moderna e inclusiva para você!
                 </p>

@@ -17,13 +17,13 @@ function Categoria() {
 
   return (
     <>
-      <div>
+      <div className="bg-[#15161B] min-h-screen flex flex-col">
         <Navbar />
         <div className="">
           {!loading && (
             <div className="text-center my-6">
               <h1 className="text-3xl font-bold text-green-600">Categorias</h1>
-              <p className="text-gray-600 mt-2 italic">
+              <p className="text-gray-100 mt-2 italic">
                 Escolha ou crie categorias para deixar seu cardápio saudável ainda mais organizado
               </p>
               <ModalCategoria />
@@ -31,8 +31,8 @@ function Categoria() {
           )}
 
           <ListaCategoria />
-        </div>
-      </div>
+        </div> 
+       </div>
     </>
   );
 }
