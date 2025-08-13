@@ -100,7 +100,7 @@ function Home() {
           <div className="bg-black bg-opacity-30 backdrop-blur-md rounded-xl shadow-lg hover:scale-105 transition-transform transform overflow-hidden">
             <div className="flex items-center justify-center w-70 h-70 mx-auto mt-6 mb-4 rounded-full shadow-xl overflow-hidden">
               <img
-                src="https://sdmntpreastus.oaiusercontent.com/files/00000000-a34c-61f9-b748-9d488b7059c2/raw?se=2025-08-13T13%3A11%3A03Z&sp=r&sv=2024-08-04&sr=b&scid=bc1482a8-fcdd-5572-8b73-cf390bf5970b&skoid=31bc9c1a-c7e0-460a-8671-bf4a3c419305&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-13T01%3A34%3A30Z&ske=2025-08-14T01%3A34%3A30Z&sks=b&skv=2024-08-04&sig=F8pC0INESizPVkhIU22GQztBHkiZKoN5nRQm/sTRPbU%3D"
+                src="/public/plataforma.png"
                 alt="Cadastre seu negócio"
                 className="w-full h-full object-cover rounded-full"
               />
