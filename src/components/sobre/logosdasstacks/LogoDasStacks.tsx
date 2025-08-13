@@ -10,7 +10,7 @@ interface Tech {
 
     function LogoDasStacks({ title, technologies }: LogoDasStacksProps) {
     return (
-        <section className="w-full py-10 bg-white">
+        <section className="w-full py-10 bg-gray-200">
         {title && (
             <h2 className="text-3xl font-bold text-center text-green-700 mb-8">
             {title}
