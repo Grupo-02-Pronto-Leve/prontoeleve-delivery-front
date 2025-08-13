@@ -1,49 +1,14 @@
-.background {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: -1;
-}
-
-.page-container {
-  height: 100vh;
+.background-img {
+  background-image: url("https://ik.imagekit.io/taelipsvolt/fotologin.jpg?updatedAt=1755037497598");
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.login-form {
-  background: white;
-  padding: 3rem 2.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
-  color: #333;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.title {
-  margin-bottom: 1.8rem;
-  text-align: center;
-  font-weight: 700;
-  font-size: 2rem;
-  color: black;
-}
-
-.label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: black;
 }
 
 .input {
-  width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 1.5rem;
-  border: 1.5px solid black;
-  border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s;
 }
