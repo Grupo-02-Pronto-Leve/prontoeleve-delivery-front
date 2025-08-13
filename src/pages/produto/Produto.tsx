@@ -6,7 +6,7 @@ function Produto() {
   return (
     <>
       <Navbar />
-      <main className="bg-gradient-to-b from-neutral-950 via-neutral-600 to-black text-white">
+      <main className="min-h-[80vh] bg-gradient-to-b from-black via-neutral-600 to-neutral-900 text-white">
         <section className="mx-auto max-w-7xl px-4 py-10">
           <header className="mb-6 flex items-center justify-between">
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">

@@ -9,7 +9,7 @@ function Perfil() {
   const { usuario } = useContext(AuthContext)
 
   useEffect(() => {
-    if(usuario.token === '') {
+    if (usuario.token === '') {
       ToastAlerta("Opa, opa... Você precisa estar logado!", "erro")
       navigate('/')
     }
@@ -17,7 +17,7 @@ function Perfil() {
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div className="min-h-screen bg-[#15161B] p-6 md:p-10">
         <div className="mx-auto my-10 max-w-5xl rounded-2xl bg-[#23272D] p-6 md:p-10">
           <div
@@ -28,14 +28,18 @@ function Perfil() {
               <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
                 {usuario?.nome || "Seu Restaurante"}
               </h1>
-              <p className="mt-1 text-lg md:text-xl text-zinc-400">
+              <p className="mt-4 text-lg md:text-xl text-zinc-400">
                 Restaurante Saudável
               </p>
             </div>
 
             <img
-              src="https://i.pinimg.com/736x/69/02/cd/6902cd3556639678ffb92bb58770d7ba.jpg"
-              alt="Foto do perfil"
+              src={
+                usuario.foto && usuario.foto.trim() !== ""
+                  ? usuario.foto
+                  : "https://ik.imagekit.io/6j8wkskq7/default-avatar.jpg?updatedAt=1755124908038"
+              }
+              alt={`Foto do(a) ${usuario?.nome || "usuário"}`}
               loading="lazy"
               className="h-20 w-20 rounded-full object-cover ring-2 ring-white/10 md:h-24 md:w-24"
             />
@@ -45,30 +49,30 @@ function Perfil() {
             <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
               <div className="rounded-xl border border-white/10 p-5 md:col-span-2 h-full 
               flex flex-col justify-evenly">
-                  <h2 className="text-xl text-white">Perfil</h2>
-                  <p className="text-zinc-200">
-                    R. Aroaba, 333 - Vila Leopoldina, São Paulo - SP, 05315-020
-                  </p>
-                  <div className="flex flex-row text-zinc-200 gap-5">
-                    <span>Nome:</span>
-                    <span>
-                      {usuario?.nome || "Nome da Sua Empresa"}
-                    </span>
-                  </div>
-                  <div className="flex flex-row text-zinc-200 gap-5">
-                    <span>Email:</span>
-                    <span>
-                      {usuario?.usuario ? `${usuario.usuario}` : "suaempresa@email.com"}
-                    </span>
-                  </div>
-                  <div className="flex flex-row text-zinc-200 gap-5">
-                    <span>Telefone:</span>
-                    <span>(11) 4002-8922</span>
-                  </div>
-                  <div className="flex flex-row text-zinc-200 gap-5">
-                    <span>Horário:</span>
-                    <span>Seg–Sex, 11h–20h</span>
-                  </div>
+                <h2 className="text-xl text-white">Perfil</h2>
+                <p className="text-zinc-200">
+                  R. Aroaba, 333 - Vila Leopoldina, São Paulo - SP, 05315-020
+                </p>
+                <div className="flex flex-row text-zinc-200 gap-5">
+                  <span>Nome:</span>
+                  <span>
+                    {usuario?.nome || "Nome da Sua Empresa"}
+                  </span>
+                </div>
+                <div className="flex flex-row text-zinc-200 gap-5">
+                  <span>Email:</span>
+                  <span>
+                    {usuario?.usuario ? `${usuario.usuario}` : "suaempresa@email.com"}
+                  </span>
+                </div>
+                <div className="flex flex-row text-zinc-200 gap-5">
+                  <span>Telefone:</span>
+                  <span>(11) 4002-8922</span>
+                </div>
+                <div className="flex flex-row text-zinc-200 gap-5">
+                  <span>Horário:</span>
+                  <span>Seg–Sex, 11h–20h</span>
+                </div>
               </div>
 
               <div className="overflow-hidden rounded-xl border border-white/10 md:col-span-1 h-full">
@@ -86,7 +90,7 @@ function Perfil() {
         </div>
       </div>
     </>
-    );
-  }
+  );
+}
 
 export default Perfil;
