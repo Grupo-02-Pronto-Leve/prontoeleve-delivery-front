@@ -32,51 +32,55 @@ function Login() {
 
   return (
     <>
-      <div className="background-img">
-        <div className="min-h-screen flex justify-center items-center">
-          <form
-            className="bg-[#141414] py-12 px-12 shadow-[0_12px_24px_rgba(0,0,0,0.15)] w-full max-w-[400px] box-border text-[#fff]"
-            onSubmit={login}
-          >
-            <h1 className="text-white text-5xl font-semibold text-center mb-7">
-              Login
-            </h1>
-            <label
-              htmlFor="usuario"
-              className="block mb-2 font-semibold text-white"
+      <div className="relative w-full min-h-screen">
+        <div className="background-img">
+          <div className="absolute inset-0 bg-black opacity-60"></div>
+          {/* Posiciona o meu formulário */}
+          <div className="absolute inset-0 min-h-screen flex justify-center items-center">
+            <form
+              className="bg-[#141414] py-12 px-12 shadow-[0_12px_24px_rgba(0,0,0,0.15)] w-full max-w-[400px] box-border text-[#fff]"
+              onSubmit={login}
             >
-              Usuário
-            </label>
-            <input
-              type="text"
-              id="usuario"
-              name="usuario"
-              className="w-full py-2 px-4 mb-4 border border-white rounded-xl text-lg"
-              value={usuarioLogin.usuario}
-              onChange={atualizarEstado}
-              placeholder="Digite seu usuário"
-            />
+              <h1 className="text-white text-5xl font-semibold text-center mb-7">
+                Login
+              </h1>
+              <label
+                htmlFor="usuario"
+                className="block mb-2 font-semibold text-white"
+              >
+                Usuário
+              </label>
+              <input
+                type="text"
+                id="usuario"
+                name="usuario"
+                className="w-full py-2 px-4 mb-4 border border-white rounded-xl text-lg"
+                value={usuarioLogin.usuario}
+                onChange={atualizarEstado}
+                placeholder="Digite seu usuário"
+              />
 
-            <label
-              htmlFor="senha"
-              className="block mb-2 font-semibold text-white"
-            >
-              Senha
-            </label>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
-              className="w-full py-2 px-4 mb-4 border border-white rounded-xl text-lg"
-              value={usuarioLogin.senha}
-              onChange={atualizarEstado}
-              placeholder="Digite sua senha"
-            />
+              <label
+                htmlFor="senha"
+                className="block mb-2 font-semibold text-white"
+              >
+                Senha
+              </label>
+              <input
+                type="password"
+                id="senha"
+                name="senha"
+                className="w-full py-2 px-4 mb-4 border border-white rounded-xl text-lg"
+                value={usuarioLogin.senha}
+                onChange={atualizarEstado}
+                placeholder="Digite sua senha"
+              />
 
-            <button type="submit" className="btn-submit">
-              {isLoading ? "Carregando..." : "Entrar"}
-            </button>
-          </form>
+              <button type="submit" className="btn-submit">
+                {isLoading ? "Carregando..." : "Entrar"}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </>
