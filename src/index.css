@@ -1,1 +1,64 @@
 @import "tailwindcss";
+
+.fundoHome {
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/home.jpeg");
+  background-color: #000;
+}
+
+.card-green {
+  background-color: #17a94d; 
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.card-green:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.comentario-card {
+  background-color: rgba(31, 34, 32, 0.404); /* verde translúcido */
+  backdrop-filter: blur(10px); /* efeito glass */
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.comentario-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+}
+
+.quote-mark {
+  font-size: 3rem;
+  color: rgba(255,255,255,0.3);
+  position: absolute;
+  top: -10px;
+  left: 15px;
+}
+
+.comentario {
+  font-style: italic;
+  color: #f0f0f0;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.comentarioCliente {
+  display: block;
+  font-weight: bold;
+  color: white;
+}
+
+.nomeNegocio {
+  font-weight: normal;
+  color: #d0ffd6;
+}
+
+.font-marko {
+  font-family: "Marko One", cursive;
+}
