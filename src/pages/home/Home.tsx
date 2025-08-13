@@ -1,13 +1,15 @@
 import Navbar from "../../components/navbar/Navbar";
 import "../../index.css";
+import prontoelevehorizontal from "../../assets/prontoelevehorizontal.png"
 
 function Home() {
   return (
     <>
       <Navbar />
       <div className="fundoHome min-h-screen w-full bg-cover bg-center flex flex-col items-center justify-center text-center px-4">
-        <div className="bg-green-700 bg-opacity-80 rounded-md px-4 py-1 mb-4 font-marko text-white text-xs uppercase tracking-widest">
-          Pronto&Leve
+        <div className="bg-green-700 bg-opacity-80 rounded-md px-4 py-2 mb-4 font-marko text-white text-xs uppercase tracking-widest">
+             <img src={prontoelevehorizontal} alt="Logo Pequena" className="h-5 w-auto filter brightness-0 invert" />
+          {/* Pronto&Leve */}
         </div>
 
         <h1 className="text-4xl md:text-6xl font-semibold font-marko text-white max-w-4xl mb-4">

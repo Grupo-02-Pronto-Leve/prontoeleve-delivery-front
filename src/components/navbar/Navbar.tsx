@@ -77,7 +77,7 @@ function Navbar() {
         {/* CTA (desktop) */}
         <Link
           to="/login"
-          className="hidden md:inline-flex px-5 py-2 rounded-full bg-lime-700 text-white font-semibold hover:bg-lime-600 transition"
+          className="hidden md:inline-flex px-5 py-2 rounded-full bg-green-600 text-white font-semibold hover:bg-[#7ED957] transition"
         >
           LOGIN
         </Link>
