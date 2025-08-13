@@ -7,6 +7,7 @@ import type Produto from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
 import { Comment } from "react-loader-spinner";
 import {ToastAlerta} from "../../../utils/ToastAlerta";
+import BarraBusca from "../buscaRestricao/BarraBusca";
 // import ModalProduto from "../modalProduto/ModalProduto";
 
 function ListaProdutos() {
@@ -18,18 +19,19 @@ function ListaProdutos() {
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
 
-    async function buscarProdutos() {
+    async function buscarProdutos(termo?: string) {
         try {
-            await buscar('/produtos', setProdutos, {
-                headers: {
-                    Authorization: token,
-                },
-            })
+            const url = termo
+                ? `/produtos/restricao?restricao=${encodeURIComponent(termo)}`
+                : `/produtos`;
 
-        } catch (error: any) {
-            if (error.toString().includes('403')) {
-                handleLogout()
-            }
+            await buscar(url, setProdutos, {
+                headers: { Authorization: token },
+            });
+            } catch (error: any) {
+            if (error.toString().includes("401")) {
+                handleLogout();
+        }
         }
     }
 
@@ -42,7 +44,7 @@ function ListaProdutos() {
 
     useEffect(() => {
         buscarProdutos()
-    }, [produtos.length])
+    }, [])
 
     return (
         <>
@@ -61,6 +63,9 @@ function ListaProdutos() {
                     />
                 </div>
             )}
+            <div className="flex flex-col items-center w-full my-4"></div>
+            <BarraBusca onBuscar={buscarProdutos} />
+            
             <div className="flex justify-center w-full my-4">
                 <div className="container flex flex-col">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
