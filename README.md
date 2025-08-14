@@ -130,6 +130,7 @@ As tecnologias utilizadas para o desenvolvimento do servidor e da lógica de neg
 Pré-requisitos
 
 • Node.js instalado
+
 • Gerenciador de pacotes (yarn recomendado)
 
 ## Passos:
