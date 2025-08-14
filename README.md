@@ -134,17 +134,17 @@ Pré-requisitos
 • Node.js instalado
 • Gerenciador de pacotes (yarn recomendado)
 
-Passos:
+# Passos:
 • Clonar o repositório:
 Passos:
 
- Clonar o repositório:
+ # Clonar o repositório:
 git clone https://github.com/seu-usuario/delivery-prontoeleve.git
 
- Entrar na pasta do projeto:
+ # Entrar na pasta do projeto:
 cd delivery-prontoeleve
 
- Instalar as dependências:
+ # Instalar as dependências:
 yarn
 
  Iniciar o servidor de desenvolvimento:
