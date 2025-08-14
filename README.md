@@ -134,8 +134,6 @@ Pré-requisitos
 • Gerenciador de pacotes (yarn recomendado)
 
 ## Passos:
-• Clonar o repositório:
-Passos:
 
  ## Clonar o repositório:
 git clone https://github.com/seu-usuario/delivery-prontoeleve.git
