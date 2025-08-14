@@ -174,14 +174,20 @@ yarn dev
 
 ---
 
-## 👥 111 . Equipe
+## 👥 11 . Equipe
 
 Adrielli Bertoldo
+
 Diego Cavalcanti
+
 Natália Gadelha
+
 Natália Taira
+
 Nathalia Carvalho
+
 Miguel Ferreira
+
 Taís Escobar
 
 *"Sua fome, nossa missão! Solução moderna e inclusiva para você." – Equipe Pronto&Leve*
