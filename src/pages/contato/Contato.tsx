@@ -57,7 +57,7 @@ const Contato: React.FC = () => {
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center bg-black p-6">
+      <div className="min-h-screen flex items-center justify-center bg-black p-6 py-30">
         <div className="flex flex-col md:flex-row items-center gap-10 max-w-5xl w-full">
           
           {/* Imagem */}
