@@ -61,19 +61,23 @@ As ferramentas e bibliotecas utilizadas para o desenvolvimento da interface e ex
 **Axios** - biblioteca para realizar requisições HTTP.
 
 **React Router** - biblioteca para roteamento em aplicações React.
-**Vite** - ferramenta de build e bundler rápido para projetos frontend.
 
+**Vite** - ferramenta de build e bundler rápido para projetos frontend.
 
 
 **Backend**
 
 As tecnologias utilizadas para o desenvolvimento do servidor e da lógica de negócio são:
 
-Node.js – Ambiente de execução JavaScript no servidor.
-Nest.js – Framework Node.js para criar aplicações escaláveis e estruturadas.
-Passport – Middleware para autenticação de usuários.
-TypeORM – ORM para TypeScript e JavaScript, facilitando a interação com bancos de dados.
-Jest – Framework para testes unitários e de integração.
+**Node.js** - Ambiente de execução JavaScript no servidor.
+
+**Nest.js** - Framework Node.js para criar aplicações escaláveis e estruturadas.
+
+**Passport** - Middleware para autenticação de usuários.
+
+**TypeORM** - ORM para TypeScript e JavaScript, facilitando a interação com bancos de dados.
+
+**Jest** - Framework para testes unitários e de integração.
 
 ---
 
