@@ -238,7 +238,7 @@ function FormCategoria() {
         </div>
       ) : (
       // Página para edição
-      <div className="min-h-screen bg-[#15161B] flex flex-col items-center justify-start">
+      <div className=" bg-[#15161B] flex flex-col items-center justify-start">
         <div className="w-full">
           <Navbar />
         </div>

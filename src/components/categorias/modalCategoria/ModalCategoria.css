@@ -7,8 +7,9 @@
 
 /* Corpo do modal */
 .popup-content {
-  background: #1f2937 !important; /* Cor cinza-escuro */
+  background: transparent !important; /* Cor cinza-escuro */
   color: white; /* Texto branco */
+  border:none;
   border-radius: 10px;
   padding: 20px;
   max-width: 700px; /* Largura máxima */
