@@ -15,25 +15,25 @@ Uma plataforma feita para você vender mais, simplificar operações e encantar 
 
 ## 🛠️ 2. Funcionalidades do Sistema
 
-Cadastrar e editar categorias:
+-Cadastrar e editar categorias:
 Adicione novas categorias e gerencie as existentes de forma simples e rápida.
-Busca por restrição alimentar:
+-Busca por restrição alimentar:
 Facilite a vida do cliente filtrando produtos conforme alergias e preferências.
-Gerenciamento de produtos:
+-Gerenciamento de produtos:
 Cadastre, edite e remova produtos de forma prática, com imagens e descrições.
-Autenticação de Usuário:
+-Autenticação de Usuário:
 Cadastro e login de usuário com autenticação via token.
-CRUD completo de pedidos e clientes:
+-CRUD completo de pedidos e clientes:
 Gerencie pedidos e informações dos clientes de forma intuitiva.
-Sistema de rotas com React Router:
+-Sistema de rotas com React Router:
 Navegação fluida entre páginas.
-Feedbacks visuais com React Toastify:
+-Feedbacks visuais com React Toastify:
 Notificações de ações realizadas no sistema.
-Sidebar expansível e footer fixo:
+-Sidebar expansível e footer fixo:
 Com links úteis para navegação rápida.
-Scroll automático para o topo:
+-Scroll automático para o topo:
 Facilita a experiência do usuário ao trocar de página.
-Interface responsiva:
+-Interface responsiva:
 Adequada para diferentes tamanhos de tela, garantindo acesso via desktop ou mobile.
 
 ---
@@ -42,13 +42,16 @@ Adequada para diferentes tamanhos de tela, garantindo acesso via desktop ou mobi
 **Frontend**
 
 As ferramentas e bibliotecas utilizadas para o desenvolvimento da interface e experiência do usuário são:
-React – Biblioteca JavaScript para construir interfaces de usuário.
-TypeScript – Superset do JavaScript que adiciona tipagem estática.
-TailwindCSS – Framework de CSS utilitário para estilização rápida.
-Axios – Biblioteca para realizar requisições HTTP.
-React Router – Biblioteca para roteamento em aplicações React.
-Vite – Ferramenta de build e bundler rápido para projetos frontend.
----
+
+React – biblioteca JavaScript para construir interfaces de usuário.
+TypeScript – superset do JavaScript que adiciona tipagem estática.
+TailwindCSS – framework de CSS utilitário para estilização rápida.
+Axios – biblioteca para realizar requisições HTTP.
+React Router – biblioteca para roteamento em aplicações React.
+Vite – ferramenta de build e bundler rápido para projetos frontend.
+
+--
+
 **Backend**
 
 As tecnologias utilizadas para o desenvolvimento do servidor e da lógica de negócio são:
