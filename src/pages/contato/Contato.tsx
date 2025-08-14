@@ -24,7 +24,7 @@ const Contato: React.FC = () => {
 
   const validate = () => {
     let valid = true;
-    let newErrors = { nome: "", email: "", assunto: "", mensagem: "" };
+    const newErrors = { nome: "", email: "", assunto: "", mensagem: "" };
 
     if (!formData.nome.trim()) {
       newErrors.nome = "Digite seu nome";
@@ -57,13 +57,7 @@ const Contato: React.FC = () => {
 
   return (
     <>
-      {/* Navbar fixa */}
-      {/* <div className="fixed top-0 left-0 w-full z-50">
-        <Navbar />
-      </div> */}
-
-      {/* Container principal com margem para afastar do botão verde */}
-      <div className="min-h-screen flex items-center justify-center bg-black p-6 mt-20 md:mt-28">
+      <div className="min-h-screen flex items-center justify-center bg-black p-6">
         <div className="flex flex-col md:flex-row items-center gap-10 max-w-5xl w-full">
           
           {/* Imagem */}
@@ -75,7 +69,6 @@ const Contato: React.FC = () => {
             />
           </div>
 
-
           {/* Formulário */}
           <div className="w-full md:w-1/2">
 
@@ -83,12 +76,12 @@ const Contato: React.FC = () => {
               onSubmit={handleSubmit}
               className="bg-[#111111]/80 backdrop-blur-md shadow-lg rounded-xl py-8 px-10 w-full max-w-[500px] text-white"
             >
-              <h1 className="text-3xl font-bold mb-6 text-center text-white">Entre em Contato</h1>
+              <h1 className="text-3xl font-bold font-marko mb-6 text-center text-white">Entre em Contato</h1>
 
               <div>
-                <label className="block font-semibold text-white">Nome:</label>
+                <label className="block font-semibold font-zain text-2xl text-white">Nome:</label>
                 <div className="relative mb-4">
-                <FaRegUser className="absolute top-3 left-3 text-gray-400" />
+                <FaRegUser className="absolute top-3 left-3 font-zain text-xl text-gray-400" />
                 <input
                   type="text"
                   name="nome"
@@ -102,9 +95,9 @@ const Contato: React.FC = () => {
               </div>
 
               <div>
-                <label className="block font-semibold text-white">E-mail:</label>
+                <label className="block font-semibold font-zain text-2xl text-white">E-mail:</label>
                 <div className="relative mb-4">
-                <MdOutlineAlternateEmail className="absolute top-3 left-3 text-gray-400" />
+                <MdOutlineAlternateEmail className="absolute font-zain text-xl top-3 left-3 text-gray-400" />
                 <input
                   type="email"
                   name="email"
@@ -118,9 +111,9 @@ const Contato: React.FC = () => {
               </div>
 
               <div>
-                <label className="block font-semibold text-white">Assunto:</label>
+                <label className="block font-semibold font-zain text-2xl text-white">Assunto:</label>
                 <div className="relative mb-4">
-                <FaEnvelopeOpenText className="absolute top-3 left-3 text-gray-400" />
+                <FaEnvelopeOpenText className="absolute font-zain text-xl top-3 left-3 text-gray-400" />
                 <input
                   type="text"
                   name="assunto"
@@ -134,9 +127,9 @@ const Contato: React.FC = () => {
               </div>
 
               <div>
-                <label className="block font-semibold text-white">Mensagem:</label>
+                <label className="block font-semibold font-zain text-2xl text-white">Mensagem:</label>
                 <div className="relative mb-4">
-                <FaRegCommentDots className="absolute top-3 left-3 text-gray-400" />
+                <FaRegCommentDots className="absolute top-3 left-3 font-zain text-xl text-gray-400" />
                 <textarea
                   name="mensagem"
                   value={formData.mensagem}
@@ -150,7 +143,7 @@ const Contato: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                className="w-full bg-green-600 text-white font-marko text-lg px-4 py-2 rounded hover:bg-green-700"
               >
                 Enviar
               </button>
