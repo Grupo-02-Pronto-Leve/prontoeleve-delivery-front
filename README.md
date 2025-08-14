@@ -1,81 +1,67 @@
-📇 Delivery Pronto&Leve – Sistema de Gestão de Pedidos
+# 📇 Delivery Pronto&Leve – Sistema de Gestão de Pedidos
 
 Projeto integrador III, desenvolvido como parte do projeto final da Generation Brasil, com o objetivo de criar um sistema completo para gestão de pedidos, produtos, categorias e clientes, facilitando a organização e o acompanhamento das operações do delivery.
 
-🧾 1. Sobre o Projeto
+---
+
+## 🧾 1. Sobre o Projeto
 
 Delivery Pronto&Leve pensa nas pessoas com restrições alimentares. Aqui, você encontra pratos fresquinhos, preparados com ingredientes selecionados e aquele toque especial de sabor caseiro.
-
 Nosso delivery é ágil, garante comida quentinha e o sabor que você merece, entregue diretamente na sua porta.
-
 Solução moderna e inclusiva para você!
-
 Uma plataforma feita para você vender mais, simplificar operações e encantar seus clientes.
 
-🛠️ 2. Funcionalidades do Sistema
+---
+
+## 🛠️ 2. Funcionalidades do Sistema
 
 Cadastrar e editar categorias:
 Adicione novas categorias e gerencie as existentes de forma simples e rápida.
-
 Busca por restrição alimentar:
 Facilite a vida do cliente filtrando produtos conforme alergias e preferências.
-
 Gerenciamento de produtos:
 Cadastre, edite e remova produtos de forma prática, com imagens e descrições.
-
 Autenticação de Usuário:
 Cadastro e login de usuário com autenticação via token.
-
 CRUD completo de pedidos e clientes:
 Gerencie pedidos e informações dos clientes de forma intuitiva.
-
 Sistema de rotas com React Router:
 Navegação fluida entre páginas.
-
 Feedbacks visuais com React Toastify:
 Notificações de ações realizadas no sistema.
-
 Sidebar expansível e footer fixo:
 Com links úteis para navegação rápida.
-
 Scroll automático para o topo:
 Facilita a experiência do usuário ao trocar de página.
-
 Interface responsiva:
 Adequada para diferentes tamanhos de tela, garantindo acesso via desktop ou mobile.
 
-🧰 3. Tecnologias Utilizadas
+---
+
+## 🧰 3. Tecnologias Utilizadas
 Frontend
 
 As ferramentas e bibliotecas utilizadas para o desenvolvimento da interface e experiência do usuário são:
-
 React – Biblioteca JavaScript para construir interfaces de usuário.
-
 TypeScript – Superset do JavaScript que adiciona tipagem estática.
-
 TailwindCSS – Framework de CSS utilitário para estilização rápida.
-
 Axios – Biblioteca para realizar requisições HTTP.
-
 React Router – Biblioteca para roteamento em aplicações React.
-
 Vite – Ferramenta de build e bundler rápido para projetos frontend.
-
+---
 Backend
 
 As tecnologias utilizadas para o desenvolvimento do servidor e da lógica de negócio são:
 
 Node.js – Ambiente de execução JavaScript no servidor.
-
 Nest.js – Framework Node.js para criar aplicações escaláveis e estruturadas.
-
 Passport – Middleware para autenticação de usuários.
-
 TypeORM – ORM para TypeScript e JavaScript, facilitando a interação com bancos de dados.
-
 Jest – Framework para testes unitários e de integração.
 
-🧭 4. Navegação e Páginas Principais
+---
+
+## 🧭 4. Navegação e Páginas Principais
 
 Home: Página inicial com apresentação e acesso ao sistema.
 
