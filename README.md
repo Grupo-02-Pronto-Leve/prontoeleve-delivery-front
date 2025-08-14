@@ -1,4 +1,4 @@
-📇 Delivery Pronto&Leve – Sistema de Gestão de Pedidos
+#📇 Delivery Pronto&Leve – Sistema de Gestão de Pedidos
 
 Projeto integrador III, desenvolvido como parte do projeto final da Generation Brasil, com o objetivo de criar um sistema completo para gestão de pedidos, produtos, categorias e clientes, facilitando a organização e o acompanhamento das operações do delivery.
 
@@ -111,7 +111,7 @@ Histórico de pedidos e interação com clientes.
 Integração com APIs externas para automação de notificações e promoções.
 Melhorias na acessibilidade e usabilidade do sistema.
 
-👥 10. Equipe
+## 👥 10. Equipe
 
 Adrielli Bertoldo
 Diego Cavalcanti
@@ -121,5 +121,5 @@ Nathalia Carvalho
 Miguel Ferreira
 Taís Escobar
 
-"Sua fome, nossa missão! Aqui, pensamos nas pessoas e suas necessidades alimentares." - Equipe Pronto&Leve
+*"Sua fome, nossa missão! Aqui, pensamos nas pessoas e suas necessidades alimentares." - Equipe Pronto&Leve*
 
