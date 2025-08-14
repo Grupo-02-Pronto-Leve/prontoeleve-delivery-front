@@ -131,22 +131,23 @@ Nossa rede de entregadores garante que seus pedidos cheguem rápido e com segura
 
 ## 🚀 7. Como Rodar o Projeto
 Pré-requisitos
-
-- Node.js instalado
-- Gerenciador de pacotes (yarn recomendado)
+• Node.js instalado
+• Gerenciador de pacotes (yarn recomendado)
 
 Passos:
+• Clonar o repositório:
+Passos:
 
-# Clonar o repositório:
+ Clonar o repositório:
 git clone https://github.com/seu-usuario/delivery-prontoeleve.git
 
-# Entrar na pasta do projeto:
+ Entrar na pasta do projeto:
 cd delivery-prontoeleve
 
-# Instalar as dependências:
+ Instalar as dependências:
 yarn
 
-# Iniciar o servidor de desenvolvimento:
+ Iniciar o servidor de desenvolvimento:
 yarn dev
 
 ---
