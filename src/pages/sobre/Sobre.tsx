@@ -1,6 +1,6 @@
 import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 import Navbar from "../../components/navbar/Navbar";
-import LogoDasStacks from "../../components/sobre/logosdasstacks/LogoDasStacks";
+// import LogoDasStacks from "../../components/sobre/logosdasstacks/LogoDasStacks";
 
 function Sobre() {
     const frontendTechs = [
