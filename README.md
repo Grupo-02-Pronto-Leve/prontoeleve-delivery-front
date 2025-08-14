@@ -53,9 +53,13 @@ Adequada para diferentes tamanhos de tela, garantindo acesso via desktop ou mobi
 As ferramentas e bibliotecas utilizadas para o desenvolvimento da interface e experiência do usuário são:
 
 **React** - biblioteca JavaScript para construir interfaces de usuário.
+
 **TypeScript** - superset do JavaScript que adiciona tipagem estática.
+
 **TailwindCSS** - framework de CSS utilitário para estilização rápida.
+
 **Axios** - biblioteca para realizar requisições HTTP.
+
 **React Router** - biblioteca para roteamento em aplicações React.
 **Vite** - ferramenta de build e bundler rápido para projetos frontend.
 
