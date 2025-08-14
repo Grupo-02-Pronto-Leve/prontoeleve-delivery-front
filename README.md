@@ -104,10 +104,15 @@ Login: Autenticação para acesso ao sistema.
 ## 📌 5. Por que vender com a gente?
 
 • Gestão de pedidos fácil e rápida: Controle e organize todos os pedidos em tempo real, sem complicação.
+
 • Pagamentos seguros e rápidos: Receba seus pagamentos de forma confiável e ágil, sem atrasos.
+
 • Mais visibilidade para o seu negócio: Atraia novos clientes e destaque sua marca na nossa plataforma.
+
 • Relatórios e insights de vendas: Analise os dados do seu negócio e tome decisões mais inteligentes.
+
 • Suporte dedicado: Nossa equipe está sempre pronta para te ajudar quando precisar.
+
 • Apoio ao seu crescimento: Estamos ao seu lado para te ajudar a expandir seu negócio com sucesso.
 
 ---
@@ -115,7 +120,9 @@ Login: Autenticação para acesso ao sistema.
 ## ⚙️ 6. Como funciona
 
 • Cadastre seu negócio: Crie seu perfil na plataforma e configure seu cardápio rapidamente.
+
 • Receba pedidos em tempo real: Tenha controle total dos pedidos, notificações instantâneas e fácil gestão.
+
 • Entregue com nossa logística integrada: Nossa rede de entregadores garante que seus pedidos cheguem rápido e com segurança.
 
 ---
@@ -147,8 +154,11 @@ yarn dev
 ## 🧪 8. Testes e Validações
 
 • Testes manuais para verificar navegação entre rotas.
+
 • Validação visual da responsividade em múltiplos dispositivos.
+
 • Confirmação do funcionamento dos formulários e modais de exclusão.
+
 • Verificação das notificações e feedbacks ao usuário.
 
 ---
@@ -156,8 +166,11 @@ yarn dev
 ## 📈 9. Próximos Passos e Melhorias Futuras
 
 • Implementação de carrinho de compras para gerenciar ordens de forma prática.
+
 • Criação de API de envio de pedidos para o WhatsApp, incluindo informações do pedido e endereço do solicitante.
+
 • Configuração de horários de atendimento, permitindo que dependendo do horário configurado, a opção de escolha de produtos seja desabilitada para o solicitante.
+
 • Outras melhorias e funcionalidades adicionais que possam tornar a experiência do usuário mais completa.
 
 ---
