@@ -71,7 +71,7 @@ function Sobre() {
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}></div>
 
                 <div className="relative z-10 max-w-3xl mx-auto px-4">
-                    <h1 className="text-5xl font-extrabold mb-6 text-yellow-400 drop-shadow-lg">
+                    <h1 className="text-5xl font-extrabold mb-10 text-[#7ED957] drop-shadow-lg">
                         Sua fome, nossa missão!
                     </h1>
                     <p className="leading-relaxed text-lg justify-center text-center text-white drop-shadow-md">
@@ -85,16 +85,16 @@ function Sobre() {
                 </div>
             </section>
 
-            <div className="max-w-full mx-100 px-20 rounded-xl py-10 bg-green-900 bg-opacity-20 backdrop-blur-md shadow-xl">
-                <h2 className="text-3xl font-bold text-center text-green-400 mb-10">
+            <div className="max-w-full  rounded-xl py-10 backdrop-blur-md shadow-xl">
+                <h2 className="text-3xl font-bold text-center text-[#7ED957] mb-10">
                     Funcionalidades do Sistema
                 </h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-center">
                     {crudFeatures.map((feature, index) => (
                         <div
                             key={index}
-                            className="bg-black bg-opacity-60 rounded-xl p-6 text-center hover:scale-105 transition-transform w-full max-w-xs shadow-lg backdrop-blur-md"
+                            className="bg-[#0f1f16]  rounded-xl p-6 text-center hover:scale-105 transition-transform w-full max-w-xs shadow-lg backdrop-blur-md"
                         >
                             <div className="text-4xl mb-4 text-green-400">{feature.icon}</div>
                             <h3 className="font-semibold text-white mb-2">{feature.title}</h3>
@@ -104,12 +104,12 @@ function Sobre() {
                 </div>
             </div>
 
-            <LogoDasStacks title="Tecnologias Frontend" technologies={frontendTechs} />
+            <LogoDasStacks title="Tecnologias Frontend"technologies={frontendTechs} />
             <LogoDasStacks title="Tecnologias Backend" technologies={backendTechs} />
 
             <section className="w-full py-20 bg-[#0f1f16]">
-                <h2 className="text-3xl font-bold text-center text-green-400 mb-12">
-                    Nossa Equipe
+                <h2 className="text-3xl font-bold text-center text-[#7ED957] mb-12">
+                    Equipe de Desenvolvedores:
                 </h2>
                 <div className="flex flex-wrap justify-center gap-8">
                     {team.map((member, index) => (
@@ -122,6 +122,7 @@ function Sobre() {
                                 alt={member.name}
                                 className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <p>Dev. Fullstack Jr.</p>
                                 <a
                                     href={member.linkedin}
                                     target="_blank"
