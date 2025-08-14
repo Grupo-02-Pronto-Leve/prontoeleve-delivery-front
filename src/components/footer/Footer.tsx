@@ -7,20 +7,6 @@ function Footer() {
 
   return (
     <>
-<<<<<<< Updated upstream
-      <div className="bg-black/95 backdrop-blur text-white">
-        <div
-          className="max-w-7xl mx-auto min-h-[260px] py-12 
-          grid grid-cols-1 md:grid-cols-3 gap-10 items-center"
-        >
-          {/* Coluna 1 e 2: Logo + Texto */}
-          <div className="flex items-start gap-8 col-span-2">
-            {/* Logo */}
-            <div className="flex flex-col items-start gap-2 min-w-[120px]">
-              <img src={logo} alt="Logo" className="h-20 w-auto rounded-lg" />
-              <img src={prontoelevehorizontal} alt="Logo Pequena" className="h-5 w-auto" />
-            </div>
-=======
     <footer className="bg-black/95 backdrop-blur text-white">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-2">
         
@@ -34,7 +20,6 @@ function Footer() {
             Solução moderna e inclusiva para pedir e receber comida saudável de forma prática e inteligente.
           </p>
         </div>
->>>>>>> Stashed changes
 
         {/* Coluna 2 - Empresa */}
         <div className="md:pl-40">
