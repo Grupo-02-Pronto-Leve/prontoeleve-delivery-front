@@ -50,7 +50,7 @@ Axios – biblioteca para realizar requisições HTTP.
 React Router – biblioteca para roteamento em aplicações React.
 Vite – ferramenta de build e bundler rápido para projetos frontend.
 
---
+
 
 **Backend**
 
