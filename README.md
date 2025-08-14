@@ -84,12 +84,19 @@ As tecnologias utilizadas para o desenvolvimento do servidor e da lógica de neg
 ## 🧭 4. Navegação e Páginas Principais
 
 Home: Página inicial com apresentação e acesso ao sistema.
+
 Dashboard: Tela principal após login, com visão geral dos pedidos e produtos.
+
 Pedidos: Listagem e gerenciamento de pedidos, com opções para cadastrar, editar e atualizar status.
+
 Produtos: Gerenciamento de produtos, incluindo cadastro, edição e exclusão.
+
 Categorias: Controle das categorias de produtos.
+
 Perfil: Visualização e edição do perfil do usuário.
+
 Cadastro: Formulário para novo usuário se cadastrar.
+
 Login: Autenticação para acesso ao sistema.
 
 ---
@@ -155,11 +162,13 @@ Verificação das notificações e feedbacks ao usuário.
 
 ## 📈 9. Próximos Passos e Melhorias Futuras
 
-Implementar dashboard com métricas de vendas e desempenho.
-Sistema de login completo com autenticação e autorização.
-Histórico de pedidos e interação com clientes.
-Integração com APIs externas para automação de notificações e promoções.
-Melhorias na acessibilidade e usabilidade do sistema.
+Implementação de carrinho de compras para gerenciar ordens de forma prática.
+
+Criação de API de envio de pedidos para o WhatsApp, incluindo informações do pedido e endereço do solicitante.
+
+Configuração de horários de atendimento, permitindo que dependendo do horário configurado, a opção de escolha de produtos seja desabilitada para o solicitante.
+
+Outras melhorias e funcionalidades adicionais que possam tornar a experiência do usuário mais completa.
 
 ---
 
