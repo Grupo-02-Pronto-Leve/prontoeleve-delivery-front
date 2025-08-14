@@ -79,24 +79,24 @@ function Cadastro() {
           <div className="absolute inset-0 bg-black opacity-70"></div>
 
           {/* Posicionamento de formulário e texto*/}
-          <div className="absolute inset-0 min-h-screen flex justify-center items-center">
+          <div className="absolute inset-0 flex justify-center items-center p-4">
             {/* Texto a direita */}
-            <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4">
+            <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <form
-                className="bg-[#111111]/80 backdrop-blur-md shadow-lg rounded-xl py-8 px-10 w-full max-w-[500px] text-white"
+                className="bg-[#111111]/80 backdrop-blur-md shadow-lg rounded-xl py-6 px-6 sm:px-8 w-full text-white"
                 onSubmit={cadastrarNovoUsuario}
               >
-                <h2 className="text-white font-marko text-4xl font-semibold text-center mb-4">
+                <h2 className="font-marko text-3xl sm:text-4xl font-semibold text-center mb-3">
                   Cadastre-se
                 </h2>
-                <p className="text-center font-zain text-2xl m-0">
+                <p className="text-center font-zain text-lg sm:text-xl mb-4">
                   Já possui uma conta?{" "}
                   <Link to="/login" className="text-lime-600 hover:underline">
                     Entre
                   </Link>
                 </p>
-                <div className="flex flex-col font-zain text-xl w-full">
-                  <label htmlFor="nome" className="block mb-2 text-xl font-medium text-white">
+                <div className="flex flex-col font-zain text-lg sm:text-xl w-full">
+                  <label htmlFor="nome" className="mb-2 font-medium text-white">
                     Nome
                   </label>
                   <div className="relative mb-4">
@@ -112,8 +112,8 @@ function Cadastro() {
                   />
                 </div>
                 </div>
-                <div className="flex flex-col font-zain text-xl w-full">
-                  <label htmlFor="usuario" className="block mb-2 text-xl font-medium text-white">
+                <div className="flex flex-col font-zain text-lg sm:text-xl w-full">
+                  <label htmlFor="usuario" className="mb-2 font-medium text-white">
                     Usuario
                   </label>
                   <div className="relative mb-4">
@@ -131,8 +131,8 @@ function Cadastro() {
                   />
                   </div>
                 </div>
-                <div className="flex flex-col font-zain text-xl w-full">
-                  <label htmlFor="foto" className="block mb-2 text-xl font-medium text-white">
+                <div className="flex flex-col font-zain text-lg sm:text-xl w-full">
+                  <label htmlFor="foto" className="mb-2 font-medium text-white">
                     Foto URL
                   </label>
                   <div className="relative mb-4">
@@ -150,8 +150,8 @@ function Cadastro() {
                   />
                   </div>
                 </div>
-                <div className="flex flex-col font-zain text-xl w-full">
-                  <label htmlFor="senha" className="block mb-2 text-xl font-medium text-white">
+                <div className="flex flex-col font-zain text-lg sm:text-xl w-full">
+                  <label htmlFor="senha" className="mb-2 font-medium text-white">
                     Senha
                   </label>
                   <div className="relative mb-4">
@@ -169,10 +169,10 @@ function Cadastro() {
                   />
                   </div>
                 </div>
-                <div className="flex flex-col font-zain text-xl w-full">
+                <div className="flex flex-col font-zain text-lg sm:text-xl w-full">
                   <label
                     htmlFor="confirmarSenha"
-                    className="block mb-2 text-xl font-medium text-white"
+                    className="mb-2 font-medium text-white"
                   >
                     Confirmar Senha
                   </label>
@@ -191,17 +191,17 @@ function Cadastro() {
                   />
                   </div>
                 </div>
-                <div className="flex justify-around font-marko w-full gap-8">
+                <div className="flex flex-col sm:flex-row justify-center gap-4 font-marko">
                   <button
                     type="reset"
-                    className="w-full bg-gradient-to-r from-red-400 to-red-500 hover:from-red-400 hover:to-red-400 transition-all duration-300 text-white font-semibold text-xl px-4 py-2 rounded-full"
+                    className="w-full sm:w-1/2 bg-gradient-to-r from-red-400 to-red-500 hover:from-red-400 hover:to-red-400 transition-all duration-300 text-white font-semibold text-lg sm:text-xl px-4 py-2 rounded-full"
                     onClick={retornar}
                   >
                     Cancelar
                   </button>
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-lime-500 to-green-600 hover:from-green-600 hover:to-lime-500 transition-all duration-300 text-white font-semibold text-xl px-4 py-2 rounded-full"
+                    className="w-full sm:w-1/2 bg-gradient-to-r from-lime-500 to-green-600 hover:from-green-600 hover:to-lime-500 transition-all duration-300 text-white font-semibold text-lg sm:text-xl px-4 py-2 rounded-full"
 
                   >
                     {isLoading ? (
@@ -219,13 +219,13 @@ function Cadastro() {
                 </div>
               </form>
               <div>
-                <div className="flex flex-col items-center gap-2">
-                  <img src={logo} alt="Logo" className="h-30 w-auto rounded-lg" />
-                  <img src={prontoelevehorizontal} alt="Logo Pequena" className="h-10 w-auto" />
-                </div>
-                <p className="text-white text-xl font-marko text-relaxed pt-3 text-center">
+                <div className="flex flex-col items-center text-center gap-4 px-4">
+                  <img src={logo} alt="Logo" className="h-24 sm:h-32 w-auto rounded-lg" />
+                  <img src={prontoelevehorizontal} alt="Logo Pequena" className="h-8 sm:h-10 w-auto" />
+                <p className="text-white text-lg sm:text-xl font-marko max-w-xs">
                   Solução moderna e inclusiva para você!
                 </p>
+                </div>
               </div>
             </div>
           </div>
