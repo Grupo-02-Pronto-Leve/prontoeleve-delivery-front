@@ -1,4 +1,16 @@
+/* ModalCategoria.css */
+
+/* Fundo escuro atrás do modal */
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Corpo do modal */
 .popup-content {
-  border-radius: 1rem;
-  padding-bottom: 2rem;
+  background: #1f2937 !important; /* Cor cinza-escuro */
+  color: white; /* Texto branco */
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 700px; /* Largura máxima */
+  width: 90%; /* Responsivo */
 }

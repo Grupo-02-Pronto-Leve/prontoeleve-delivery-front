@@ -34,6 +34,7 @@ function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/categorias" element={<Categoria />} />
+              <Route path="/categorias/cadastrar" element={<FormCategoria />} />
               <Route path="/categorias/:id" element={<FormCategoria />} />
               <Route path="/cadastrarcategoria" element={<FormCategoria />} />
               <Route path="/editarcategoria/:id" element={<FormCategoria />} />

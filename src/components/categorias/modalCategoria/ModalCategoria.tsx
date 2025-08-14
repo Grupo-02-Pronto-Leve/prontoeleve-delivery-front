@@ -16,7 +16,9 @@ function ModalCategoria() {
                 }
                 modal
             >
-                <FormCategoria />
+                
+             <FormCategoria />
+  
             </Popup>
         </div>
         </>

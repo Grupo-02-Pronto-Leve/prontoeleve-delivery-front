@@ -17,6 +17,7 @@ import { MdOutlineFastfood } from "react-icons/md"
 import { PiCarrot } from "react-icons/pi"
 import { RiDrinks2Line } from "react-icons/ri"
 import { TbMeat, TbMilkshake } from "react-icons/tb"
+import Navbar from "../../navbar/Navbar"
 
 function DeletarCategoria() {
 
@@ -101,60 +102,64 @@ function DeletarCategoria() {
         navigate("/categorias")
     }
     
-    return (
-    <div className="container max-w-3/12 mx-auto">
-        <h1 className="text-4xl text-center my-6 font-bold text-gray-800">
+return (
+    <>
+    <Navbar/>
+  <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div className="w-full max-w-md bg-[#1F2025] p-6 rounded-lg shadow-lg">
+      <h1 className="text-2xl text-center mb-4 font-bold text-white">
         Deletar Categoria
-        </h1>
+      </h1>
 
-        <p className="text-center font-medium text-gray-600 mb-6">
+      <p className="text-center text-gray-300 mb-6">
         Você tem certeza de que deseja apagar a categoria a seguir?
-        </p>
+      </p>
 
-        <div className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg">
-        {/* <header className="w-full py-3 px-6 text-black font-bold text-xl text-center rounded-t-lg">
-            Categoria
-        </header> */}
-
-        <div className="text-green-500 text-5xl my-4">
-            {/* Ícone da categoria */}
-            {iconMap[categoria.nome] ? (
+      <div className="flex flex-col items-center">
+        <div className="text-green-400 text-5xl my-4">
+          {iconMap[categoria.nome] ? (
             React.createElement(iconMap[categoria.nome])
-            ) : (
+          ) : (
             <FaLeaf />
-            )}
+          )}
         </div>
 
-        <h3 className="font-semibold text-lg text-center">{categoria.nome}</h3>
-        <p className="text-gray-500 text-sm text-center">{categoria.descricao}</p>
+        <h3 className="font-semibold text-lg text-center text-white">
+          {categoria.nome}
+        </h3>
+        <p className="text-gray-400 text-sm text-center">
+          {categoria.descricao}
+        </p>
 
         <div className="flex gap-3 mt-6 w-full">
-            <button
-            className="flex-1 text-slate-100 bg-red-400 hover:bg-red-600 py-2 rounded-lg transition"
+          <button
+            className="flex-1 text-white bg-red-500 hover:bg-red-600 py-2 rounded-lg transition"
             onClick={retornar}
-            >
+          >
             Não
-            </button>
+          </button>
 
-            <button
-            className="flex-1 text-slate-100 bg-green-400 hover:bg-green-500 flex items-center justify-center py-2 rounded-lg transition"
+          <button
+            className="flex-1 text-white bg-green-500 hover:bg-green-600 flex items-center justify-center py-2 rounded-lg transition"
             onClick={deletarCategoria}
-            >
+          >
             {isLoading ? (
-                <RotatingLines
+              <RotatingLines
                 strokeColor="white"
                 strokeWidth="5"
                 animationDuration="0.75"
                 width="24"
                 visible={true}
-                />
+              />
             ) : (
-                <span>Sim</span>
+              <span>Sim</span>
             )}
-            </button>
+          </button>
         </div>
-        </div>
+      </div>
     </div>
-    );
+  </div>
+  </>
+);
 }
 export default DeletarCategoria

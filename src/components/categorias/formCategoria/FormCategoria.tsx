@@ -15,6 +15,7 @@ import { GiFruitBowl, GiSandwich, } from "react-icons/gi";
 import { MdOutlineFastfood } from "react-icons/md";
 import { CgCoffee } from "react-icons/cg";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Navbar from "../../navbar/Navbar";
 
 function FormCategoria() {
 
@@ -131,106 +132,223 @@ function FormCategoria() {
     }   
 
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto">
-      <h1 className="text-4xl text-center my-8">
-        {id === undefined ? "Cadastrar Categoria" : "Editar Categoria"}
-      </h1>
+    <>
+      {id === undefined ? (
+        // ✅ Modal para cadastro
+        <div className=" flex items-center justify-center">
+          <div className="w-full max-w-md h-[500px] bg-[#1F2025] p-6 rounded-lg shadow-lg overflow-y-auto">
+            <h1 className="text-2xl text-center mb-4 text-white">Cadastrar Categoria</h1>
 
-      <form className="w-full md:w-8/12 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
-        
-        {/* Nome */}
-        <div className="flex flex-col gap-2">
-          <label htmlFor="nome">Nome da Categoria</label>
-          <input
-            type="text"
-            placeholder="Nome da categoria:"
-            name="nome"
-            className="border-2 border-slate-700 rounded p-2"
-            value={categoria.nome}
-            onChange={atualizarEstado}
-          />
-        </div>
+            <form className="flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
+              {/* Nome */}
+              <div className="flex flex-col gap-2">
+                <label htmlFor="nome" className="text-white text-sm">Nome da Categoria</label>
+                <input
+                  type="text"
+                  name="nome"
+                  placeholder="Nome da categoria"
+                  className="border-2 border-gray-600 rounded-md p-2 bg-gray-900 text-white text-sm"
+                  value={categoria.nome}
+                  onChange={atualizarEstado}
+                />
+              </div>
 
-        {/* Descrição */}
-        <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição da Categoria</label>
-          <input
-            type="text"
-            placeholder="Descreva aqui sua categoria:"
-            name="descricao"
-            className="border-2 border-slate-700 rounded p-2"
-            value={categoria.descricao}
-            onChange={atualizarEstado}
-          />
-        </div>
+              {/* Descrição */}
+              <div className="flex flex-col gap-2">
+                <label htmlFor="descricao" className="text-white text-sm">Descrição da Categoria</label>
+                <input
+                  type="text"
+                  name="descricao"
+                  placeholder="Descreva aqui sua categoria"
+                  className="border-2 border-gray-600 rounded-md p-2 bg-gray-900 text-white text-sm"
+                  value={categoria.descricao}
+                  onChange={atualizarEstado}
+                />
+              </div>
 
-        {/* Ícones com setas */}
-        <div className="flex flex-col gap-2 relative">
-          <label>Ícone da Categoria</label>
+              {/* Ícones */}
+              <div className="flex flex-col gap-2 relative max-h-[120px] overflow-hidden">
+                <label className="text-white text-sm">Ícone da Categoria</label>
 
-          {/* Seta Esquerda */}
-          <button
-            type="button"
-            onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 z-10 hover:bg-gray-100"
-          >
-            <FaChevronLeft className="text-gray-600" />
-          </button>
-
-          {/* Lista de ícones */}
-          <div
-            ref={scrollRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide py-2 px-8"
-          >
-            {iconOptions.map((opt) => {
-              const Icon = opt.icon;
-              return (
-                <div
-                  key={opt.name}
-                  onClick={() => setCategoria({ ...categoria, nome: opt.name })}
-                  className={`flex flex-col items-center p-4 border-2 rounded-lg cursor-pointer flex-shrink-0 transition w-24 ${
-                    categoria.nome === opt.name
-                      ? "border-green-500 bg-green-50"
-                      : "border-gray-300"
-                  }`}
+                <button
+                  type="button"
+                  onClick={() => scroll("left")}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 shadow-md rounded-full p-1 z-10 hover:bg-gray-700"
                 >
-                  <Icon className="text-green-500 text-xl" />
-                  <span className="text-xs mt-1 text-center">{opt.name}</span>
-                </div>
-              );
-            })}
-          </div>
+                  <FaChevronLeft className="text-white text-sm" />
+                </button>
 
-          {/* Seta Direita */}
-          <button
-            type="button"
-            onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 z-10 hover:bg-gray-100"
-          >
-            <FaChevronRight className="text-gray-600" />
-          </button>
+                <div ref={scrollRef} className="flex gap-2 overflow-x-auto scrollbar-hide py-2 px-4">
+                  {iconOptions.map((opt) => {
+                    const Icon = opt.icon;
+                    return (
+                      <div
+                        key={opt.name}
+                        onClick={() => setCategoria({ ...categoria, nome: opt.name })}
+                        className={`flex flex-col items-center p-2 border-2 rounded-lg cursor-pointer flex-shrink-0 transition w-20 ${
+                          categoria.nome === opt.name
+                            ? "border-green-500 bg-green-700"
+                            : "border-gray-600 bg-gray-800"
+                        }`}
+                      >
+                        <Icon className="text-green-400 text-lg" />
+                        <span className="text-xs mt-1 text-center text-white">{opt.name}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => scroll("right")}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 shadow-md rounded-full p-1 z-10 hover:bg-gray-700"
+                >
+                  <FaChevronRight className="text-white text-sm" />
+                </button>
+              </div>
+
+              {/* Botões */}
+              <div className="flex gap-2 justify-center mt-4">
+                <button
+                  className="rounded-md text-white bg-green-400 hover:bg-green-600 px-6 py-1 text-sm"
+                  type="submit"
+                  onClick={() => navigate(-1)}
+                >
+                  {isLoading ? (
+                    <RotatingLines
+                      strokeColor="white"
+                      strokeWidth="5"
+                      animationDuration="0.75"
+                      width="24"
+                      visible={true}
+                    />
+                  ) : "Cadastrar"}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={retornar}
+                  className="rounded-md text-white bg-red-500 hover:bg-red-700 px-6 py-1 text-sm"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      ) : (
+      // Página para edição
+      <div className="min-h-screen bg-[#15161B] flex flex-col items-center justify-start">
+        <div className="w-full">
+          <Navbar />
         </div>
 
-        {/* Botão submit */}
-        <button
-          className="rounded text-slate-100 bg-green-400 hover:bg-green-800 w-1/2 py-2 mx-auto flex justify-center"
-          type="submit"
-        >
-          {isLoading ? (
-            <RotatingLines
-              strokeColor="white"
-              strokeWidth="5"
-              animationDuration="0.75"
-              width="24"
-              visible={true}
-            />
-          ) : (
-            <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>
-          )}
-        </button>
-      </form>
-    </div>
-  );
+        <div className="container flex flex-col items-center justify-center mx-auto mt-12">
+          <h1 className="text-3xl md:text-4xl text-center my-6 text-white">Editar Categoria</h1>
+
+          <form
+            className="w-full max-w-md h-[500px] flex flex-col gap-4 bg-[#1F2025] p-6 rounded-lg shadow-lg overflow-y-auto"
+            onSubmit={gerarNovaCategoria}
+          >
+            {/* Nome */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="nome" className="text-white text-sm">Nome da Categoria</label>
+              <input
+                type="text"
+                name="nome"
+                placeholder="Nome da categoria"
+                className="border-2 border-gray-600 rounded-md p-2 bg-gray-900 text-white text-sm"
+                value={categoria.nome}
+                onChange={atualizarEstado}
+              />
+            </div>
+
+            {/* Descrição */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="descricao" className="text-white text-sm">Descrição da Categoria</label>
+              <input
+                type="text"
+                name="descricao"
+                placeholder="Descreva aqui sua categoria"
+                className="border-2 border-gray-600 rounded-md p-2 bg-gray-900 text-white text-sm"
+                value={categoria.descricao}
+                onChange={atualizarEstado}
+              />
+            </div>
+
+            {/* Ícones */}
+            <div className="flex flex-col gap-2 relative max-h-[120px] overflow-hidden">
+              <label className="text-white text-sm">Ícone da Categoria</label>
+
+              <button
+                type="button"
+                onClick={() => scroll("left")}
+                className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 shadow-md rounded-full p-1 z-10 hover:bg-gray-700"
+              >
+                <FaChevronLeft className="text-white text-sm" />
+              </button>
+
+              <div ref={scrollRef} className="flex gap-2 overflow-x-auto scrollbar-hide py-2 px-4">
+                {iconOptions.map((opt) => {
+                  const Icon = opt.icon;
+                  return (
+                    <div
+                      key={opt.name}
+                      onClick={() => setCategoria({ ...categoria, nome: opt.name })}
+                      className={`flex flex-col items-center p-2 border-2 rounded-lg cursor-pointer flex-shrink-0 transition w-20 ${
+                        categoria.nome === opt.name
+                          ? "border-green-500 bg-green-700"
+                          : "border-gray-600 bg-gray-800"
+                      }`}
+                    >
+                      <Icon className="text-green-400 text-lg" />
+                      <span className="text-xs mt-1 text-center text-white">{opt.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <button
+                type="button"
+                onClick={() => scroll("right")}
+                className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 shadow-md rounded-full p-1 z-10 hover:bg-gray-700"
+              >
+                <FaChevronRight className="text-white text-sm" />
+              </button>
+            </div>
+
+            {/* Botões */}
+            <div className="flex gap-2 justify-center mt-4">
+              <button
+                className="rounded-md text-white bg-green-400 hover:bg-green-600 px-6 py-1 text-sm"
+                type="submit"
+              >
+                {isLoading ? (
+                  <RotatingLines
+                    strokeColor="white"
+                    strokeWidth="5"
+                    animationDuration="0.75"
+                    width="24"
+                    visible={true}
+                  />
+                ) : "Atualizar"}
+              </button>
+
+              <button
+                type="button"
+                onClick={retornar}
+                className="rounded-md text-white bg-red-500 hover:bg-red-700 px-6 py-1 text-sm"
+              >
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    )}
+  </>
+);
 }
+
 
 export default FormCategoria;
