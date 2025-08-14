@@ -9,7 +9,7 @@ import Perfil from "./pages/perfil/Perfil";
 import Footer from "./components/footer/Footer";
 import Categoria from "./pages/categoria/Categoria";
 import Produto from "./pages/produto/Produto";
-import Contato from "./pages/contato/Contato";
+import ContatoHero from "./pages/contatoHero/ContatoHero";
 
 import FormProduto from "./components/produtos/formProduto/FormProduto";
 import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto";
@@ -45,7 +45,7 @@ function App() {
               <Route path="/editarproduto/:id" element={<FormProduto />} />
               <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
               <Route path="/perfil" element={<Perfil />} />
-              <Route path="/contato" element={<Contato />} />
+              <Route path="/contato" element={<ContatoHero />} />
               <Route path="/sobre" element={<Sobre />} />
             </Routes>
           </div>

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { RotatingLines } from "react-loader-spinner";
 import { Link, useNavigate } from "react-router-dom";
@@ -5,6 +7,11 @@ import type Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
 import { ToastAlerta } from "../../utils/ToastAlerta";
 import "./Cadastro.css";
+import logo from "../../assets/logo.png";
+import prontoelevehorizontal from "../../assets/prontoelevehorizontal.png"
+import { FaLock, FaImage } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa6";
+import { MdOutlineAlternateEmail } from "react-icons/md";
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -68,146 +75,93 @@ function Cadastro() {
 
   return (
     <>
-      <div className="relative w-full min-h-screen">
-        <div className="background-cadastro">
-          <div className="absolute inset-0 bg-black opacity-70"></div>
+    <div className="relative w-full min-h-screen">
+      <div className="background-cadastro">
+        <div className="absolute inset-0 bg-black opacity-70"></div>
 
-          {/* Posicionamento de formulário e texto*/}
-          <div className="absolute inset-0 min-h-screen flex justify-center items-center">
-            {/* Texto a direita */}
-            <div className="max-w-5xl w-full grid md:grid-cols-2 gap-8 items-center">
-              <form
-                className="bg-[#111111] rounded-lg py-6 px-12 w-full max-w-[500px] box-border text-[#fff] mx-auto"
-                onSubmit={cadastrarNovoUsuario}
-              >
-                <h2 className="text-white text-4xl font-semibold text-center mb-4">
-                  Crie uma conta
-                </h2>
-                <p className="text-center m-0">
-                  Já possui uma conta?{" "}
-                  <Link to="/login" className="text-lime-600 hover:underline">
-                    Entre
-                  </Link>
-                </p>
-                <div className="flex flex-col w-full">
-                  <label htmlFor="nome" className="block mb-2 text-sm font-medium text-white">
-                    Nome
+        <div className="absolute inset-0 flex justify-center items-center p-2 sm:p-4">
+          <div className="w-full max-w-6xl grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-8 items-center">
+
+            {/* Formulário */}
+            <form
+              className="bg-[#111111]/80 backdrop-blur-md shadow-lg rounded-xl py-4 px-3 sm:px-8 w-full text-white"
+              onSubmit={cadastrarNovoUsuario}
+            >
+              <h2 className="font-marko text-xl sm:text-3xl font-semibold text-center mb-2 sm:mb-3">
+                Cadastre-se
+              </h2>
+              <p className="text-center font-zain text-sm sm:text-lg mb-3 sm:mb-4">
+                Já possui uma conta?{" "}
+                <Link to="/login" className="text-lime-600 hover:underline">
+                  Entre
+                </Link>
+              </p>
+
+              {/* Campos */}
+              {[
+                { id: "nome", icon: <FaRegUser />, placeholder: "Nome" },
+                { id: "usuario", icon: <MdOutlineAlternateEmail />, placeholder: "E-mail" },
+                { id: "foto", icon: <FaImage />, placeholder: "URL da Foto" },
+                { id: "senha", icon: <FaLock />, placeholder: "Senha", type: "password" },
+                { id: "confirmarSenha", icon: <FaLock />, placeholder: "Confirmar Senha", type: "password", confirm: true }
+              ].map((field) => (
+                <div key={field.id} className="flex flex-col font-zain text-sm sm:text-base w-full mb-3 sm:mb-4">
+                  <label htmlFor={field.id} className="mb-1 sm:mb-2 font-medium text-white">
+                    {field.placeholder}
                   </label>
-                  <input
-                    type="text"
-                    id="nome"
-                    name="nome"
-                    placeholder="Nome"
-                    className="w-full px-4 py-2 rounded bg-[#111111] border border-[#333333] placeholder-[#333333] focus:outline-none focus:ring-2 focus:ring-lime-600 mb-2"
-                    value={usuario.nome}
-                    onChange={(e) => atualizarEstado(e)}
-                  />
+                  <div className="relative">
+                    <span className="absolute top-2.5 left-3 text-gray-400">{field.icon}</span>
+                    <input
+                      type={field.type || "text"}
+                      id={field.id}
+                      name={field.id}
+                      placeholder={field.placeholder}
+                      className="pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-lime-600 text-xs sm:text-sm"
+                      value={
+                        field.confirm ? confirmaSenha : (usuario as any)[field.id]
+                      }
+                      onChange={(e) =>
+                        field.confirm ? handleConfirmarSenha(e) : atualizarEstado(e)
+                      }
+                    />
+                  </div>
                 </div>
-                <div className="flex flex-col w-full">
-                  <label htmlFor="usuario" className="block mb-2 text-sm font-medium text-white">
-                    Usuario
-                  </label>
-                  <input
-                    type="text"
-                    id="usuario"
-                    name="usuario"
-                    placeholder="Usuario"
-                    className="w-full px-4 py-2 rounded bg-[#111111] border border-[#333333] placeholder-[#333333] focus:outline-none focus:ring-2 focus:ring-lime-600 mb-2"
-                    value={usuario.usuario}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      atualizarEstado(e)
-                    }
-                  />
-                </div>
-                <div className="flex flex-col w-full">
-                  <label htmlFor="foto" className="block mb-2 text-sm font-medium text-white">
-                    Foto
-                  </label>
-                  <input
-                    type="text"
-                    id="foto"
-                    name="foto"
-                    placeholder="Foto"
-                    className="w-full px-4 py-2 rounded bg-[#111111] border border-[#333333] placeholder-[#333333] focus:outline-none focus:ring-2 focus:ring-lime-600 mb-2"
-                    value={usuario.foto}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      atualizarEstado(e)
-                    }
-                  />
-                </div>
-                <div className="flex flex-col w-full">
-                  <label htmlFor="senha" className="block mb-2 text-sm font-medium text-white">
-                    Senha
-                  </label>
-                  <input
-                    type="password"
-                    id="senha"
-                    name="senha"
-                    placeholder="Senha"
-                    className="w-full px-4 py-2 rounded bg-[#111111] border border-[#333333] placeholder-[#333333] focus:outline-none focus:ring-2 focus:ring-lime-600 mb-2"
-                    value={usuario.senha}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      atualizarEstado(e)
-                    }
-                  />
-                </div>
-                <div className="flex flex-col w-full">
-                  <label
-                    htmlFor="confirmarSenha"
-                    className="block mb-2 text-sm font-medium text-white"
-                  >
-                    Confirmar Senha
-                  </label>
-                  <input
-                    type="password"
-                    id="confirmarSenha"
-                    name="confirmarSenha"
-                    placeholder="Confirmar Senha"
-                    className="w-full px-4 py-2 rounded bg-[#111111] border border-[#333333] placeholder-[#333333] focus:outline-none focus:ring-2 focus:ring-lime-600 mb-4"
-                    value={confirmaSenha}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      handleConfirmarSenha(e)
-                    }
-                  />
-                </div>
-                <div className="flex justify-around w-full gap-8">
-                  <button
-                    type="reset"
-                    className="w-full bg-red-400 hover:bg-red-500 transition text-black font-semibold text-xl p-2 rounded-full"
-                    onClick={retornar}
-                  >
-                    Cancelar
-                  </button>
-                  <button
-                    type="submit"
-                    className="w-full bg-lime-600 hover:bg-lime-700 transition text-black font-semibold text-xl px-3 py-2 rounded-full"
-                  >
-                    {isLoading ? (
-                      <RotatingLines
-                        strokeColor="white"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="24"
-                        visible={true}
-                      />
-                    ) : (
-                      <span>Cadastrar</span>
-                    )}
-                  </button>
-                </div>
-              </form>
-              <div>
-                <h1 className="text-5xl text-lime-600 font-bold mb-2 text-center mt-8">
-                  Pronto & Leve
-                </h1>
-                <p className="text-white text-xl text-center">
-                  Solução moderna e inclusiva para você!
-                </p>
+              ))}
+
+              {/* Botões */}
+              <div className="flex flex-col md:flex-row justify-center gap-3 sm:gap-4 font-marko mt-4">
+                <button
+                  type="reset"
+                  className="w-full md:w-1/2 bg-gradient-to-r from-red-400 to-red-500 hover:from-red-400 hover:to-red-400 transition-all duration-300 text-white font-semibold text-sm sm:text-lg px-3 sm:px-4 py-2 rounded-full"
+                  onClick={retornar}
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  className="w-full md:w-1/2 bg-gradient-to-r from-lime-500 to-green-600 hover:from-green-600 hover:to-lime-500 transition-all duration-300 text-white font-semibold text-sm sm:text-lg px-3 sm:px-4 py-2 rounded-full"
+                >
+                  {isLoading ? (
+                    <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="20" visible={true} />
+                  ) : (
+                    <span>Cadastrar</span>
+                  )}
+                </button>
               </div>
+            </form>
+
+            {/* Coluna de imagens */}
+            <div className="flex flex-col items-center text-center gap-3 sm:gap-4 px-2 sm:px-4">
+              <img src={logo} alt="Logo" className="h-16 sm:h-32 max-w-full rounded-lg" />
+              <img src={prontoelevehorizontal} alt="Logo Pequena" className="h-6 sm:h-10 max-w-full" />
+              <p className="text-white text-sm sm:text-xl font-marko max-w-[90%]">
+                Solução moderna e inclusiva para você!
+              </p>
             </div>
           </div>
         </div>
-      </div>   
+      </div>
+    </div>
     </>
   );
 }

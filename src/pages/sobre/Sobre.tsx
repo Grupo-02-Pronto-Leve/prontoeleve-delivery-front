@@ -1,4 +1,4 @@
-import { GithubLogoIcon, LinkedinLogo, LinkedinLogoIcon } from "@phosphor-icons/react";
+import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 import Navbar from "../../components/navbar/Navbar";
 import LogoDasStacks from "../../components/sobre/logosdasstacks/LogoDasStacks";
 
@@ -38,7 +38,7 @@ function Sobre() {
         icon: "",
         },
         {
-        title: "Busca de produtos por restrição alimentar",
+        title: "Busca por restrição alimentar",
         description:
             "Facilite a vida do cliente filtrando produtos conforme alergias e preferências.",
         icon: "",
@@ -59,59 +59,86 @@ function Sobre() {
 
     return (
         <>
-        <Navbar /><div className="min-h-screen w-full bg-black text-white font-marko">
-            {/* HERO */}
+        <Navbar />
+        <div className="min-h-screen w-full bg-black text-white font-marko">
             <section
-                className="w-full text-white py-28 text-center bg-cover bg-center relative"
-                style={{
-                    backgroundImage: "url('https://ik.imagekit.io/iyc9bztrf8/vecteezy_healthy-lifestyle-salad-with-chicken-and-veggies_50513834.png?updatedAt=1755115549588')", // atualize o caminho conforme necessário
-                }}
+            className="w-full text-white py-28 text-center bg-cover bg-center relative"
+            style={{
+                backgroundImage: "url('https://ik.imagekit.io/iyc9bztrf8/vecteezy_healthy-lifestyle-salad-with-chicken-and-veggies_50513834.png?updatedAt=1755115549588')",
+            }}
             >
-                <div className="absolute inset-0"
-                    style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80"></div>
 
-                <div className="relative z-10 max-w-3xl mx-auto px-4">
-                    <h1 className="text-5xl font-extrabold mb-6 text-yellow-400 drop-shadow-lg">
-                        Sua fome, nossa missão!
-                    </h1>
-                    <p className="text-lg text-white drop-shadow-md">
-                        Aqui, você encontra pratos sempre fresquinhos, preparados com ingredientes selecionados <br />
-                        e aquele toque especial de sabor caseiro que conquista qualquer paladar. <br /><br />
-                        Delivery ágil, comida quentinha e o sabor que você merece, direto na sua porta. <br />
-                        Bateu a fome? A gente resolve. É só pedir!
-                    </p>
-                </div>
+            <div className="relative z-10 max-w-4xl mx-auto px-4 animate-fadeIn">
+                <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#7ED957] to-green-400 drop-shadow-lg">
+                Sua fome, nossa missão!
+                </h1>
+                <p className="leading-relaxed text-lg sm:text-xl text-gray-200 drop-shadow-md">
+                Aqui, você encontra pratos fresquinhos, preparados com ingredientes selecionados e aquele toque especial de sabor caseiro.
+                </p>
+                <p className="leading-relaxed pt-4 text-lg sm:text-xl text-gray-200 drop-shadow-md">
+                Delivery ágil, comida quentinha e o sabor que você merece, direto na sua porta.
+                </p>
+            </div>
             </section>
 
-            {/* <section className="w-full py-20 px-6 bg-[#111111]"> */}
-            <div className="max-w-full mx-100 px-20 rounded-xl py-10 bg-green-900 bg-opacity-20 backdrop-blur-md shadow-xl">
-                <h2 className="text-3xl font-bold text-center text-green-400 mb-10">
+            <div className="max-w-full  rounded-xl py-10 backdrop-blur-md shadow-xl">
+                <h2 className="text-3xl font-bold text-center text-[#7ED957] mb-10">
                     Funcionalidades do Sistema
                 </h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-center">
                     {crudFeatures.map((feature, index) => (
                         <div
                             key={index}
-                            className="bg-black bg-opacity-60 rounded-xl p-6 text-center hover:scale-105 transition-transform w-full max-w-xs shadow-lg backdrop-blur-md"
+                            className="bg-[#0f1f16]  rounded-xl p-6 text-center hover:scale-105 transition-transform w-full max-w-xs shadow-lg backdrop-blur-md"
                         >
                             <div className="text-4xl mb-4 text-green-400">{feature.icon}</div>
-                            <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                            <h3 className="font-semibold text-white mb-2">{feature.title}</h3>
                             <p className="text-gray-300 text-sm">{feature.description}</p>
                         </div>
                     ))}
                 </div>
             </div>
-            {/* </section> */}
 
-            {/* STACKS */}
-            <LogoDasStacks title="Tecnologias Frontend" technologies={frontendTechs} />
-            <LogoDasStacks title="Tecnologias Backend" technologies={backendTechs} />
-
-            {/* EQUIPE */}
             <section className="w-full py-20 bg-[#0f1f16]">
-                <h2 className="text-3xl font-bold text-center text-green-400 mb-12">
-                    Nossa Equipe
+                <div className="container mx-auto px-4 py-8">
+                <h2 className="text-3xl font-bold text-center text-[#7ED957] mb-6">
+                    Tecnologias Frontend
+                </h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 justify-items-center">
+                    {frontendTechs.map((tech, index) => (
+                    <div
+                        key={index}
+                        className="bg-black/95 backdrop-blur p-4 rounded-lg shadow-md flex flex-col items-center w-full max-w-[140px]"
+                    >
+                        <img src={tech.img} alt={tech.name} className="h-12 mb-2" />
+                        <span className="text-white font-medium text-sm text-center">{tech.name}</span>
+                    </div>
+                    ))}
+                </div>
+
+                <h2 className="text-3xl font-bold text-center text-[#7ED957] mt-10 mb-6">
+                    Tecnologias Backend
+                </h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-items-center">
+                    {backendTechs.map((tech, index) => (
+                    <div
+                        key={index}
+                        className="bg-black/95 backdrop-blur p-4 rounded-lg shadow-md flex flex-col items-center w-full max-w-[140px]"
+                    >
+                        <img src={tech.img} alt={tech.name} className="h-12 mb-2" />
+                        <span className="text-white font-medium text-sm text-center">{tech.name}</span>
+                    </div>
+                    ))}
+                </div>
+                </div>
+                </section>
+
+
+            <section className="w-full py-20 bg-[#0f1f16]">
+                <h2 className="text-3xl font-bold text-center text-[#7ED957] mb-12">
+                    Equipe de Desenvolvedores:
                 </h2>
                 <div className="flex flex-wrap justify-center gap-8">
                     {team.map((member, index) => (
@@ -124,6 +151,7 @@ function Sobre() {
                                 alt={member.name}
                                 className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <p>Dev. Fullstack Jr.</p>
                                 <a
                                     href={member.linkedin}
                                     target="_blank"

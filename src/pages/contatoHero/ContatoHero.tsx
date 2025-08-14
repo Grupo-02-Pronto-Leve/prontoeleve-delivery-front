@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import salada from "../../assets/salada.png";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaEnvelopeOpenText, FaRegCommentDots, FaRegUser } from "react-icons/fa";
+import Navbar from "../../components/navbar/Navbar";
 
-const Contato: React.FC = () => {
+
+function ContatoHero() {
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -57,7 +59,10 @@ const Contato: React.FC = () => {
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center bg-black p-6 py-30">
+      <div className="fixed top-0 left-0 w-full z-50">
+        <Navbar />
+      </div>
+      <div className="min-h-screen flex items-center justify-center bg-black p-6">
         <div className="flex flex-col md:flex-row items-center gap-10 max-w-5xl w-full">
           
           {/* Imagem */}
@@ -152,7 +157,7 @@ const Contato: React.FC = () => {
         </div>
       </div>
     </>
-   );
+  );
 };
 
-export default Contato;
+export default ContatoHero;

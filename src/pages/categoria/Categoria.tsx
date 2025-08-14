@@ -32,7 +32,7 @@ function Categoria() {
 
           <ListaCategoria />
         </div> 
-       </div>
+      </div>
     </>
   );
 }
