@@ -1,69 +1,125 @@
-# React + TypeScript + Vite
+📇 Delivery Pronto&Leve – Sistema de Gestão de Pedidos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto integrador III, desenvolvido como parte do projeto final da Generation Brasil, com o objetivo de criar um sistema completo para gestão de pedidos, produtos, categorias e clientes, facilitando a organização e o acompanhamento das operações do delivery.
 
-Currently, two official plugins are available:
+🧾 1. Sobre o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Delivery Pronto&Leve pensa nas pessoas com restrições alimentares. Aqui, você encontra pratos fresquinhos, preparados com ingredientes selecionados e aquele toque especial de sabor caseiro.
+Nosso delivery é ágil, garante comida quentinha e o sabor que você merece, entregue diretamente na sua porta.
 
-## Expanding the ESLint configuration
+Delivery ágil para impulsionar o seu negócio
+Uma plataforma feita para você vender mais, simplificar operações e encantar seus clientes.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🛠️ 2. Funcionalidades do Sistema
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Cadastrar e editar categorias:Adicione novas categorias e gerencie as existentes de forma simples e rápida.
+Busca por restrição alimentar:Facilite a vida do cliente filtrando produtos conforme alergias e preferências.
+Gerenciamento de produtos:Cadastre, edite e remova produtos de forma prática, com imagens e descrições.
+Autenticação de Usuário:Cadastro e login de usuário com autenticação via token.
+CRUD completo de pedidos e clientes:Gerencie pedidos e informações dos clientes de forma intuitiva.
+Sistema de rotas com React Router:Navegação fluida entre páginas.
+Feedbacks visuais com React Toastify:Notificações de ações realizadas no sistema.
+Sidebar expansível e footer fixo:Com links úteis para navegação rápida.
+Scroll automático para o topo:Facilita a experiência do usuário ao trocar de página.
+Interface responsiva:Adequada para diferentes tamanhos de tela, garantindo acesso via desktop ou mobile.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+🧰 3. Tecnologias Utilizadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Frontend
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+As ferramentas e bibliotecas utilizadas para o desenvolvimento da interface e experiência do usuário são:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+React – Biblioteca JavaScript para construir interfaces de usuário.
+TypeScript – Superset do JavaScript que adiciona tipagem estática.
+TailwindCSS – Framework de CSS utilitário para estilização rápida.
+Axios – Biblioteca para realizar requisições HTTP.
+React Router – Biblioteca para roteamento em aplicações React.
+Vite – Ferramenta de build e bundler rápido para projetos frontend.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Backend
+
+As tecnologias utilizadas para o desenvolvimento do servidor e da lógica de negócio são:
+
+Node.js – Ambiente de execução JavaScript no servidor.
+Nest.js – Framework Node.js para criar aplicações escaláveis e estruturadas.
+Passport – Middleware para autenticação de usuários.
+TypeORM – ORM para TypeScript e JavaScript, facilitando a interação com bancos de dados.
+Jest – Framework para testes unitários e de integração.
+
+🧭 4. Navegação e Páginas Principais
+
+Home: Página inicial com apresentação e acesso ao sistema.
+Dashboard: Tela principal após login, com visão geral dos pedidos e produtos.
+Pedidos: Listagem e gerenciamento de pedidos, com opções para cadastrar, editar e atualizar status.
+Produtos: Gerenciamento de produtos, incluindo cadastro, edição e exclusão.
+Categorias: Controle das categorias de produtos.
+Perfil: Visualização e edição do perfil do usuário.
+Cadastro: Formulário para novo usuário se cadastrar.
+Login: Autenticação para acesso ao sistema.
+
+📌 5. Por que vender com a gente?
+
+Gestão de pedidos fácil e rápida:Controle e organize todos os pedidos em tempo real, sem complicação.
+Pagamentos seguros e rápidos:Receba seus pagamentos de forma confiável e ágil, sem atrasos.
+Mais visibilidade para o seu negócio:Atraia novos clientes e destaque sua marca na nossa plataforma.
+Relatórios e insights de vendas:Analise os dados do seu negócio e tome decisões mais inteligentes.
+Suporte dedicado:Nossa equipe está sempre pronta para te ajudar quando precisar.
+Apoio ao seu crescimento:Estamos ao seu lado para te ajudar a expandir seu negócio com sucesso.
+
+⚙️ 6. Como funciona
+
+Cadastre seu negócio:Crie seu perfil na plataforma e configure seu cardápio rapidamente.
+Receba pedidos em tempo real:Tenha controle total dos pedidos, notificações instantâneas e fácil gestão.
+Entregue com nossa logística integrada:Nossa rede de entregadores garante que seus pedidos cheguem rápido e com segurança.
+
+🚀 7. Como Rodar o Projeto
+
+Pré-requisitos
+Node.js instalado
+Gerenciador de pacotes (yarn recomendado)
+
+Passos
+
+Clonar o repositório:
+
+git clone https://github.com/seu-usuario/delivery-prontoeleve.git
+
+Entrar na pasta do projeto:
+
+cd delivery-prontoeleve
+
+Instalar as dependências:
+
+yarn
+
+Iniciar o servidor de desenvolvimento:
+
+yarn dev
+
+🧪 8. Testes e Validações
+
+Testes manuais para verificar navegação entre rotas.
+Validação visual da responsividade em múltiplos dispositivos.
+Confirmação do funcionamento dos formulários e modais de exclusão.
+Verificação das notificações e feedbacks ao usuário.
+
+📈 9. Próximos Passos e Melhorias Futuras
+
+Implementar dashboard com métricas de vendas e desempenho.
+Sistema de login completo com autenticação e autorização.
+Histórico de pedidos e interação com clientes.
+Integração com APIs externas para automação de notificações e promoções.
+Melhorias na acessibilidade e usabilidade do sistema.
+
+👥 10. Equipe
+
+Adrielli Bertoldo
+Diego Cavalcanti
+Natália Gadelha
+Natália Taira
+Nathalia Carvalho
+Miguel Ferreira
+Taís Escobar
+
+"Sua fome, nossa missão! Aqui, pensamos nas pessoas e suas necessidades alimentares." - Equipe Pronto&Leve
+
