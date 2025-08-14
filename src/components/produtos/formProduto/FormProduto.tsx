@@ -300,9 +300,8 @@ function FormProduto() {
                                 <div className="mt-2 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-center">
                                     <button
                                         type="submit"
-                                        className="rounded-2xl disabled:opacity-100 cursor-pointer bg-gradient-to-r from-teal-400 to-ligth-green
-                               hover:from-ligth-green hover:to-teal-400 shadow-lg shadow-emerald-500/20
-                               text-white font-bold w-full sm:w-48 py-3 flex justify-center"
+                                        className="rounded-2xl disabled:opacity-100 cursor-pointer bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 shadow-lg shadow-emerald-500/20
+                                                text-white font-bold w-full sm:w-48 py-3 flex justify-center"
                                         disabled={isLoading}
                                         aria-busy={isLoading}
                                         aria-live="polite"
@@ -324,8 +323,8 @@ function FormProduto() {
                                     <button
                                         type="button"
                                         onClick={() => navigate(-1)} // ou navigate('/produtos')
-                                        className="rounded-2xl border cursor-pointer border-white/10 bg-white/10 hover:bg-white/20
-                               text-white font-semibold w-full sm:w-48 py-3 flex justify-center transition"
+                                        className="rounded-2xl border cursor-pointer border-white/10 bg-gradient-to-r from-rose-500 to-red-600 hover:brightness-110
+                                                text-white font-semibold w-full sm:w-48 py-3 flex justify-center transition"
                                     >
                                         Cancelar
                                     </button>

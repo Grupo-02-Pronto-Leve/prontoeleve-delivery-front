@@ -16,8 +16,8 @@ function Produto() {
             <Link
               to="/cadastrarproduto"
               className="inline-flex items-center gap-2 rounded-xl px-4 py-2
-                         bg-gradient-to-r from-teal-400 to-ligth-green text-white font-semibold
-                         hover:from-ligth-green hover:to-teal-400 shadow-sm transition"
+                         bg-gradient-to-r text-white font-semibold
+                          from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 shadow-sm transition"
             >
               + Novo Produto
             </Link>

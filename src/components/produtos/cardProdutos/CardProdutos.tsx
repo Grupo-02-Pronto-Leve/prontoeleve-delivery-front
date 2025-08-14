@@ -66,7 +66,7 @@ function CardProdutos({ produto }: CardProdutosProps) {
         <Link to={`/editarproduto/${produto.id}`} className="flex-1">
           <button
             type="button"
-            className={`${btnBase} cursor-pointer bg-gradient-to-r from-teal-400 to-ligth-green hover:from-ligth-green hover:to-teal-400`}
+            className={`${btnBase} cursor-pointer bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700`}
           >
             Editar
             <PencilLine size={18} weight="light" />

@@ -103,7 +103,7 @@ function Sobre() {
 
             <section className="w-full py-20 bg-[#0f1f16]">
                 <div className="container mx-auto px-4 py-8">
-                <h2 className="text-3xl font-bold text-center text-green-400 mb-6">
+                <h2 className="text-3xl font-bold text-center text-[#7ED957] mb-6">
                     Tecnologias Frontend
                 </h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 justify-items-center">
@@ -118,7 +118,7 @@ function Sobre() {
                     ))}
                 </div>
 
-                <h2 className="text-3xl font-bold text-center text-green-400 mt-10 mb-6">
+                <h2 className="text-3xl font-bold text-center text-[#7ED957] mt-10 mb-6">
                     Tecnologias Backend
                 </h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-items-center">
