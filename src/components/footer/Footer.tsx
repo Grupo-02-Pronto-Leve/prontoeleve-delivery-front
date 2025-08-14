@@ -10,7 +10,7 @@ function Footer() {
       <div className="bg-black/95 backdrop-blur text-white">
         <div
           className="max-w-7xl mx-auto min-h-[260px] py-12 
-          grid grid-cols-1 md:grid-cols-3 gap-10 items-start"
+          grid grid-cols-1 md:grid-cols-3 gap-10 items-center"
         >
           {/* Coluna 1 e 2: Logo + Texto */}
           <div className="flex items-start gap-8 col-span-2">
