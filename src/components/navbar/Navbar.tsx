@@ -6,6 +6,7 @@ import { HiOutlineBolt, HiOutlineCake } from "react-icons/hi2";
 import { AuthContext } from "../../contexts/AuthContext";
 import logo from "../../assets/logo.png";
 import prontoeleve from "../../assets/prontoeleve.png";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -126,8 +127,9 @@ function Navbar() {
                   role="menuitem"
                   onClick={() => {
                     setProfileOpen(false);
+                    ToastAlerta('Você saiu com sucesso.', 'info');
                     handleLogout();
-                    navigate("/");
+                    navigate("/", { replace: true });
                   }}
                   className="mt-1 w-full px-3 py-2 rounded-lg text-left text-sm text-white bg-red-600 hover:bg-red-700"
                 >
