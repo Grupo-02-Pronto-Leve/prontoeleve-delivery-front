@@ -15,93 +15,92 @@ Uma plataforma feita para você vender mais, simplificar operações e encantar 
 
 ## 🛠️ 2. Funcionalidades do Sistema
 
--Cadastrar e editar categorias:
-Adicione novas categorias e gerencie as existentes de forma simples e rápida.
+• Cadastrar e editar categorias: Adicione novas categorias e gerencie as existentes de forma simples e rápida.
 
--Busca por restrição alimentar:
-Facilite a vida do cliente filtrando produtos conforme alergias e preferências.
+• Gerenciamento de produtos: Cadastre, edite e remova produtos de forma prática, com imagens e descrições.
 
--Gerenciamento de produtos:
-Cadastre, edite e remova produtos de forma prática, com imagens e descrições.
+• Autenticação de Usuário: Cadastro e login de usuário com autenticação via token.
 
--Autenticação de Usuário:
-Cadastro e login de usuário com autenticação via token.
+• CRUD completo de pedidos e clientes: Gerencie pedidos e informações dos clientes de forma intuitiva.
 
--CRUD completo de pedidos e clientes:
-Gerencie pedidos e informações dos clientes de forma intuitiva.
+• Sistema de rotas com React Router: Navegação fluida entre páginas.
 
--Sistema de rotas com React Router:
-Navegação fluida entre páginas.
+• Feedbacks visuais com React Toastify: Notificações de ações realizadas no sistema.
 
--Feedbacks visuais com React Toastify:
-Notificações de ações realizadas no sistema.
+• Sidebar expansível e footer fixo: Com links úteis para navegação rápida.
 
--Sidebar expansível e footer fixo:
-Com links úteis para navegação rápida.
-
--Scroll automático para o topo:
-Facilita a experiência do usuário ao trocar de página.
-
--Interface responsiva:
-Adequada para diferentes tamanhos de tela, garantindo acesso via desktop ou mobile.
+• Scroll automático para o topo: Facilita a experiência do usuário ao trocar de página.
+ 
+• Interface responsiva: Adequada para diferentes tamanhos de tela, garantindo acesso via desktop ou mobile.
 
 ---
 
-## 🧰 3. Tecnologias Utilizadas
+## 🌟 3. Funcionalidade Especial
+
+• Busca por Restrições Alimentares.
+
+• Essa funcionalidade permite que os usuários encontrem facilmente produtos de acordo com suas necessidades de saúde.
+
+• Filtra itens por palavras-chave como “sem glúten”, “sem lactose” ou outras restrições.
+
+• Facilita a experiência do cliente, tornando a escolha de produtos mais rápida e segura.
+
+---
+
+## 🧰 4. Tecnologias Utilizadas
 **Frontend**
 
 As ferramentas e bibliotecas utilizadas para o desenvolvimento da interface e experiência do usuário são:
 
-**React** - biblioteca JavaScript para construir interfaces de usuário.
+• React – biblioteca JavaScript para construir interfaces de usuário.
 
-**TypeScript** - superset do JavaScript que adiciona tipagem estática.
+• TypeScript – superset do JavaScript que adiciona tipagem estática.
 
-**TailwindCSS** - framework de CSS utilitário para estilização rápida.
+• TailwindCSS – framework de CSS utilitário para estilização rápida.
 
-**Axios** - biblioteca para realizar requisições HTTP.
+• Axios – biblioteca para realizar requisições HTTP.
 
-**React Router** - biblioteca para roteamento em aplicações React.
+• React Router – biblioteca para roteamento em aplicações React.
 
-**Vite** - ferramenta de build e bundler rápido para projetos frontend.
-
+• Vite – ferramenta de build e bundler rápido para projetos frontend.
 
 **Backend**
 
 As tecnologias utilizadas para o desenvolvimento do servidor e da lógica de negócio são:
 
-**Node.js** - Ambiente de execução JavaScript no servidor.
+• Node.js – Ambiente de execução JavaScript no servidor.
 
-**Nest.js** - Framework Node.js para criar aplicações escaláveis e estruturadas.
+• Nest.js – Framework Node.js para criar aplicações escaláveis e estruturadas.
 
-**Passport** - Middleware para autenticação de usuários.
+• Passport – Middleware para autenticação de usuários.
 
-**TypeORM** - ORM para TypeScript e JavaScript, facilitando a interação com bancos de dados.
+• TypeORM – ORM para TypeScript e JavaScript, facilitando a interação com bancos de dados.
 
-**Jest** - Framework para testes unitários e de integração.
-
----
-
-## 🧭 4. Navegação e Páginas Principais
-
-Home: Página inicial com apresentação e acesso ao sistema.
-
-Dashboard: Tela principal após login, com visão geral dos pedidos e produtos.
-
-Pedidos: Listagem e gerenciamento de pedidos, com opções para cadastrar, editar e atualizar status.
-
-Produtos: Gerenciamento de produtos, incluindo cadastro, edição e exclusão.
-
-Categorias: Controle das categorias de produtos.
-
-Perfil: Visualização e edição do perfil do usuário.
-
-Cadastro: Formulário para novo usuário se cadastrar.
-
-Login: Autenticação para acesso ao sistema.
+• Jest – Framework para testes unitários e de integração.
 
 ---
 
-## 📌 5. Por que vender com a gente?
+## 🧭 5. Navegação e Páginas Principais
+
+• Home: Página inicial com apresentação e acesso ao sistema.
+
+• Dashboard: Tela principal após login, com visão geral dos pedidos e produtos.
+
+• Pedidos: Listagem e gerenciamento de pedidos, com opções para cadastrar, editar e atualizar status.
+
+• Produtos: Gerenciamento de produtos, incluindo cadastro, edição e exclusão.
+
+• Categorias: Controle das categorias de produtos.
+
+• Perfil: Visualização e edição do perfil do usuário.
+
+• Cadastro: Formulário para novo usuário se cadastrar.
+
+• Login: Autenticação para acesso ao sistema.
+
+---
+
+## 📌 6. Por que vender com a gente?
 
 • Gestão de pedidos fácil e rápida: Controle e organize todos os pedidos em tempo real, sem complicação.
 
@@ -117,7 +116,7 @@ Login: Autenticação para acesso ao sistema.
 
 ---
 
-## ⚙️ 6. Como funciona
+## ⚙️ 7. Como funciona
 
 • Cadastre seu negócio: Crie seu perfil na plataforma e configure seu cardápio rapidamente.
 
@@ -127,7 +126,7 @@ Login: Autenticação para acesso ao sistema.
 
 ---
 
-## 🚀 7. Como Rodar o Projeto
+## 🚀 8. Como Rodar o Projeto
 Pré-requisitos
 
 • Node.js instalado
@@ -151,7 +150,7 @@ yarn dev
 
 ---
 
-## 🧪 8. Testes e Validações
+## 🧪 9. Testes e Validações
 
 • Testes manuais para verificar navegação entre rotas.
 
@@ -163,7 +162,7 @@ yarn dev
 
 ---
 
-## 📈 9. Próximos Passos e Melhorias Futuras
+## 📈 10. Próximos Passos e Melhorias Futuras
 
 • Implementação de carrinho de compras para gerenciar ordens de forma prática.
 
@@ -175,7 +174,7 @@ yarn dev
 
 ---
 
-## 👥 10. Equipe
+## 👥 111 . Equipe
 
 Adrielli Bertoldo
 Diego Cavalcanti
