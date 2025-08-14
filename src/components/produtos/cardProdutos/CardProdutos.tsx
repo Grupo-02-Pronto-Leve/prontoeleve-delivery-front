@@ -11,7 +11,7 @@ function CardProdutos({ produto }: CardProdutosProps) {
     produto.foto && produto.foto.trim() !== ""
       ? produto.foto
       // verificar a foto que vamos deixar padrao
-      : "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1200&auto=format&fit=crop";
+      : "https://bubuyog.com.br/images/foto-indisponivel.png";
 
   const categoria =
     produto.categoria?.nome ?? produto.categoria?.descricao ?? "Categoria";

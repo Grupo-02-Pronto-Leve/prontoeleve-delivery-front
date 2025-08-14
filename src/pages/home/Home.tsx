@@ -1,14 +1,21 @@
+import { Link } from "react-router-dom";
+import prontoelevehorizontal from "../../assets/prontoelevehorizontal.png";
 import Navbar from "../../components/navbar/Navbar";
 import "../../index.css";
+import Contato from "../contato/Contato";
 
 function Home() {
   return (
     <>
       <Navbar />
 
-      <div className="fundoHome min-h-screen w-full flex flex-col items-center justify-center text-center bg-cover bg-center px-4 bg-black/60 bg-cover">
-        <div className="bg-green-700 bg-opacity-80 rounded-md px-4 py-1 mb-4 font-marko text-white text-xs uppercase tracking-widest">
-          Pronto&Leve
+      <div className="fundoHome min-h-screen w-full bg-cover bg-center flex flex-col items-center justify-center text-center px-4 bg-black/60">
+        <div className="bg-green-700 bg-opacity-80 rounded-md px-4 py-2 mb-4 font-marko text-white text-xs uppercase tracking-widest">
+          <img
+            src={prontoelevehorizontal}
+            alt="Logo Pequena"
+            className="h-5 w-auto filter brightness-0 invert"
+          />
         </div>
 
         <h1 className="text-4xl md:text-6xl font-semibold font-marko text-white max-w-4xl mb-4">
@@ -19,10 +26,14 @@ function Home() {
           Uma plataforma feita para você vender mais, simplificar operações e
           encantar seus clientes.
         </p>
-
-        <button className="font-marko bg-green-700 px-6 py-2 rounded-full text-white text-sm hover:bg-olive-800 transition cursor-pointer">
-          CONHEÇA AGORA
-        </button>
+        <Link to="/login">
+          <button
+            type="button"
+            className="font-marko bg-green-700 px-6 py-2 rounded-full text-white text-sm hover:bg-olive-800 transition cursor-pointer"
+          >
+            CONHEÇA AGORA
+          </button>
+        </Link>
       </div>
 
       <section className="bg-[#0c0c0c] text-white py-30 px-6">
@@ -274,11 +285,15 @@ function Home() {
             Junte-se aos nossos parceiros e leve seu negócio para o próximo
             nível.
           </p>
-          <button className="bg-white text-green-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 cursor-pointer">
-            Seja um parceiro agora
-          </button>
+          <Link to="/cadastro">
+            <button className="bg-white text-green-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 cursor-pointer">
+              Seja um parceiro agora
+            </button>
+          </Link>
         </div>
       </section>
+
+      <Contato />
     </>
   );
 }

@@ -341,7 +341,7 @@ function FormProduto() {
                                                 src={
                                                     produto.foto && produto.foto.trim() !== ""
                                                         ? produto.foto
-                                                        : "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop"
+                                                        : "https://bubuyog.com.br/images/foto-indisponivel.png"
                                                 }
                                                 alt={produto.nome || "Prévia do produto"}
                                                 className="h-56 w-full object-cover"

@@ -5,7 +5,8 @@ import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import type Produto from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
-import { Comment } from "react-loader-spinner";
+// import { Comment } from "react-loader-spinner";
+import { PacmanLoader } from "react-spinners";
 import {ToastAlerta} from "../../../utils/ToastAlerta";
 import BarraBusca from "../buscaRestricao/BarraBusca";
 // import ModalProduto from "../modalProduto/ModalProduto";
@@ -50,8 +51,9 @@ function ListaProdutos() {
         <>
         {/* <ModalProduto /> */}
             {produtos.length === 0 && (
-                <div className="flex items-center justify-center h-screen">
-                    <Comment
+                <div className="flex mt-30 justify-center h-screen">
+                    <PacmanLoader color="#80ed99" size={50} />
+                    {/* <Comment
                         visible={true}
                         height="80"
                         width="80"
@@ -60,7 +62,7 @@ function ListaProdutos() {
                         wrapperClass="comment-wrapper mx-auto"
                         color="#fff"
                         backgroundColor="#80ed99"
-                    />
+                    /> */}
                 </div>
             )}
             <div className="flex flex-col items-center w-full my-4"></div>

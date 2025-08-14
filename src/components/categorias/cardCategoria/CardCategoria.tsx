@@ -38,12 +38,12 @@ function CardCategoria({ categoria }: CardCategoriasProps) {
       const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="relative flex flex-col items-center p-6 bg-white shadow-md rounded-lg hover:shadow-lg transition w-64">
+    <div className="relative flex flex-col items-center p-6 text-white bg-[#23272D] shadow-md rounded-lg hover:shadow-lg transition w-64">
       {/* Botão de três pontinhos */}
       <div className="absolute top-2 right-2">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="p-1 rounded-full hover:bg-gray-100 transition"
+          className="p-1 rounded-full hover:bg-gray-400 transition"
         >
           <BsThreeDotsVertical size={20} />
         </button>
@@ -73,7 +73,7 @@ function CardCategoria({ categoria }: CardCategoriasProps) {
         <Icon />
       </div>
       <h3 className="font-semibold text-lg text-center">{categoria.nome}</h3>
-      <p className="text-gray-500 text-sm text-center">{categoria.descricao}</p>
+      <p className="text-gray-300 text-sm text-center">{categoria.descricao}</p>
     </div>
   );
 }

@@ -5,7 +5,8 @@ import type Categoria from "../../../models/Categoria";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
-import { DNA } from "react-loader-spinner";
+import { PacmanLoader } from "react-spinners";
+// import { DNA } from "react-loader-spinner";
 import CardCategoria from "../cardCategoria/CardCategoria";
 
 function ListaCategorias() {
@@ -43,14 +44,17 @@ function ListaCategorias() {
     return (
         <>
         {categorias.length === 0 && (
-            <DNA
-            visible={true}
-            height="200"
-            width="200"
-            ariaLabel="dna-loading"
-            wrapperStyle={{}}
-            wrapperClass="dna-wrapper mx-auto"
-        />
+        //     <DNA
+        //     visible={true}
+        //     height="200"
+        //     width="200"
+        //     ariaLabel="dna-loading"
+        //     wrapperStyle={{}}
+        //     wrapperClass="dna-wrapper mx-auto"
+        // />
+        <div className="flex mt-10 justify-center items-center h-screen">
+            <PacmanLoader color="#80ed99" size={50} />
+        </div>
         )}
             <div className="flex justify-center w-full my-4 px-2 sm:px-4">
                 <div className="container flex flex-col">
