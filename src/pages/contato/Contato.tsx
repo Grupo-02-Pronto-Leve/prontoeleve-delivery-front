@@ -1,4 +1,4 @@
-import Navbar from "../../components/navbar/Navbar";
+//import Navbar from "../../components/navbar/Navbar";
 import React, { useState } from "react";
 import burgerImage from "../../assets/salada.png";
 
@@ -140,7 +140,7 @@ const Contato: React.FC = () => {
         </div>
       </div>
     </>
-  );
+   );
 };
 
 export default Contato;
