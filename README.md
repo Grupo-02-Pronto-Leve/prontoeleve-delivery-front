@@ -17,22 +17,31 @@ Uma plataforma feita para você vender mais, simplificar operações e encantar 
 
 -Cadastrar e editar categorias:
 Adicione novas categorias e gerencie as existentes de forma simples e rápida.
+
 -Busca por restrição alimentar:
 Facilite a vida do cliente filtrando produtos conforme alergias e preferências.
+
 -Gerenciamento de produtos:
 Cadastre, edite e remova produtos de forma prática, com imagens e descrições.
+
 -Autenticação de Usuário:
 Cadastro e login de usuário com autenticação via token.
+
 -CRUD completo de pedidos e clientes:
 Gerencie pedidos e informações dos clientes de forma intuitiva.
+
 -Sistema de rotas com React Router:
 Navegação fluida entre páginas.
+
 -Feedbacks visuais com React Toastify:
 Notificações de ações realizadas no sistema.
+
 -Sidebar expansível e footer fixo:
 Com links úteis para navegação rápida.
+
 -Scroll automático para o topo:
 Facilita a experiência do usuário ao trocar de página.
+
 -Interface responsiva:
 Adequada para diferentes tamanhos de tela, garantindo acesso via desktop ou mobile.
 
