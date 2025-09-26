@@ -4,29 +4,29 @@ import Navbar from "../../components/navbar/Navbar";
 
 function Sobre() {
     const frontendTechs = [
-        { name: "React", img: "https://ik.imagekit.io/iyc9bztrf8/reactmenorLogo.png?updatedAt=1755102234323" },
-        { name: "TypeScript", img: "https://ik.imagekit.io/iyc9bztrf8/Typescript_logo_2020.svg.png?updatedAt=1755104841563" },
-        { name: "TailwindCSS", img: "https://ik.imagekit.io/iyc9bztrf8/tailwindcssLogo.png?updatedAt=1755102234546" },
-        { name: "Axios", img: "https://ik.imagekit.io/iyc9bztrf8/axiosLogo.png?updatedAt=1755102234779" },
-        { name: "React Router", img: "https://ik.imagekit.io/iyc9bztrf8/reactRouterLogo.png?updatedAt=1755102234645" },
-        { name: "Vite", img: "https://ik.imagekit.io/iyc9bztrf8/viteLogo.png?updatedAt=1755102234607" },
+        { name: "React", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/reactmenorLogo.png?updatedAt=1757553832544" },
+        { name: "TypeScript", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/Typescript_logo_2020.svg.png?updatedAt=1757553885381" },
+        { name: "TailwindCSS", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/tailwindcssLogo.png?updatedAt=1757553928945" },
+        { name: "Axios", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/axiosLogo.png?updatedAt=1757553911007" },
+        { name: "React Router", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/reactRouterLogo.png?updatedAt=1757553911545" },
+        { name: "Vite", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/viteLogo.png?updatedAt=1757553831698" },
     ];
 
     const backendTechs = [
-        { name: "Node.js", img: "https://ik.imagekit.io/iyc9bztrf8/nodeLogo.png?updatedAt=1755102234550" },
-        { name: "Nest.js", img: "https://ik.imagekit.io/iyc9bztrf8/nestLogo.png?updatedAt=1755102234576" },
-        { name: "Passport", img: "https://ik.imagekit.io/iyc9bztrf8/passportLogo.png?updatedAt=1755102235954" },
-        { name: "Jest", img: "https://ik.imagekit.io/iyc9bztrf8/jestLogo.png?updatedAt=1755102234434" },
-        { name: "TypeORM", img: "https://ik.imagekit.io/iyc9bztrf8/typeormLogo.png?updatedAt=1755102234924" },
+        { name: "Node.js", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/nodeLogo.png?updatedAt=1757553832296" },
+        { name: "Nest.js", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/nestLogo.png?updatedAt=1757553832009" },
+        { name: "Passport", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/passportLogo.png?updatedAt=1757553910440" },
+        { name: "Jest", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/jestLogo.png?updatedAt=1757553929215" },
+        { name: "TypeORM", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/typeormLogo.png?updatedAt=1757553910758" },
     ];
 
     const team = [
         { name: "Adrielli Bertoldo", img: "https://github.com/Adrielli-Bertoldo.png", linkedin: "https://www.linkedin.com/in/adrielli-bertoldo/", github: "https://github.com/Adrielli-Bertoldo" },
-        { name: "Diego Cavalcanti", img: "https://ik.imagekit.io/iyc9bztrf8/diego.jpg?updatedAt=1755102273597", linkedin: "https://www.linkedin.com/in/diegoscavalcanti/", github: "https://github.com/diegocavalcanti-dev" },
+        { name: "Diego Cavalcanti", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/diego.jpg?updatedAt=1757553910186", linkedin: "https://www.linkedin.com/in/diegoscavalcanti/", github: "https://github.com/diegocavalcanti-dev" },
         { name: "Miguel Ferreira", img: "https://github.com/devvMiguel.png", linkedin: "https://www.linkedin.com/in/ferreir4miguel/", github: "https://github.com/devvMiguel" },
-        { name: "Natália Gadelha", img: "https://ik.imagekit.io/iyc9bztrf8/nataliag.jpeg?updatedAt=1755102273677", linkedin: "https://www.linkedin.com/in/natalia-gadelha/", github: "https://github.com/NataliaGadelha" },
+        { name: "Natália Gadelha", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/nataliag.jpeg?updatedAt=1757553889534", linkedin: "https://www.linkedin.com/in/natalia-gadelha/", github: "https://github.com/NataliaGadelha" },
         { name: "Natalia Taira", img: "https://ik.imagekit.io/iyc9bztrf8/nataliat.jpeg?updatedAt=1755102273747", linkedin: "https://www.linkedin.com/in/nataliataira/", github: "https://github.com/nataliataira" },
-        { name: "Nathalia Carvalho", img: "https://ik.imagekit.io/iyc9bztrf8/nathaliac.png?updatedAt=1755102274054", linkedin: "https://www.linkedin.com/in/naah-carvalho/", github: "https://github.com/naahcarvalho" },
+        { name: "Nathalia Carvalho", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/nathaliac.png?updatedAt=1757553888810", linkedin: "https://www.linkedin.com/in/naah-carvalho/", github: "https://github.com/naahcarvalho" },
         { name: "Taís Escobar", img: "https://ik.imagekit.io/iyc9bztrf8/tais.jpg?updatedAt=1755102274340", linkedin: "https://www.linkedin.com/in/taismqescobar/", github: "https://github.com/taismichely" },
     ];
 
