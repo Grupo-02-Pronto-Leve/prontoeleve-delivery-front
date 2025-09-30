@@ -45,8 +45,13 @@ function Login() {
             <div className="max-w-5xl w-full grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="flex flex-col items-center gap-2">
-                  <img src={logo} alt="Logo" className="h-30 w-auto rounded-lg" />
-                  <img src={prontoelevehorizontal} alt="Logo Pequena" className="h-10 w-auto" />
+                  <Link to="/home">
+                  <img src={logo} alt="Logo" className="h-30 w-auto rounded-lg cursor-pointer" />
+                </Link>
+
+                <Link to="/home">
+                  <img src={prontoelevehorizontal} alt="Logo Pequena" className="h-10 w-auto cursor-pointer" />
+                </Link>
                 </div>
                 <p className="text-white text-xl font-marko text-relaxed pt-3 text-center">
                   Solução moderna e inclusiva para você!
