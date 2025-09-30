@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import salada from "../../assets/salada.png";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaEnvelopeOpenText, FaRegCommentDots, FaRegUser } from "react-icons/fa";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 const Contato: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -50,7 +51,7 @@ const Contato: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
-      alert("Mensagem enviada com sucesso!");
+      ToastAlerta("Mensagem enviada com sucesso!", "sucesso");
       setFormData({ nome: "", email: "", assunto: "", mensagem: "" });
     }
   };
