@@ -152,8 +152,13 @@ function Cadastro() {
 
             {/* Coluna de imagens */}
             <div className="flex flex-col items-center text-center gap-3 sm:gap-4 px-2 sm:px-4">
-              <img src={logo} alt="Logo" className="h-16 sm:h-32 max-w-full rounded-lg" />
-              <img src={prontoelevehorizontal} alt="Logo Pequena" className="h-6 sm:h-10 max-w-full" />
+              <Link to="/home">
+                  <img src={logo} alt="Logo" className="h-30 w-auto rounded-lg cursor-pointer" />
+              </Link>
+
+              <Link to="/home">
+                  <img src={prontoelevehorizontal} alt="Logo Pequena" className="h-10 w-auto cursor-pointer" />
+              </Link>
               <p className="text-white text-sm sm:text-xl font-marko max-w-[90%]">
                 Solução moderna e inclusiva para você!
               </p>
