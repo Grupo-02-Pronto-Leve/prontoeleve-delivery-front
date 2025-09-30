@@ -3,6 +3,7 @@ import salada from "../../assets/salada.png";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaEnvelopeOpenText, FaRegCommentDots, FaRegUser } from "react-icons/fa";
 import Navbar from "../../components/navbar/Navbar";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 
 function ContatoHero() {
@@ -52,7 +53,7 @@ function ContatoHero() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
-      alert("Mensagem enviada com sucesso!");
+      ToastAlerta("Mensagem enviada com sucesso!", "sucesso");
       setFormData({ nome: "", email: "", assunto: "", mensagem: "" });
     }
   };
