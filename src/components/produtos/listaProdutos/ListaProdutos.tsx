@@ -5,11 +5,11 @@ import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import type Produto from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
-// import { Comment } from "react-loader-spinner";
-import { PacmanLoader } from "react-spinners";
+//import { Comment } from "react-loader-spinner";
+//import { PacmanLoader } from "react-spinners";
 import {ToastAlerta} from "../../../utils/ToastAlerta";
 import BarraBusca from "../buscaRestricao/BarraBusca";
-// import ModalProduto from "../modalProduto/ModalProduto";
+//import ModalProduto from "../modalProduto/ModalProduto";
 
 function ListaProdutos() {
 
