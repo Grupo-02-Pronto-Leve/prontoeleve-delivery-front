@@ -7,6 +7,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import logo from "../../assets/logo.png";
 import prontoeleve from "../../assets/prontoeleve.png";
 import { ToastAlerta } from "../../utils/ToastAlerta";
+import { ShoppingCartIcon } from "@phosphor-icons/react";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -79,6 +80,12 @@ function Navbar() {
                 <NavLink to="/produtos" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
                   <HiOutlineCake />
                   Produtos
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/cardapio" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
+                  <ShoppingCartIcon />
+                  Cardápio
                 </NavLink>
               </li>
             </>
@@ -191,6 +198,7 @@ function Navbar() {
               <>
                 <NavLink onClick={() => setOpen(false)} to="/categorias" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Categorias</NavLink>
                 <NavLink onClick={() => setOpen(false)} to="/produtos" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Produtos</NavLink>
+                <NavLink onClick={() => setOpen(false)} to="/cardapio" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Cardápio</NavLink>
               </>
             )}
 

@@ -20,11 +20,14 @@ import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCa
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Sobre from "./pages/sobre/Sobre";
+import { CartProvider } from "./contexts/CartContext";
+import Cardapio from "./components/cardapio/Cardapio";
 
 function App() {
   return (
     <>
       <AuthProvider>
+        <CartProvider>
         <ToastContainer />
         <BrowserRouter>
           <div className="min-h-[80vh]">
@@ -33,8 +36,8 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/cardapio" element={<Cardapio />} />
               <Route path="/categorias" element={<Categoria />} />
-              <Route path="/categorias/cadastrar" element={<FormCategoria />} />
               <Route path="/categorias/:id" element={<FormCategoria />} />
               <Route path="/cadastrarcategoria" element={<FormCategoria />} />
               <Route path="/editarcategoria/:id" element={<FormCategoria />} />
@@ -52,6 +55,7 @@ function App() {
           </div>
           <Footer />
         </BrowserRouter>
+        </CartProvider>
       </AuthProvider>
     </>
   );
