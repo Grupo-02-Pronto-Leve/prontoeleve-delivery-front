@@ -71,7 +71,7 @@ function Login() {
                   Usuário
                 </label>
                 <div className="relative mb-4">
-                <MdOutlineAlternateEmail className="absolute top-3 left-3 text-gray-300" />
+                <MdOutlineAlternateEmail className="absolute top-3 left-3 text-gray-400" />
                 <input
                   type="text"
                   id="usuario"
