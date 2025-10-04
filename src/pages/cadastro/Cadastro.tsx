@@ -112,53 +112,53 @@ function Cadastro() {
                 </div>                
               </div>
               <div className="flex flex-col font-zain text-xl w-full mb-3 sm:mb-4">
-                <label htmlFor="nome" className="font-medium text-white">Nome</label>
+                <label htmlFor="nome" className="font-medium text-white">Usuário</label>
                 <div className="relative">
-                  <span className="absolute top-2.5 left-3 text-gray-400"><FaRegUser /></span>
+                  <span className="absolute top-2.5 left-3 text-gray-400"><MdOutlineAlternateEmail /></span>
                   <input 
                     type="text"
-                    id= "nome"
-                    name= "nome"
-                    placeholder= "Nome"
+                    id= "usuario"
+                    name= "usuario"
+                    placeholder= "E-mail"
                     className="pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lime-600 text-xl"
                   />
                 </div>                
               </div>
               <div className="flex flex-col font-zain text-xl w-full mb-3 sm:mb-4">
-                <label htmlFor="nome" className="font-medium text-white">Nome</label>
+                <label htmlFor="foto" className="font-medium text-white">Foto</label>
                 <div className="relative">
-                  <span className="absolute top-2.5 left-3 text-gray-400"><FaRegUser /></span>
+                  <span className="absolute top-2.5 left-3 text-gray-400"><FaImage /></span>
                   <input 
                     type="text"
-                    id= "nome"
-                    name= "nome"
-                    placeholder= "Nome"
+                    id= "foto"
+                    name= "foto"
+                    placeholder= "URL da imagem"
                     className="pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lime-600 text-xl"
                   />
                 </div>                
               </div>
               <div className="flex flex-col font-zain text-xl w-full mb-3 sm:mb-4">
-                <label htmlFor="nome" className="font-medium text-white">Nome</label>
+                <label htmlFor="senha" className="font-medium text-white">Senha</label>
                 <div className="relative">
-                  <span className="absolute top-2.5 left-3 text-gray-400"><FaRegUser /></span>
+                  <span className="absolute top-2.5 left-3 text-gray-400"><FaLock /></span>
                   <input 
                     type="text"
-                    id= "nome"
-                    name= "nome"
-                    placeholder= "Nome"
+                    id= "senha"
+                    name= "senha"
+                    placeholder= "Senha"
                     className="pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lime-600 text-xl"
                   />
                 </div>                
               </div>
               <div className="flex flex-col font-zain text-xl w-full mb-3 sm:mb-4">
-                <label htmlFor="nome" className="font-medium text-white">Nome</label>
+                <label htmlFor="confirmarsenha" className="font-medium text-white">Confirmar senha</label>
                 <div className="relative">
                   <span className="absolute top-2.5 left-3 text-gray-400"><FaRegUser /></span>
                   <input 
                     type="text"
-                    id= "nome"
-                    name= "nome"
-                    placeholder= "Nome"
+                    id= "confirmarsenha"
+                    name= "confirmarsenha"
+                    placeholder= "Senha novamente"
                     className="pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lime-600 text-xl"
                   />
                 </div>                
