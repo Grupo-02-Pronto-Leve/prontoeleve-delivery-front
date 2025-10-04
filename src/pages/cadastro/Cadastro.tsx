@@ -90,7 +90,7 @@ function Cadastro() {
               <h2 className="font-marko text-xl sm:text-3xl font-semibold text-center mb-2 sm:mb-3">
                 Cadastre-se
               </h2>
-              <p className="text-center font-zain text-sm sm:text-lg mb-3 sm:mb-4">
+              <p className="text-center font-zain text-xl mb-3">
                 Já possui uma conta?{" "}
                 <Link to="/login" className="text-lime-600 hover:underline">
                   Entre
@@ -98,35 +98,71 @@ function Cadastro() {
               </p>
 
               {/* Campos */}
-              {[
-                { id: "nome", icon: <FaRegUser />, placeholder: "Nome" },
-                { id: "usuario", icon: <MdOutlineAlternateEmail />, placeholder: "E-mail" },
-                { id: "foto", icon: <FaImage />, placeholder: "URL da Foto" },
-                { id: "senha", icon: <FaLock />, placeholder: "Senha", type: "password" },
-                { id: "confirmarSenha", icon: <FaLock />, placeholder: "Confirmar Senha", type: "password", confirm: true }
-              ].map((field) => (
-                <div key={field.id} className="flex flex-col font-zain text-sm sm:text-base w-full mb-3 sm:mb-4">
-                  <label htmlFor={field.id} className="mb-1 sm:mb-2 font-medium text-white">
-                    {field.placeholder}
-                  </label>
-                  <div className="relative">
-                    <span className="absolute top-2.5 left-3 text-gray-400">{field.icon}</span>
-                    <input
-                      type={field.type || "text"}
-                      id={field.id}
-                      name={field.id}
-                      placeholder={field.placeholder}
-                      className="pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-lime-600 text-xs sm:text-sm"
-                      value={
-                        field.confirm ? confirmaSenha : (usuario as any)[field.id]
-                      }
-                      onChange={(e) =>
-                        field.confirm ? handleConfirmarSenha(e) : atualizarEstado(e)
-                      }
-                    />
-                  </div>
-                </div>
-              ))}
+              <div className="flex flex-col font-zain text-xl w-full mb-3 sm:mb-4">
+                <label htmlFor="nome" className="font-medium text-white">Nome</label>
+                <div className="relative">
+                  <span className="absolute top-2.5 left-3 text-gray-400"><FaRegUser /></span>
+                  <input 
+                    type="text"
+                    id= "nome"
+                    name= "nome"
+                    placeholder= "Nome"
+                    className="pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lime-600 text-xl"
+                  />
+                </div>                
+              </div>
+              <div className="flex flex-col font-zain text-xl w-full mb-3 sm:mb-4">
+                <label htmlFor="nome" className="font-medium text-white">Nome</label>
+                <div className="relative">
+                  <span className="absolute top-2.5 left-3 text-gray-400"><FaRegUser /></span>
+                  <input 
+                    type="text"
+                    id= "nome"
+                    name= "nome"
+                    placeholder= "Nome"
+                    className="pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lime-600 text-xl"
+                  />
+                </div>                
+              </div>
+              <div className="flex flex-col font-zain text-xl w-full mb-3 sm:mb-4">
+                <label htmlFor="nome" className="font-medium text-white">Nome</label>
+                <div className="relative">
+                  <span className="absolute top-2.5 left-3 text-gray-400"><FaRegUser /></span>
+                  <input 
+                    type="text"
+                    id= "nome"
+                    name= "nome"
+                    placeholder= "Nome"
+                    className="pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lime-600 text-xl"
+                  />
+                </div>                
+              </div>
+              <div className="flex flex-col font-zain text-xl w-full mb-3 sm:mb-4">
+                <label htmlFor="nome" className="font-medium text-white">Nome</label>
+                <div className="relative">
+                  <span className="absolute top-2.5 left-3 text-gray-400"><FaRegUser /></span>
+                  <input 
+                    type="text"
+                    id= "nome"
+                    name= "nome"
+                    placeholder= "Nome"
+                    className="pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lime-600 text-xl"
+                  />
+                </div>                
+              </div>
+              <div className="flex flex-col font-zain text-xl w-full mb-3 sm:mb-4">
+                <label htmlFor="nome" className="font-medium text-white">Nome</label>
+                <div className="relative">
+                  <span className="absolute top-2.5 left-3 text-gray-400"><FaRegUser /></span>
+                  <input 
+                    type="text"
+                    id= "nome"
+                    name= "nome"
+                    placeholder= "Nome"
+                    className="pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lime-600 text-xl"
+                  />
+                </div>                
+              </div>
 
               {/* Botões */}
               <div className="flex flex-col md:flex-row justify-center gap-3 sm:gap-4 font-marko mt-4">
