@@ -71,12 +71,12 @@ function Login() {
                   Usuário
                 </label>
                 <div className="relative mb-4">
-                <MdOutlineAlternateEmail className="absolute top-3 left-3 text-gray-400" />
+                <MdOutlineAlternateEmail className="absolute top-4 left-3 text-gray-400" />
                 <input
                   type="text"
                   id="usuario"
                   name="usuario"
-                  className="pl-10 pr-4 py-2 w-full rounded bg-[#1a1a1a] border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-lime-600"
+                  className="pl-10 pr-4 py-2 w-full rounded text-lg bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lime-600"
                   value={usuarioLogin.usuario}
                   onChange={atualizarEstado}
                   placeholder="Digite seu e-mail"
@@ -90,12 +90,12 @@ function Login() {
                   Senha
                 </label>
                 <div className="relative mb-4">
-                <FaLock className="absolute top-3 left-3 text-gray-400" />
+                <FaLock className="absolute top-4 left-3 text-gray-400" />
                 <input
                   type="password"
                   id="senha"
                   name="senha"
-                  className="pl-10 pr-4 py-2 w-full rounded bg-[#1a1a1a] border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-lime-600"
+                  className="pl-10 pr-4 py-2 w-full rounded text-lg bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lime-600"
                   value={usuarioLogin.senha}
                   onChange={atualizarEstado}
                   placeholder="Digite sua senha"
