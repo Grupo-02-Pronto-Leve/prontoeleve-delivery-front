@@ -1,4 +1,4 @@
-import { type ChangeEvent, useContext, useEffect, useState } from "react";
+import { type ChangeEvent, useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import type UsuarioLogin from "../../models/UsuarioLogin";
@@ -7,20 +7,11 @@ import logo from "../../assets/logo.png";
 import prontoelevehorizontal from "../../assets/prontoelevehorizontal.png"
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
+import { Perfil } from "../../models/Perfil";
 
 function Login() {
   const navigate = useNavigate();
-  const { usuario, handleLogin, isLoading } = useContext(AuthContext);
-
-  // const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
-  //   {} as UsuarioLogin
-  // );
-
-  // useEffect(() => {
-  //   if (usuario.token !== "") {
-  //     navigate("/home");
-  //   }
-  // }, [usuario, navigate]);
+  const { handleLogin, isLoading } = useContext(AuthContext);
 
   const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({
   id: 0,
@@ -29,30 +20,26 @@ function Login() {
   senha: "",
   foto: "",
   token: "",
-  perfil: "CLIENTE", // ou EMPRESA, padrão
+  perfil: Perfil.CLIENTE, // ou EMPRESA, padrão
 });
 
-  useEffect(() => {
-  if (usuario.token !== "") {
-    if (usuario.perfil === "EMPRESA") {
-      navigate("/home");
-    } else if (usuario.perfil === "CLIENTE") {
-      navigate("/cardapio");
-    }
-  }
-}, [usuario, navigate]);
+async function login(e: ChangeEvent<HTMLFormElement>) {
+  e.preventDefault();
+  await handleLogin(usuarioLogin);
 
+  // Redirecionar com base no perfil
+  if (usuarioLogin.perfil === "EMPRESA") {
+    navigate("/home");
+  } else if (usuarioLogin.perfil === "CLIENTE") {
+    navigate("/cardapio");
+  }
+}
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement> ) {
     setUsuarioLogin({
       ...usuarioLogin,
       [e.target.name]: e.target.value,
     });
-  }
-
-  function login(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
-    handleLogin(usuarioLogin);
   }
 
   return (

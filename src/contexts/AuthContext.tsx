@@ -10,7 +10,7 @@ import { Perfil } from "../models/Perfil"
 interface AuthContextProps {
     usuario: UsuarioLogin
     handleLogout(): void
-    handleLogin(usuario: UsuarioLogin): Promise<void>
+    handleLogin(usuario: UsuarioLogin): Promise<UsuarioLogin | null>
     isLoading: boolean
 }
 
@@ -34,15 +34,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
     const [isLoading, setIsLoading] = useState(false)
 
-    async function handleLogin(usuarioLogin: UsuarioLogin) {
-        setIsLoading(true)
-        try {
-            await login(`/usuarios/logar`, usuarioLogin, setUsuario)
-            ToastAlerta("Usuário foi autenticado com sucesso!", "sucesso")
-        } catch (error) {
-            ToastAlerta("Os dados do Usuário estão inconsistentes!", "erro")
-        }
-        setIsLoading(false)
+    async function handleLogin(usuarioLogin: UsuarioLogin): Promise<UsuarioLogin | null> {
+    setIsLoading(true);
+    try {
+        const usuarioRetornado = await login(`/usuarios/logar`, usuarioLogin, setUsuario);
+        ToastAlerta("Usuário foi autenticado com sucesso!", "sucesso");
+        return usuarioRetornado;
+    } catch (error) {
+        ToastAlerta("Os dados do Usuário estão inconsistentes!", "erro");
+        return null;
+    } finally {
+        setIsLoading(false);
+    }
     }
 
     function handleLogout() {
