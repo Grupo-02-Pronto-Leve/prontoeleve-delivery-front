@@ -11,6 +11,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { ToastAlerta } from "../../utils/ToastAlerta";
 import Navbar from "../navbar/Navbar";
 import { PacmanLoader } from "react-spinners";
+import BarraBusca from "../produtos/buscaRestricao/BarraBusca";
 
 export default function Cardapio() {
     const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -19,6 +20,25 @@ export default function Cardapio() {
     const navigate = useNavigate();
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario?.token ?? "";
+
+    async function buscarProdutos(termo?: string) {
+            try {
+                setLoading(true); // inicia loading
+                const url = termo
+                    ? `/produtos/restricao?restricao=${encodeURIComponent(termo)}`
+                    : `/produtos`;
+    
+                await buscar(url, setProdutos, {
+                    headers: { Authorization: token },
+                });
+                } catch (error: any) {
+                if (error.toString().includes("401")) {
+                    handleLogout();
+                } 
+            } finally {
+                setLoading(false); // finaliza loading
+            }
+        }
 
     async function carregar() {
         setLoading(true);
@@ -55,6 +75,7 @@ export default function Cardapio() {
                     <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Produtos</h1>
                     <p className="mt-2 text-neutral-300">Escolha seus itens e adicione ao carrinho.</p>
                 </div>
+                <BarraBusca onBuscar={buscarProdutos} />
 
                 {loading ? (
                     <div className="flex items-center justify-center h-[40vh]">
