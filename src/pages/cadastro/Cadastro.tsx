@@ -12,6 +12,7 @@ import type Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
 import { ToastAlerta } from "../../utils/ToastAlerta";
 import "./Cadastro.css";
+import { Perfil, type Perfil as TipoPerfil } from "../../models/Perfil";
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ function Cadastro() {
     usuario: "",
     senha: "",
     foto: "",
-    perfil: ""
+    perfil: Perfil.CLIENTE,
   });
 
   const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(usuario.usuario);
@@ -41,12 +42,16 @@ function Cadastro() {
     navigate("/login");
   }
 
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
-    setUsuario({
-      ...usuario,
-      [e.target.name]: e.target.value,
-    });
-  }
+function atualizarEstado(
+  e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+) {
+  const { name, value } = e.target;
+
+  setUsuario({
+    ...usuario,
+    [name]: name === "perfil" ? (value as TipoPerfil) : value,
+  });
+}
 
   function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
     setConfirmaSenha(e.target.value);
@@ -255,13 +260,13 @@ function Cadastro() {
                 <div className="mt-4">
                   <label className="block mb-1 font-medium">Perfil</label>
                   <select
-                    name="perfil"
-                    value={usuario.perfil}
-                    onChange = {atualizarEstado}
+                      name="perfil"
+                      value={usuario.perfil}
+                      onChange={atualizarEstado}
                     className="l-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border placeholder-gray-400 focus:outline-none focus:ring-2 text-lg border-gray-400 focus:ring-lime-600"
                   >
-                    <option value="EMPRESA">Empresa</option>
-                    <option value="CLIENTE">Cliente</option>
+                    <option value={Perfil.EMPRESA}>Empresa</option>
+                    <option value={Perfil.CLIENTE}>Cliente</option>
                   </select>
                 </div>
 
