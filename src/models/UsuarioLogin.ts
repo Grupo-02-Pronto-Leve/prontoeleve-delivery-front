@@ -1,3 +1,5 @@
+import type { Perfil } from "./Perfil";
+
 export default interface UsuarioLogin {
     id: number;
     nome: string;
@@ -5,4 +7,5 @@ export default interface UsuarioLogin {
     senha: string;
     foto: string;
     token: string;
+    perfil: Perfil;
 }

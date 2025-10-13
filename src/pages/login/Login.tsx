@@ -16,11 +16,22 @@ function Login() {
     {} as UsuarioLogin
   );
 
+  // useEffect(() => {
+  //   if (usuario.token !== "") {
+  //     navigate("/home");
+  //   }
+  // }, [usuario, navigate]);
+
   useEffect(() => {
-    if (usuario.token !== "") {
+  if (usuario.token !== "") {
+    if (usuario.perfil === "EMPRESA") {
       navigate("/home");
+    } else if (usuario.perfil === "CLIENTE") {
+      navigate("/cardapio");
     }
-  }, [usuario, navigate]);
+  }
+}, [usuario, navigate]);
+
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuarioLogin({
