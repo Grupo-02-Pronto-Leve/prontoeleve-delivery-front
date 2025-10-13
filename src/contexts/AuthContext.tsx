@@ -5,6 +5,7 @@ import { createContext, type ReactNode, useState } from "react"
 import type UsuarioLogin from "../models/UsuarioLogin"
 import { login } from "../services/Service"
 import { ToastAlerta } from "../utils/ToastAlerta"
+import { Perfil } from "../models/Perfil"
 
 interface AuthContextProps {
     usuario: UsuarioLogin
@@ -27,7 +28,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
         usuario: "",
         senha: "",
         foto: "",
-        token: ""
+        token: "",
+        perfil: Perfil.CLIENTE
     })
 
     const [isLoading, setIsLoading] = useState(false)
@@ -50,7 +52,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
             usuario: "",
             senha: "",
             foto: "",
-            token: ""
+            token: "",
+            perfil: Perfil.CLIENTE
         })
     }
 

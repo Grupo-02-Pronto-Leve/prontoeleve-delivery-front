@@ -12,15 +12,25 @@ function Login() {
   const navigate = useNavigate();
   const { usuario, handleLogin, isLoading } = useContext(AuthContext);
 
-  const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
-    {} as UsuarioLogin
-  );
+  // const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
+  //   {} as UsuarioLogin
+  // );
 
   // useEffect(() => {
   //   if (usuario.token !== "") {
   //     navigate("/home");
   //   }
   // }, [usuario, navigate]);
+
+  const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({
+  id: 0,
+  nome: "",
+  usuario: "",
+  senha: "",
+  foto: "",
+  token: "",
+  perfil: "CLIENTE", // ou EMPRESA, padrão
+});
 
   useEffect(() => {
   if (usuario.token !== "") {
@@ -33,7 +43,7 @@ function Login() {
 }, [usuario, navigate]);
 
 
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement> ) {
     setUsuarioLogin({
       ...usuarioLogin,
       [e.target.name]: e.target.value,
