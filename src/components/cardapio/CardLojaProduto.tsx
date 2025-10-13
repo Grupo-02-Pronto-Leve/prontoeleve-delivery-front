@@ -1,6 +1,7 @@
 import type Produto from "../../models/Produto";
 import { useCart } from "../../contexts/CartContext";
 import { ShoppingCartSimple } from "@phosphor-icons/react";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 export default function CardLojaProduto({ produto }: { produto: Produto }) {
   const { add } = useCart();
@@ -13,6 +14,11 @@ export default function CardLojaProduto({ produto }: { produto: Produto }) {
   const categoria = produto.categoria?.nome ?? produto.categoria?.descricao ?? "Categoria";
   const precoBRL = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" })
     .format(Number(produto.preco ?? 0));
+
+  const alertaCarrinho = () => {
+    add(produto);
+    ToastAlerta(`${produto.nome} foi adicionado ao carrinho! 🛒`, "sucesso");
+  };
 
   return (
     <article className="group rounded-3xl overflow-hidden border bg-white/95 border-black/5 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.15)] hover:shadow-[0_20px_60px_-12px_rgba(0,0,0,0.25)] transition">
@@ -31,8 +37,8 @@ export default function CardLojaProduto({ produto }: { produto: Produto }) {
 
       <div className="px-4 pb-4 pt-1">
         <button
-          onClick={() => add(produto)}
-          className="w-full inline-flex items-center justify-center gap-2 py-2 px-5 rounded-xl text-white font-medium bg-gray-900 hover:brightness-110"
+          onClick={alertaCarrinho}
+          className="w-full cursor-pointer inline-flex items-center justify-center gap-2 py-2 px-5 rounded-xl text-white font-medium bg-gray-900 hover:brightness-110"
         >
           Adicionar
           <ShoppingCartSimple size={18} />
