@@ -25,7 +25,7 @@ function Sobre() {
         { name: "Diego Cavalcanti", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/diego.jpg?updatedAt=1757553910186", linkedin: "https://www.linkedin.com/in/diegoscavalcanti/", github: "https://github.com/diegocavalcanti-dev" },
         { name: "Miguel Ferreira", img: "https://github.com/devvMiguel.png", linkedin: "https://www.linkedin.com/in/ferreir4miguel/", github: "https://github.com/devvMiguel" },
         { name: "Natália Gadelha", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/nataliag.jpeg?updatedAt=1757553889534", linkedin: "https://www.linkedin.com/in/natalia-gadelha/", github: "https://github.com/NataliaGadelha" },
-        { name: "Natalia Taira", img: "https://ik.imagekit.io/iyc9bztrf8/nataliat.jpeg?updatedAt=1755102273747", linkedin: "https://www.linkedin.com/in/nataliataira/", github: "https://github.com/nataliataira" },
+        { name: "Natalia Taira", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/nataliat.jpeg?updatedAt=1757553889191", linkedin: "https://www.linkedin.com/in/nataliataira/", github: "https://github.com/nataliataira" },
         { name: "Nathalia Carvalho", img: "https://ik.imagekit.io/iyc9bztrf8/Fotos%20para%20projeto%20da%20GEN/nathaliac.png?updatedAt=1757553888810", linkedin: "https://www.linkedin.com/in/naah-carvalho/", github: "https://github.com/naahcarvalho" },
         { name: "Taís Escobar", img: "https://ik.imagekit.io/iyc9bztrf8/tais.jpg?updatedAt=1755102274340", linkedin: "https://www.linkedin.com/in/taismqescobar/", github: "https://github.com/taismichely" },
     ];
