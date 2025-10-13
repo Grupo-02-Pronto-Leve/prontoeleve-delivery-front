@@ -24,6 +24,7 @@ function Cadastro() {
     usuario: "",
     senha: "",
     foto: "",
+    perfil: ""
   });
 
   const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(usuario.usuario);
@@ -40,7 +41,7 @@ function Cadastro() {
     navigate("/login");
   }
 
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     setUsuario({
       ...usuario,
       [e.target.name]: e.target.value,
@@ -88,10 +89,10 @@ function Cadastro() {
                 className="bg-[#111111]/80 backdrop-blur-md shadow-lg rounded-xl py-4 px-3 sm:px-8 w-full text-white"
                 onSubmit={cadastrarNovoUsuario}
               >
-                <h2 className="font-marko text-xl sm:text-3xl font-semibold text-center mb-2 sm:mb-3">
+                <h2 className="font-marko text-xl sm:text-3xl font-semibold text-center">
                   Cadastre-se
                 </h2>
-                <p className="text-center font-zain text-xl mb-3">
+                <p className="text-center font-zain text-xl mb-2">
                   Já possui uma conta?{" "}
                   <Link to="/login" className="text-lime-600 hover:underline">
                     Entre
@@ -114,19 +115,19 @@ function Cadastro() {
                       value={usuario.nome}
                       onChange={atualizarEstado}
                       required
-                      className= {`pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 
+                      className={`pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 
                    focus:outline-none focus:ring-2 focus:ring-lime-600 text-xl
                    ${
-                  nomeInvalido
-                    ? "border-red-500 focus:ring-red-500"
-                    : "border-gray-400 focus:ring-lime-600"
-                    }`}
-                    autoFocus
+                     nomeInvalido
+                       ? "border-red-500 focus:ring-red-500"
+                       : "border-gray-400 focus:ring-lime-600"
+                   }`}
+                      autoFocus
                     />
                     {nomeInvalido && (
-                    <p className="text-red-500 text-lg mt-1">
-                      O nome deve ter no mínimo de 5 caracteres
-                    </p>
+                      <p className="text-red-500 text-lg mt-1">
+                        O nome deve ter no mínimo de 5 caracteres
+                      </p>
                     )}
                   </div>
                 </div>
@@ -249,6 +250,19 @@ function Cadastro() {
                       As senhas não coincidem.
                     </p>
                   )}
+                </div>
+
+                <div className="mt-4">
+                  <label className="block mb-1 font-medium">Perfil</label>
+                  <select
+                    name="perfil"
+                    value={usuario.perfil}
+                    onChange = {atualizarEstado}
+                    className="l-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border placeholder-gray-400 focus:outline-none focus:ring-2 text-lg border-gray-400 focus:ring-lime-600"
+                  >
+                    <option value="EMPRESA">Empresa</option>
+                    <option value="CLIENTE">Cliente</option>
+                  </select>
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-center gap-3 sm:gap-4 font-marko mt-4">
