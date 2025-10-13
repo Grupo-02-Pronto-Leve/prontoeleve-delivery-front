@@ -27,6 +27,8 @@ function Cadastro() {
   });
 
   const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(usuario.usuario);
+  const nomeValido = usuario.nome.trim().length >= 5;
+  const nomeInvalido = usuario.nome.trim().length > 0 && !nomeValido;
 
   useEffect(() => {
     if (usuario.id !== 0) {
@@ -96,7 +98,7 @@ function Cadastro() {
                   </Link>
                 </p>
 
-                <div className="flex flex-col font-zain text-xl w-full mb-3 sm:mb-4">
+                <div className="flex flex-col font-zain text-xl w-full mb-2 sm:mb-4">
                   <label htmlFor="nome" className="font-medium text-white">
                     Nome
                   </label>
@@ -112,9 +114,20 @@ function Cadastro() {
                       value={usuario.nome}
                       onChange={atualizarEstado}
                       required
-                      className="pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 
-                   focus:outline-none focus:ring-2 focus:ring-lime-600 text-xl"
+                      className= {`pl-10 pr-3 py-2 w-full rounded bg-[#1a1a1a] border border-gray-400 placeholder-gray-400 
+                   focus:outline-none focus:ring-2 focus:ring-lime-600 text-xl
+                   ${
+                  nomeInvalido
+                    ? "border-red-500 focus:ring-red-500"
+                    : "border-gray-400 focus:ring-lime-600"
+                    }`}
+                    autoFocus
                     />
+                    {nomeInvalido && (
+                    <p className="text-red-500 text-lg mt-1">
+                      O nome deve ter no mínimo de 5 caracteres
+                    </p>
+                    )}
                   </div>
                 </div>
 
@@ -144,7 +157,7 @@ function Cadastro() {
                     />
                   </div>
                   {!emailValido && usuario.usuario !== "" && (
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-red-500 text-lg mt-1">
                       Digite um e-mail válido.
                     </p>
                   )}
@@ -197,7 +210,7 @@ function Cadastro() {
                     />
                   </div>
                   {usuario.senha.length > 0 && usuario.senha.length < 8 && (
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-red-500 text-lg mt-1">
                       A senha deve ter pelo menos 8 caracteres.
                     </p>
                   )}
@@ -232,7 +245,7 @@ function Cadastro() {
                     />
                   </div>
                   {confirmaSenha !== "" && confirmaSenha !== usuario.senha && (
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-red-500 text-lg mt-1">
                       As senhas não coincidem.
                     </p>
                   )}
