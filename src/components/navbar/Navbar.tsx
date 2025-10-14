@@ -51,56 +51,55 @@ const avatar =
 
         {/* Menu central (desktop) */}
         <ul className="hidden md:flex items-center gap-4">
-          <li>
-            <NavLink to="/home" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
-              <HiOutlineHome />
-              Início
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/sobre" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
-              <HiOutlineBolt />
-              Sobre
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/contato" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
-              <HiOutlinePhone />
-              Contato
-            </NavLink>
-          </li>
+  {/* Se for CLIENTE, mostra o Cardápio no lugar do Início */}
+  {perfil === Perfil.CLIENTE ? (
+    <li>
+      <NavLink to="/cardapio" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
+        <ShoppingCartIcon />
+        Cardápio
+      </NavLink>
+    </li>
+  ) : (
+    <li>
+      <NavLink to="/home" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
+        <HiOutlineHome />
+        Início
+      </NavLink>
+    </li>
+  )}
 
-        {token && (
-          <>
-            {perfil === Perfil.EMPRESA && (
-              <>
-                <li>
-                  <NavLink to="/categorias" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
-                    <HiOutlineSelector />
-                    Categorias
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/produtos" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
-                    <HiOutlineCake />
-                    Produtos
-                  </NavLink>
-                </li>
-              </>
-            )}
+  {/* Estes aparecem para todos */}
+  <li>
+    <NavLink to="/sobre" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
+      <HiOutlineBolt />
+      Sobre
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/contato" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
+      <HiOutlinePhone />
+      Contato
+    </NavLink>
+  </li>
 
-            {perfil === Perfil.CLIENTE && (
-              <li>
-                <NavLink to="/cardapio" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
-                  <ShoppingCartIcon />
-                  Cardápio
-                </NavLink>
-              </li>
-            )}
-          </>
-        )}
-
-        </ul>
+  {/* Itens específicos de EMPRESA */}
+  {token && perfil === Perfil.EMPRESA && (
+    <>
+      <li>
+        <NavLink to="/categorias" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
+          <HiOutlineSelector />
+          Categorias
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/produtos" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
+          <HiOutlineCake />
+          Produtos
+        </NavLink>
+      </li>
+    </>
+  )}
+</ul>
 
         {/* Área à direita (desktop) */}
         {token ? (

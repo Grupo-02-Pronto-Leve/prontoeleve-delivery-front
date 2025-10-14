@@ -25,12 +25,13 @@ function Login() {
 
 async function login(e: ChangeEvent<HTMLFormElement>) {
   e.preventDefault();
-  await handleLogin(usuarioLogin);
+  const usuarioRetornado = await handleLogin(usuarioLogin);
 
-  // Redirecionar com base no perfil
-  if (usuarioLogin.perfil === Perfil.EMPRESA) {
+  if (!usuarioRetornado) return;
+
+  if (usuarioRetornado.perfil === Perfil.EMPRESA) {
     navigate("/home");
-  } else if (usuarioLogin.perfil === Perfil.CLIENTE) {
+  } else if (usuarioRetornado.perfil === Perfil.CLIENTE) {
     navigate("/cardapio");
   }
 }
