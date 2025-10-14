@@ -28,9 +28,9 @@ async function login(e: ChangeEvent<HTMLFormElement>) {
   await handleLogin(usuarioLogin);
 
   // Redirecionar com base no perfil
-  if (usuarioLogin.perfil === "EMPRESA") {
+  if (usuarioLogin.perfil === Perfil.EMPRESA) {
     navigate("/home");
-  } else if (usuarioLogin.perfil === "CLIENTE") {
+  } else if (usuarioLogin.perfil === Perfil.CLIENTE) {
     navigate("/cardapio");
   }
 }

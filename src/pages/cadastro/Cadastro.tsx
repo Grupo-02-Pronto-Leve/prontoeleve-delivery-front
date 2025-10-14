@@ -59,6 +59,7 @@ function atualizarEstado(
 
   async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    console.log("Enviando para cadastro:", usuario); // <-- Veja o valor aqui
 
     if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
       setIsLoading(true);

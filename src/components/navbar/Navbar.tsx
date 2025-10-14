@@ -8,6 +8,7 @@ import logo from "../../assets/logo.png";
 import prontoeleve from "../../assets/prontoeleve.png";
 import { ToastAlerta } from "../../utils/ToastAlerta";
 import { ShoppingCartIcon } from "@phosphor-icons/react";
+import { Perfil } from "../../models/Perfil";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,13 +20,14 @@ function Navbar() {
     "inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-800/90 text-neutral-200 hover:text-white hover:bg-neutral-700 transition text-sm";
   const active = "ring-2 ring-white/40 text-white bg-neutral-700";
 
-  const { usuario, handleLogout } = useContext(AuthContext);
-  const token = usuario?.token;
-  const firstName = usuario?.nome ? usuario.nome.split(" ")[0] : "";
-  const avatar =
-    (usuario as any)?.foto && (usuario as any)?.foto.trim() !== ""
-      ? (usuario as any)?.foto
-      : "https://ik.imagekit.io/6j8wkskq7/default-avatar.jpg?updatedAt=1755124908038";
+const { usuario, handleLogout } = useContext(AuthContext);
+const token = usuario?.token;
+const perfil = usuario?.perfil?.toString().toUpperCase().replace("ROLE_", ""); 
+const firstName = usuario?.nome ? usuario.nome.split(" ")[0] : "";
+const avatar =
+  (usuario as any)?.foto && (usuario as any)?.foto.trim() !== ""
+    ? (usuario as any)?.foto
+    : "https://ik.imagekit.io/6j8wkskq7/default-avatar.jpg?updatedAt=1755124908038";
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -68,28 +70,36 @@ function Navbar() {
             </NavLink>
           </li>
 
-          {token && (
-            <>
-              <li>
-                <NavLink to="/categorias" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
-                  <HiOutlineSelector />
-                  Categorias
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/produtos" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
-                  <HiOutlineCake />
-                  Produtos
-                </NavLink>
-              </li>
+        {token && (
+          <>
+            {perfil === Perfil.EMPRESA && (
+              <>
+                <li>
+                  <NavLink to="/categorias" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
+                    <HiOutlineSelector />
+                    Categorias
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/produtos" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
+                    <HiOutlineCake />
+                    Produtos
+                  </NavLink>
+                </li>
+              </>
+            )}
+
+            {perfil === Perfil.CLIENTE && (
               <li>
                 <NavLink to="/cardapio" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>
                   <ShoppingCartIcon />
                   Cardápio
                 </NavLink>
               </li>
-            </>
-          )}
+            )}
+          </>
+        )}
+
         </ul>
 
         {/* Área à direita (desktop) */}
@@ -196,9 +206,15 @@ function Navbar() {
 
             {token && (
               <>
-                <NavLink onClick={() => setOpen(false)} to="/categorias" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Categorias</NavLink>
-                <NavLink onClick={() => setOpen(false)} to="/produtos" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Produtos</NavLink>
-                <NavLink onClick={() => setOpen(false)} to="/cardapio" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Cardápio</NavLink>
+                {perfil === Perfil.EMPRESA && (
+                  <>
+                    <NavLink onClick={() => setOpen(false)} to="/categorias" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Categorias</NavLink>
+                    <NavLink onClick={() => setOpen(false)} to="/produtos" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Produtos</NavLink>
+                  </>
+                )}
+                {perfil === Perfil.CLIENTE && (
+                  <NavLink onClick={() => setOpen(false)} to="/cardapio" className={({ isActive }) => `${item} ${isActive ? active : ""}`}>Cardápio</NavLink>
+                )}
               </>
             )}
 
